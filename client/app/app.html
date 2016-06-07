@@ -1,0 +1,71 @@
+<md-content>
+      <md-toolbar color="primary">
+          <span>{{ u.email }}</span>
+        
+          <span class="fill"></span>
+          
+
+
+          
+            <!--
+        
+           <md-button md-button router-active [routerLink]=" ['Material'] ">
+                Material Demo
+          </md-button>
+          <md-button md-button router-active [routerLink] = " ['ProductAdd',{'id': '574c568dc534abb86bf27453' }] ">
+              Product Add
+          </md-button>
+
+          <md-button md-button router-active [routerLink]=" ['ProductList',{'id' '574c568dc534abb86bf27453' }] ">
+              Product List
+          </md-button>
+          
+          <md-button md-button router-active [routerLink]=" ['Signup'] ">
+            Signup
+          </md-button>
+                      -->
+        
+          <md-button md-button router-active [routerLink]=" ['CartList'] ">
+              Cart
+          </md-button>
+
+          <md-button md-button router-active [routerLink]=" ['ShopSearch'] ">
+              Search
+          </md-button>
+
+          <button md-button router-active [routerLink]=" ['Test'] ">
+            Test
+          </button>
+		  
+		  
+        
+          <button md-button router-active [routerLink]=" ['ShopAdd'] ">
+              Shop Add
+          </button>
+          <button md-button router-active [routerLink]=" ['ShopList'] ">
+              Shop List
+          </button>
+
+          <button md-button router-active [routerLink]=" ['Products'] ">
+            Products Flux
+          </button>
+          <button md-button router-active [routerLink]=" ['Product'] ">
+              Products
+          </button>
+
+          <button md-button router-active [routerLink]=" ['Signin'] ">
+            Login
+          </button>
+      </md-toolbar>
+      
+    <!--    
+    <sebm-google-map [latitude]="lat" [longitude]="lng">
+    </sebm-google-map>
+    -->
+    
+    
+      <router-outlet></router-outlet>
+      <footer>
+        hhhhhhhhhhhhhhh
+      </footer>
+    </md-content>

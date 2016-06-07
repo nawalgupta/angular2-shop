@@ -1,7 +1,20 @@
+# Angular 2 Shop
+
+# Ignore Documentation
+docs
+
+# Ignore Node env variables
+config/config.json
+
+# Ignore file-loader directory
+res
+
+# Ignore Photoshop Files
+*.psd
+
 # Logs
 logs
 *.log
-npm-debug.log*
 
 # Runtime data
 pids
@@ -17,17 +30,48 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
-# node-waf configuration
-.lock-wscript
-
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-node_modules
+# Users Environment Variables
+.lock-wscript
 
-# Optional npm cache directory
-.npm
+# OS generated files #
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
 
-# Optional REPL history
-.node_repl_history
+# Node Files #
+/node_modules
+/bower_components
+npm-debug.log
+
+# Coverage #
+/coverage/
+
+# Typing #
+/client/typings/tsd/
+/typings/
+/tsd_typings/
+
+# Dist #
+/dist
+/public/__build__/
+/client/*/__build__/
+/__build__/**
+/public/dist/
+/client/*/dist/
+/dist/**
+.webpack.json
+
+# Doc #
+/doc/
+
+# IDE #
+.idea/
+
+# Temporary Files #
+.tmp
+.sass-cache
+*.swp
