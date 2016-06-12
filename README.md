@@ -1,6 +1,6 @@
 # Angular2Shop (Angular eCommerce) (ng2Shop) - Fullstack
 
-Angular2Shop is a multi tenant eCommerce plateform. The sample site is for home cooked meals, but can be easily accomodate for any product.
+Angular2Shop is a multi tenant eCommerce application. The sample site is for home cooked meals, but can be easily accomodate for any product.
 
 #Technology Stack
   - MEAN with Angular2
