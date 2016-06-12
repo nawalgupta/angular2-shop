@@ -88,6 +88,7 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.4.17",
     "ng2-dropdown": "0.0.3",
+    "ng2-file-upload": "^1.0.3",
     "ng2-material": "^0.4.1",
     "ng2-select": "^1.0.3",
     "ng2-ui-auth": "^3.0.2",

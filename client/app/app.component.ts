@@ -1,6 +1,17 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {RouteConfig, Router} from '@angular/router-deprecated';
 
+
+
+import { OnInit, OnDestroy, Input, ViewChild, AfterViewInit} from '@angular/core';
+import {Response, Http} from '@angular/http';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
+//import {Router} from '@angular/router';
+import {MD_SIDENAV_DIRECTIVES, MdSidenav} from '@angular2-material/sidenav';
+import {MdToolbar} from '@angular2-material/toolbar';
+import {MATERIAL_DIRECTIVES, Media} from 'ng2-material';
+import {MdIcon} from 'ng2-material';
+
 import {AppState} from './app.service';
 
 import {RouterActive} from './shared/directives/router-active/router-active.directive';
@@ -59,6 +70,8 @@ import {SharedService} from './services/shared.service';
 
 import {UserService} from './auth/user.service';
 
+import {FileUpload} from './demo/file-upload';
+
 
 /*
  * App Component
@@ -68,7 +81,8 @@ import {UserService} from './auth/user.service';
   selector: 'app',
   providers: [  ANGULAR2_GOOGLE_MAPS_PROVIDERS, AuthService],
   directives: [ MdDropdown,
-                RouterActive],
+      RouterActive,
+      MD_SIDENAV_DIRECTIVES, MdIcon, MdToolbar  ],
   encapsulation: ViewEncapsulation.None,
   pipes: [],
   styles: [`
@@ -78,7 +92,7 @@ import {UserService} from './auth/user.service';
   `],
   // Load our main `Sass` file into our `app` `component`
   styleUrls: [require('!style!css!sass!../sass/main.scss')],
-  template: require('./app.html')
+  template: require('./app.side.nav.html')
 })
 /*
 @Routes([
@@ -94,6 +108,8 @@ import {UserService} from './auth/user.service';
   { path: '/shopadd', component: ShopAdd, name: 'ShopAdd' },
   { path: '/shoplist', component: ShopList, name: 'ShopList' },
   { path: '/cartlist', component: CartList, name: 'CartList' },
+  { path: '/file', component: FileUpload, name: 'FileUpload' },
+
 
  // { path: '/shopsearch', component: ShopSearch, name: 'ShopSearch' },
   { path: '/search', component: ShopSearch, name: 'ShopSearch' },
@@ -123,6 +139,27 @@ export class App {
  private latitude: number = 51.678418;
  private longitude : number = 7.809007;
 
+
+
+ //public SIDE_MENU_BREAKPOINT: string = 'gt-md';
+
+ @ViewChild(MdSidenav) private menu: MdSidenav;
+
+ //@Input()
+ //fullPage: boolean = true;
+
+ public site: string = 'Angular2 Material';
+
+ version: string;
+
+ angularVersion: string = null;
+ linkTag: string = null;
+
+ //  components: IComponentMeta[] = [];
+
+ private _subscription = null;
+ public navigation = {};
+
   //If using Auth0 for SSO
   //lock = new Auth0Lock('tN9xVfIaUEeUCrFxleVwhIoObMbSe9be', 'xxx.auth0.com');
  items = ['A', 'B', 'C', 'Pizza'];
@@ -130,7 +167,9 @@ export class App {
   constructor(public appState: AppState,
       private auth: AuthService,
       public s: SharedService,
-      private u: UserService  ) {
+      private u: UserService) {
+
+    
 
     s.userId = "";
     s.userEmail = "";
@@ -203,4 +242,78 @@ login() {
 
     console.log('Initial App State', this.appState.state);
   }
+
+
+
+
+
+
+
+
+
+
+
+  get pushed(): boolean { return this.menu && this.menu.mode === 'side'; }
+
+  get over(): boolean { return this.menu && this.menu.mode === 'over' && this.menu.opened; }
+
+  // TODO(jd): these two property hacks are to work around issues with the peekaboo fixed nav
+  // overlapping the sidenav and toolbar.  They will not properly "fix" to the top if inside
+  // md-sidenav-layout, and they will overlap the sidenav and scrollbar when outside.  So just
+  // calculate left and right properties for fixed toolbars based on the media query and browser
+  // scrollbar width.  :sob: :rage:
+  @Input()
+  get sidenavWidth(): number { return this.pushed ? 281 : 0; }
+
+  @Input()
+  get scrollWidth(): number {
+      var inner = document.createElement('p');
+      inner.style.width = '100%';
+      inner.style.height = '200px';
+
+      var outer = document.createElement('div');
+      outer.style.position = 'absolute';
+      outer.style.top = '0px';
+      outer.style.left = '0px';
+      outer.style.visibility = 'hidden';
+      outer.style.width = '200px';
+      outer.style.height = '150px';
+      outer.style.overflow = 'hidden';
+      outer.appendChild(inner);
+
+      document.body.appendChild(outer);
+      var w1 = inner.offsetWidth;
+      outer.style.overflow = 'scroll';
+      var w2 = inner.offsetWidth;
+      if (w1 == w2) w2 = outer.clientWidth;
+
+      document.body.removeChild(outer);
+
+      return (w1 - w2);
+  };
+/*
+  ngOnInit() {
+      this.http.get('version.json').subscribe((res: Response) => {
+          const json = res.json();
+          this.version = json.version;
+          this.angularVersion = json['@angular/core'];
+          this.linkTag = this.angularVersion.replace(/[>=^~]/g, '');
+      });
+      this._components.getComponents().then((comps) => {
+          this.components = comps;
+          let title = 'Angular2 Shop';
+          document.title = title;
+          this.navigation.currentTitle = title;
+          this.navigation.prevLink = this.navigation.componentLink(comps[comps.length - 1]);
+          this.navigation.nextLink = this.navigation.componentLink(comps[0]);
+      });
+  }
+  */
+
+
+
+
+
+
+
 }

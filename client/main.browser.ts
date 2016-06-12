@@ -23,7 +23,6 @@ const DEFAULT_POST_HEADER: {[name: string]: string} = {
   'Content-Type': 'application/json'
 };
 const GOOGLE_CLIENT_ID = '******************************.apps.googleusercontent.com';
-
 //bootstrap(Main, [
   //  HTTP_PROVIDERS,
     //NG2_UI_AUTH_PROVIDERS({defaultHeaders: DEFAULT_POST_HEADER, providers: {google: {clientId: GOOGLE_CLIENT_ID}}}),
