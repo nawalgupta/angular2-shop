@@ -2,12 +2,41 @@
 
 Angular2Shop is a multi tenant eCommerce application. The sample site is for home cooked meals, but can be easily accomodate for any product.
 
+
 #Technology Stack
   - MEAN with Angular2
 
-ng2Shop uses a number of open source projects to work properly:
+#Technical Features
+* Oauth2 with google login
+* Authentication and Authorization with Secure Rest Calls
+* GeoLocation
+* Angular2 integration with google map and places api
+* Places Autocomlete
+* Image Dropdown Component  
+* File Upload Integration
+* Grapicks Magic and Image Resize 
+* Session, Cookies and Local Stogare
+
+
+#Site Flow and Features
+* Login with google id/local logic
+
+##Seller
+* Create Shop (Kitchen)/ Create Multiple Shops
+* Add Products/Food Menu to Shop (Kitchen) 
+* Manage Orders 
+
+##Buyer
+* Search Shops/Products near to his/her location on keyword or preference
+* Local Filter on search results
+* Add to Cart
+* Manage Cart (Add/Edit Items from cart)
+* Confirm Order
+
+
+Angular2-Shop uses a number of open source projects to work properly:
 * [Angular2] - HTML enhanced for web apps!Latest Beta Version
-* [TypeScript] - Angular2
+* [TypeScript] - Angular2 with Typescript
 * [Material] - Google Material Desing  
 * [Vulgar] - Vulger Cli for Seed Project
 * [Angular-Material and Ng2Material] - For Google Material Desing   
@@ -22,14 +51,6 @@ ng2Shop uses a number of open source projects to work properly:
 * [Rx] -  Reactive JX (Flux) (@dev)
 * [Mobile-Codorva] - Codorva   (@dev)
 
-
-
-
-
-
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
 
 ### Installation
 
@@ -94,15 +115,13 @@ License
 
 MIT
 
-
-   [vulgar-cli]: <https://github.com/>
+   [vulgar-cli]: 
    [proj]: <https://github.com/nawalgupta/angular2shop>
    [git-repo-url]: <https://github.com/nawalgupta/angular2shop.git>
    [john gruber]: <http://daringfireball.net>
    [@thomasfuchs]: <http://twitter.com/thomasfuchs>
    [node.js]: <http://nodejs.org>
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
    [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
    [express]: <http://expressjs.com>
    [AngularJS]: <http://angularjs.org>
