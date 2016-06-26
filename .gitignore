@@ -4,7 +4,8 @@
 docs
 
 # Ignore Node env variables
-config/config.json
+# TODO 
+# config/config.json
 
 # Ignore file-loader directory
 res
