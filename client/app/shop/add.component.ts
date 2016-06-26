@@ -22,6 +22,10 @@ import {FormBuilder, ControlGroup, Validators} from '@angular/common';
 import {RouteConfig, Router, RouteParams} from '@angular/router-deprecated';
 
 
+
+import {MapAutocomplete} from '../components/map-auto';
+
+
 // Create metadata with the `@Component` decorator
 @Component({
     // HTML tag for specifying this component
@@ -32,12 +36,13 @@ import {RouteConfig, Router, RouteParams} from '@angular/router-deprecated';
     providers: [
         ...HTTP_PROVIDERS,
         ShopService,
-        ANGULAR2_GOOGLE_MAPS_PROVIDERS,
+      //  ANGULAR2_GOOGLE_MAPS_PROVIDERS,
   //      AuthService
     ],
     directives: [
         MdSwitch,
-        ANGULAR2_GOOGLE_MAPS_DIRECTIVES,
+        MapAutocomplete,
+        //ANGULAR2_GOOGLE_MAPS_DIRECTIVES,
 //        RouterActive
     ],
     //encapsulation: ViewEncapsulation.None,
@@ -47,7 +52,7 @@ import {RouteConfig, Router, RouteParams} from '@angular/router-deprecated';
       height: 200px;
     }
   `],
-    template: require('./add.html')
+    template: require('./add_edit.html')
 })
 export class ShopAdd {
 
@@ -59,12 +64,39 @@ export class ShopAdd {
     text: ''
   };
   url = 'https://google.com/';
+  public id: string = '';
+
   public latitude: number = 51.678418;
   public longitude: number = 7.809007;
   public zoom: number = 16;
-  public isPickup = false;
-  public isDelivery = false;
+  public isPickup = true;
+  public isDelivery = true;
   public isVeg = true;
+  public allDay = true;
+  public day1 = true; //Monday
+  public day2 = true;
+  public day3 = true;
+  public day4 = true;
+  public day5 = true;
+  public day6 = true;
+  public day7 = true; //Sunday
+
+
+  public callAndConfirm = false; 
+  public phone : number = 0; 
+
+
+  public advanceOrderOnly = true;
+
+  public openTime: number = 12.30;
+  public closeTime: number = 21.30;
+  public prepareTime: number = 1.00;
+  public deliveryTime: number = 1.00;
+
+  public minDeliveryOrder: number = 200;
+  public minOrder: number = 200;
+  public discount: number = 10;
+  
 
   mode='';
   currentItem= {text:'',userId:''};
@@ -73,15 +105,23 @@ export class ShopAdd {
   constructor(public router: Router,
       public shopService: ShopService,
       private u: UserService) {
-      console.log('In Shop constructor!');
+
+      console.log('In Shop constructor!', u.latitude, u.longitude);
       //u.id = '574c5677c534abb86bf27452';
       u.setLocation();
 
+      console.log('In Shop constructor!', u.latitude, u.longitude);
+      
       let fb = new FormBuilder();
 
       this.myForm = fb.group({
-          title: ['', Validators.required],
-          cuisine: ['', Validators.required],
+          title: ['Mrs.... Kitchen', Validators.required],
+          cuisine: ['Continental', Validators.required],
+          description: ['The best home made food in your locality'],
+          address: ['Somewhere in earth'],
+          city: [''],
+
+
           isVeg: [''],
           isDelivery: [''],
           isPickup: ['']
@@ -120,6 +160,10 @@ submit(data) {
         let sendData = {
             title: data.title,
             cuisine: data.cuisine,
+            description: data.description,
+            address: data.address,
+            city: data.city,
+
             isVeg: this.isVeg,
             isDelivery: this.isDelivery,
             isPickup: this.isPickup,

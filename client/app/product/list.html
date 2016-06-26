@@ -1,15 +1,20 @@
 <md-content layout="row" layout-align="center start" layout-fill layout-margin>
-    <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
+    <md-whiteframe-dis layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="40" class="md-whiteframe-z2-dis" layout-fill>
         <md-toolbar>
             <div layout="row">
-                <h3 class="md-display-1"> Shop- {{shop.title}} </h3>
+                <h3 class="md-display-1"> {{shop.title}} </h3>
             </div>
-            <button md-button router-active [routerLink]="['ProductAdd',{shopid:shopId}]">
-                Add New Product
-            </button>
+
+            
         </md-toolbar>
+
         <md-list>
-            <md-subheader class="md-no-sticky"></md-subheader>
+            <md-subheader class="md-no-sticky">
+
+                <button md-button router-active [routerLink]="['ProductAdd',{shopid:shopId}]">
+                    Add New Product
+                </button>
+            </md-subheader>
             <md-list-item class="md-3-line" *ngFor="let item of items; let index = index">
                 <div class="md-list-item-text" layout="column">
                     <p>
@@ -20,8 +25,13 @@
                 </div>
             </md-list-item>
             <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">
 
+                <button md-button router-active [routerLink]="['ProductAdd',{shopid:shopId}]">
+                    Add New Product
+                </button>
+            </md-subheader>
         </md-list>
-    </md-whiteframe>
+    </md-whiteframe-dis>
 </md-content>
 

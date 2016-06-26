@@ -5,7 +5,7 @@ import {FILE_UPLOAD_DIRECTIVES, FileUploader} from 'ng2-file-upload';
 // webpack html imports
 let template = require('./file-upload.html');
 
-// const URL = '/api/upload';
+ const URL = '/api/upload';
 // const URL = 'http://localhost:8080/api/upload';
 
 @Component({

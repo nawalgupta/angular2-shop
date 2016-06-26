@@ -9,9 +9,6 @@ import {NgFor} from '@angular/common';
 import {UserService} from '../auth/user.service';
 
 
-import {ANGULAR2_GOOGLE_MAPS_PROVIDERS} from 'angular2-google-maps/core';
-import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
-
 import {MdSwitch} from "ng2-material";
 import {RouteConfig, Router, RouteParams} from '@angular/router-deprecated';
 
@@ -25,19 +22,15 @@ import {FormBuilder, ControlGroup, Validators} from '@angular/common';
     providers: [
         ...HTTP_PROVIDERS,
         ProductService,
-        ANGULAR2_GOOGLE_MAPS_PROVIDERS,
+       
     ],
     directives: [
         MdSwitch,
-        ANGULAR2_GOOGLE_MAPS_DIRECTIVES,
+       
     ],
     //encapsulation: ViewEncapsulation.None,
     pipes: [],
-    styles: [`
-    .sebm-google-map-container {
-      height: 200px;
-    }
-  `],
+    styles: [],
     template: require('./add.html')
 })
 export class ProductAdd {
@@ -45,7 +38,7 @@ export class ProductAdd {
     myForm: ControlGroup;
     error: string;
     public shopId: string;
-    
+    public showForm: boolean = true;  
     public url = 'https://google.com/';
     public latitude: number = 51.678418;
     public longitude: number = 7.809007;
@@ -58,16 +51,11 @@ export class ProductAdd {
     currentItem = { text: '', userId: '' };
     private products: Array<any> = [];
 
-    constructor(public params: RouteParams,
-        public router: Router,
-        public productService: ProductService, private u: UserService) {
-        u.currency = 'Rs';
-        u.setLocation();
-        console.log('In Product Add constructor!', this.params);
-
-        this.shopId = params.get('shopid');
-        console.log('In Product constructor!', this.shopId);
-
+    reset() {
+        this.createForm();
+    }
+    createForm() {
+        //this.createForm();
         let fb = new FormBuilder();
 
         this.myForm = fb.group({
@@ -83,16 +71,27 @@ export class ProductAdd {
 
         });
 
+    }
+
+    constructor(public params: RouteParams,
+        public router: Router,
+        public productService: ProductService, private u: UserService) {
+        u.currency = 'Rs';
+        u.setLocation();
+     
+        this.shopId = params.get('shopid');
+        console.log('In Product constructor!', this.shopId);
+
+        
         this.error = '';
         productService.userId = u.id;
         this.latitude = u.latitude;
         this.longitude = u.longitude;
-
+        this.createForm();
     }
     
     submit(data) {
         if (this.myForm.valid || 1) {
-            alert('in submit of product add');
             let sendData = {
                 title: data.title,
                 price: data.price,
@@ -114,7 +113,10 @@ export class ProductAdd {
                     if (this.u.id) {
                         console.log('refresh form')
                         this.router.parent.navigate(['ProductAdd', { shopid: this.shopId }])
-                        alert('Product Added!, You can add more');
+                        this.showForm = false;
+                        alert('Product Added!, You can add more!!');
+                        this.showForm = true;
+                        this.reset();
                     }
 
                 });

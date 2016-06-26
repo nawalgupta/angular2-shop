@@ -1,22 +1,3 @@
-// ```
-// _authentication.router.js
-// (c) 2016 David Newman
-// david.r.niciforovic@gmail.com
-// _authentication.router.js may be freely distributed under the MIT license
-// ```
-
-// */app/routes/_authentication.router.js*
-
-// GET    */api/auth/user*        Get user data from session object in
-//                                Node
-
-// GET    */api/auth/loggedin*    Route to test if the user is logged in
-//                                or not
-
-// POST   */api/auth/login*       Route to login
-
-// POST   */api/auth/logout*      Route to logout and redirect to the
-//                                appropriate view
 
 // ## Authentication API object
 
@@ -83,7 +64,6 @@ export default (app, router, passport, auth, admin) => {
 
   router.post('/auth/signin', (req, res, next) => {
 
-      console.log("NawalAAA 11. in router.post('/auth/signin");
 	  
       // Call `authenticate()` from within the route handler, rather than
       // as a route middleware. This gives the callback access to the `req`
@@ -93,7 +73,6 @@ export default (app, router, passport, auth, admin) => {
       // exception occured, `err` will be set. `info` contains a message
       // set within the Local Passport strategy.
       passport.authenticate('local-login', (err, user, info) => {
-          console.log("Nawal AA 22. in router.post('/auth/signup");
 	  
           if (err)
               return next(err);
@@ -129,7 +108,6 @@ export default (app, router, passport, auth, admin) => {
   });
   router.post('/auth/signup', (req, res, next) => {
 
-      console.log("Nawal 11. in router.post('/auth/signup");
 	  
     // Call `authenticate()` from within the route handler, rather than
     // as a route middleware. This gives the callback access to the `req`
@@ -139,7 +117,6 @@ export default (app, router, passport, auth, admin) => {
     // exception occured, `err` will be set. `info` contains a message
     // set within the Local Passport strategy.
     passport.authenticate('local-signup', (err, user, info) => {
-	  console.log("Nawal 22. in router.post('/auth/signup");
 	  
       if (err)
         return next(err);
@@ -154,7 +131,6 @@ export default (app, router, passport, auth, admin) => {
         return next(info.signupMessage);
       }
 
-      console.log("Nawal 33. in router.post('/auth/signup",user);
 	  
       req.login(user, (err) => {
 

@@ -1,27 +1,39 @@
-// ```
-// user.model.js
-// ```
 
-// */app/models/user.model.js*
-
-// ## User Model
-
-// Note: MongoDB will autogenerate an _id for each User object created
-
-// Grab the Mongoose module
 import mongoose from 'mongoose';
-
-// Import library to hash passwords
 import bcrypt from 'bcrypt-nodejs';
 
-// Define the schema for the showcase item
 let userSchema = mongoose.Schema({
 
     email : { type : String },
     username : { type : String },
     password : String,
     provider: String,
-    role : { type : String }
+    role : { type : String },
+	
+	//Extra Cols
+	
+	profile:{  },
+	
+   firstName: { type : String },
+   lastName: { type : String },
+   address1: { type : String },
+   address2: { type : String },
+   city: { type : String },
+   country: { type : String },
+   zip: { type : String },
+   mobile: { type : String },
+
+   phone: { type : String },
+   gmail: { type : String },
+   facebook: { type : String },
+   profile_url: { type : String },
+   url: { type : String },
+
+   delivery: { type : Boolean },
+   pickup: { type : Boolean },
+   veg: { type : Boolean },
+   cusine: { type : String },
+  
 
 
 });

@@ -2,10 +2,11 @@ import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 
 //This is used as an shared/global class 
+//We create only once instance of this class 
 @Injectable()
 export class UserService {
 
-// Static Variables
+// Static/Shared Variables
   public id: string;
   public email: string;
   public username: string;
@@ -24,12 +25,18 @@ export class UserService {
   public urlSignin = '/api/auth/signin';
   public urlCart = '/api/cart';
   public urlOrder = '/api/order';
+  public urlUserProfile = '/api/secure/user/profile/';
   
 
   public shopId: string;
   public shopTitle: string;
 
   public location: any;
+  public profile: any = {firstName:''};
+
+  public address: any;
+  public map_address: any;
+
   public cart: any = [];
   public cartItems: any = [];
   public cartOptions: any = [];
@@ -126,6 +133,10 @@ export class UserService {
       console.log('out');
       return r;
 
+  }
+  updateProfile(data) {
+      this.profile = data;
+      return this.postData(this.urlUserProfile+ this.id,data);
   }
 
   order()

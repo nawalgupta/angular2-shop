@@ -18,16 +18,14 @@ import {App, APP_PROVIDERS, APP_STORES} from './app';
 import {SharedService} from './app/services/shared.service';
 import {UserService} from './app/auth/user.service';
 import {NG2_UI_AUTH_PROVIDERS} from 'ng2-ui-auth';
+import {ANGULAR2_GOOGLE_MAPS_PROVIDERS, NoOpMapsAPILoader,LazyMapsAPILoaderConfig} from 'angular2-google-maps/core';
+
 
 const DEFAULT_POST_HEADER: {[name: string]: string} = {
   'Content-Type': 'application/json'
 };
 const GOOGLE_CLIENT_ID = '******************************.apps.googleusercontent.com';
-//bootstrap(Main, [
-  //  HTTP_PROVIDERS,
-    //NG2_UI_AUTH_PROVIDERS({defaultHeaders: DEFAULT_POST_HEADER, providers: {google: {clientId: GOOGLE_CLIENT_ID}}}),
-
-	//]);
+import {provide} from '@angular/core';
 
 export function main(initialHmrState?: any): Promise<any> {
 
@@ -44,6 +42,14 @@ export function main(initialHmrState?: any): Promise<any> {
       SharedService,
       UserService,
 	  NG2_UI_AUTH_PROVIDERS({defaultHeaders: DEFAULT_POST_HEADER, providers: {google: {clientId: GOOGLE_CLIENT_ID}}}),
+      provide(LazyMapsAPILoaderConfig, {
+          useFactory: () => {
+              let config = new LazyMapsAPILoaderConfig();
+              config.libraries = ['places'];
+              return config;
+          }
+      })
+
 
   ])
   .catch(err => console.error(err));

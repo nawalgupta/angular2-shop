@@ -1,10 +1,5 @@
 // ```
 // passport.conf.js
-// (c) 2015 David Newman
-// david.r.niciforovic@gmail.com
-// passport.conf.js may be freely distributed under the MIT license
-// ```
-
 // *config/passport.conf.js*
 
 // This file contains the function which configures the PassportJS
@@ -53,15 +48,10 @@ export default (passport) => {
 
   // Helper function to validate string length
   let checkLength = (string, min, max) => {
-    console.log('string',string);
-	console.log('string.length',string.length);
-	console.log('string.length',min,max);
+    
 	
-	
-    // If the string is outside the passed in bounds...
     if(string.length > max || string.length < min)
       return false;
-
     else
       return true;
   };
@@ -120,10 +110,7 @@ export default (passport) => {
 
   (req, username, password, done) => {
 
-    // ## Data Checks
-      console.log('username',username);
-      console.log('req.body.email',req.body.email)
-
+    
     // If the length of the username string is too long/short,
     // invoke verify callback
     if(!checkLength(username, bounds.username.minLength, bounds.username.maxLength)) {

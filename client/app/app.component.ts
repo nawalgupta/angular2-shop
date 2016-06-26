@@ -72,6 +72,12 @@ import {UserService} from './auth/user.service';
 
 import {FileUpload} from './demo/file-upload';
 
+import {Demo} from './demo/demo';
+
+import {MapAutocomplete} from './components/map-auto';
+import {Avatar} from './profile/avatar.component';
+
+import {Profile} from './profile/profile.component';
 
 /*
  * App Component
@@ -79,8 +85,8 @@ import {FileUpload} from './demo/file-upload';
 
 @Component({
   selector: 'app',
-  providers: [  ANGULAR2_GOOGLE_MAPS_PROVIDERS, AuthService],
-  directives: [ MdDropdown,
+  providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, AuthService],
+  directives: [ MdDropdown, MapAutocomplete,
       RouterActive,
       MD_SIDENAV_DIRECTIVES, MdIcon, MdToolbar  ],
   encapsulation: ViewEncapsulation.None,
@@ -92,7 +98,8 @@ import {FileUpload} from './demo/file-upload';
   `],
   // Load our main `Sass` file into our `app` `component`
   styleUrls: [require('!style!css!sass!../sass/main.scss')],
-  template: require('./app.side.nav.html')
+  //template: require('./app.side.nav.html')
+  template: require('./app.html')
 })
 /*
 @Routes([
@@ -109,6 +116,9 @@ import {FileUpload} from './demo/file-upload';
   { path: '/shoplist', component: ShopList, name: 'ShopList' },
   { path: '/cartlist', component: CartList, name: 'CartList' },
   { path: '/file', component: FileUpload, name: 'FileUpload' },
+  { path: '/demo', component: Demo, name: 'Demo' },
+
+  { path: '/map', component: MapAutocomplete, name: 'MapAutocomplete' },
 
 
  // { path: '/shopsearch', component: ShopSearch, name: 'ShopSearch' },
@@ -119,6 +129,10 @@ import {FileUpload} from './demo/file-upload';
   { path: '/product', component: Product, name: 'Product' },
   { path: '/signup', component: Signup, name: 'Signup' },
   { path: '/signin', component: Signin, name: 'Signin' },
+  { path: '/avatar', component: Avatar, name: 'Avatar' },
+  { path: '/profile', component: Profile, name: 'Profile' },
+
+
   { path: '/test', component: Test, name: 'Test' },
   { path: '/material', component: Material2App, name: 'Material' },
   { path: '/productadd/:shopid', component: ProductAdd, name: 'ProductAdd' },
@@ -128,6 +142,7 @@ import {FileUpload} from './demo/file-upload';
   { path: '/plist/:shopid', component: PList, name: 'PList' },
 
   { path: '/productdetails/:id', component: ProductDetails, name: 'ProductDetails' },
+
 
   // Async load
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
