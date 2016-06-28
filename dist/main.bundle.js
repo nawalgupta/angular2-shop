@@ -5,21 +5,21 @@ webpackJsonp([3],[
 	"use strict";
 	//Nawal
 	//# Providers provided by Angular
-	var platform_browser_dynamic_1 = __webpack_require__(329);
+	var platform_browser_dynamic_1 = __webpack_require__(335);
 	//## Platform and Environment
 	//
 	//** our providers/directives/pipes **
-	var browser_1 = __webpack_require__(566);
-	var environment_1 = __webpack_require__(569);
+	var browser_1 = __webpack_require__(579);
+	var environment_1 = __webpack_require__(582);
 	//## App Component
 	//
 	//** our top level component that holds all of our components **
-	var app_1 = __webpack_require__(540);
+	var app_1 = __webpack_require__(553);
 	// Bootstrap our Angular app with a top level component `App` and inject
 	// our Services and Providers into Angular's dependency injection
-	var shared_service_1 = __webpack_require__(222);
+	var shared_service_1 = __webpack_require__(223);
 	var user_service_1 = __webpack_require__(23);
-	var ng2_ui_auth_1 = __webpack_require__(431);
+	var ng2_ui_auth_1 = __webpack_require__(439);
 	var core_1 = __webpack_require__(27);
 	var DEFAULT_POST_HEADER = {
 	    'Content-Type': 'application/json'
@@ -216,11 +216,11 @@ webpackJsonp([3],[
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	var core_1 = __webpack_require__(1);
-	var maps_api_loader_1 = __webpack_require__(146);
-	var lazy_maps_api_loader_1 = __webpack_require__(374);
+	var maps_api_loader_1 = __webpack_require__(147);
+	var lazy_maps_api_loader_1 = __webpack_require__(382);
 	// main modules
-	__export(__webpack_require__(649));
-	__export(__webpack_require__(650));
+	__export(__webpack_require__(666));
+	__export(__webpack_require__(676));
 	exports.ANGULAR2_GOOGLE_MAPS_PROVIDERS = [
 	    new core_1.Provider(maps_api_loader_1.MapsAPILoader, { useClass: lazy_maps_api_loader_1.LazyMapsAPILoader }),
 	];
@@ -323,8 +323,7 @@ webpackJsonp([3],[
 /* 69 */,
 /* 70 */,
 /* 71 */,
-/* 72 */,
-/* 73 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -332,43 +331,43 @@ webpackJsonp([3],[
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	var core_1 = __webpack_require__(1);
-	var button_1 = __webpack_require__(408);
-	var content_1 = __webpack_require__(409);
-	var index_1 = __webpack_require__(411);
-	var index_2 = __webpack_require__(416);
-	var divider_1 = __webpack_require__(417);
-	var icon_1 = __webpack_require__(420);
-	var ink_1 = __webpack_require__(421);
-	var validators_1 = __webpack_require__(419);
-	var messages_1 = __webpack_require__(418);
-	var list_1 = __webpack_require__(422);
-	var peekaboo_1 = __webpack_require__(423);
-	var switch_1 = __webpack_require__(425);
-	var subheader_1 = __webpack_require__(424);
-	var tabs_1 = __webpack_require__(426);
-	var media_1 = __webpack_require__(254);
+	var button_1 = __webpack_require__(416);
+	var content_1 = __webpack_require__(417);
+	var index_1 = __webpack_require__(419);
+	var index_2 = __webpack_require__(424);
+	var divider_1 = __webpack_require__(425);
+	var icon_1 = __webpack_require__(428);
+	var ink_1 = __webpack_require__(429);
+	var validators_1 = __webpack_require__(427);
+	var messages_1 = __webpack_require__(426);
+	var list_1 = __webpack_require__(430);
+	var peekaboo_1 = __webpack_require__(431);
+	var switch_1 = __webpack_require__(433);
+	var subheader_1 = __webpack_require__(432);
+	var tabs_1 = __webpack_require__(434);
+	var media_1 = __webpack_require__(257);
 	var viewport_1 = __webpack_require__(113);
-	var overlay_1 = __webpack_require__(259);
-	var backdrop_1 = __webpack_require__(407);
-	__export(__webpack_require__(408));
-	__export(__webpack_require__(407));
-	__export(__webpack_require__(409));
-	__export(__webpack_require__(411));
+	var overlay_1 = __webpack_require__(162);
+	var backdrop_1 = __webpack_require__(415);
 	__export(__webpack_require__(416));
+	__export(__webpack_require__(415));
 	__export(__webpack_require__(417));
-	__export(__webpack_require__(420));
-	__export(__webpack_require__(421));
 	__export(__webpack_require__(419));
-	__export(__webpack_require__(418));
-	__export(__webpack_require__(422));
-	__export(__webpack_require__(423));
-	__export(__webpack_require__(425));
 	__export(__webpack_require__(424));
+	__export(__webpack_require__(425));
+	__export(__webpack_require__(428));
+	__export(__webpack_require__(429));
+	__export(__webpack_require__(427));
 	__export(__webpack_require__(426));
-	__export(__webpack_require__(254));
-	__export(__webpack_require__(159));
+	__export(__webpack_require__(430));
+	__export(__webpack_require__(431));
+	__export(__webpack_require__(433));
+	__export(__webpack_require__(432));
+	__export(__webpack_require__(434));
+	__export(__webpack_require__(257));
+	__export(__webpack_require__(160));
 	__export(__webpack_require__(113));
-	__export(__webpack_require__(158));
+	__export(__webpack_require__(159));
 	exports.MATERIAL_DIRECTIVES = [
 	    button_1.MdAnchor, button_1.MdButton,
 	    content_1.MdContent,
@@ -400,6 +399,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
+/* 73 */,
 /* 74 */,
 /* 75 */,
 /* 76 */,
@@ -429,6 +429,7 @@ webpackJsonp([3],[
 	var ProductService = (function () {
 	    function ProductService(http) {
 	        this.http = http;
+	        this.userId = '';
 	        this.url = '/api/product';
 	        this.urlMy = '/api/myproduct/';
 	        this.urlShopProducts = '/api/shopproducts/';
@@ -561,10 +562,176 @@ webpackJsonp([3],[
 	}(ViewportHelper));
 	exports.NodeViewportHelper = NodeViewportHelper;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(256)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(259)))
 
 /***/ },
-/* 114 */,
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var portal_errors_1 = __webpack_require__(265);
+	/**
+	 * A `Portal` is something that you want to render somewhere else.
+	 * It can be attach to / detached from a `PortalHost`.
+	 */
+	var Portal = (function () {
+	    function Portal() {
+	    }
+	    /** Attach this portal to a host. */
+	    Portal.prototype.attach = function (host) {
+	        if (host == null) {
+	            throw new portal_errors_1.MdNullPortalHostError();
+	        }
+	        if (host.hasAttached()) {
+	            throw new portal_errors_1.MdPortalAlreadyAttachedError();
+	        }
+	        this._attachedHost = host;
+	        return host.attach(this);
+	    };
+	    /** Detach this portal from its host */
+	    Portal.prototype.detach = function () {
+	        var host = this._attachedHost;
+	        if (host == null) {
+	            throw new portal_errors_1.MdNoPortalAttachedError();
+	        }
+	        this._attachedHost = null;
+	        return host.detach();
+	    };
+	    Object.defineProperty(Portal.prototype, "isAttached", {
+	        /** Whether this portal is attached to a host. */
+	        get: function () {
+	            return this._attachedHost != null;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Sets the PortalHost reference without performing `attach()`. This is used directly by
+	     * the PortalHost when it is performing an `attach()` or `detatch()`.
+	     */
+	    Portal.prototype.setAttachedHost = function (host) {
+	        this._attachedHost = host;
+	    };
+	    return Portal;
+	}());
+	exports.Portal = Portal;
+	/**
+	 * A `ComponentPortal` is a portal that instantiates some Component upon attachment.
+	 */
+	var ComponentPortal = (function (_super) {
+	    __extends(ComponentPortal, _super);
+	    function ComponentPortal(component, viewContainerRef) {
+	        if (viewContainerRef === void 0) { viewContainerRef = null; }
+	        _super.call(this);
+	        this.component = component;
+	        this.viewContainerRef = viewContainerRef;
+	    }
+	    return ComponentPortal;
+	}(Portal));
+	exports.ComponentPortal = ComponentPortal;
+	/**
+	 * A `TemplatePortal` is a portal that represents some embedded template (TemplateRef).
+	 */
+	var TemplatePortal = (function (_super) {
+	    __extends(TemplatePortal, _super);
+	    function TemplatePortal(template, viewContainerRef) {
+	        _super.call(this);
+	        /**
+	         * Additional locals for the instantiated embedded view.
+	         * These locals can be seen as "exports" for the template, such as how ngFor has
+	         * index / event / odd.
+	         * See https://angular.io/docs/ts/latest/api/core/EmbeddedViewRef-class.html
+	         */
+	        this.locals = new Map();
+	        this.templateRef = template;
+	        this.viewContainerRef = viewContainerRef;
+	    }
+	    Object.defineProperty(TemplatePortal.prototype, "origin", {
+	        get: function () {
+	            return this.templateRef.elementRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    TemplatePortal.prototype.attach = function (host, locals) {
+	        this.locals = locals == null ? new Map() : locals;
+	        return _super.prototype.attach.call(this, host);
+	    };
+	    TemplatePortal.prototype.detach = function () {
+	        this.locals = new Map();
+	        return _super.prototype.detach.call(this);
+	    };
+	    return TemplatePortal;
+	}(Portal));
+	exports.TemplatePortal = TemplatePortal;
+	/**
+	 * Partial implementation of PortalHost that only deals with attaching either a
+	 * ComponentPortal or a TemplatePortal.
+	 */
+	var BasePortalHost = (function () {
+	    function BasePortalHost() {
+	        /** Whether this host has already been permanently disposed. */
+	        this._isDisposed = false;
+	    }
+	    /** Whether this host has an attached portal. */
+	    BasePortalHost.prototype.hasAttached = function () {
+	        return this._attachedPortal != null;
+	    };
+	    BasePortalHost.prototype.attach = function (portal) {
+	        if (portal == null) {
+	            throw new portal_errors_1.MdNullPortalError();
+	        }
+	        if (this.hasAttached()) {
+	            throw new portal_errors_1.MdPortalAlreadyAttachedError();
+	        }
+	        if (this._isDisposed) {
+	            throw new portal_errors_1.MdPortalHostAlreadyDisposedError();
+	        }
+	        if (portal instanceof ComponentPortal) {
+	            this._attachedPortal = portal;
+	            return this.attachComponentPortal(portal);
+	        }
+	        else if (portal instanceof TemplatePortal) {
+	            this._attachedPortal = portal;
+	            return this.attachTemplatePortal(portal);
+	        }
+	        throw new portal_errors_1.MdUnknownPortalTypeError();
+	    };
+	    BasePortalHost.prototype.detach = function () {
+	        this._attachedPortal.setAttachedHost(null);
+	        this._attachedPortal = null;
+	        if (this._disposeFn != null) {
+	            this._disposeFn();
+	            this._disposeFn = null;
+	        }
+	        return Promise.resolve(null);
+	    };
+	    BasePortalHost.prototype.dispose = function () {
+	        if (this.hasAttached()) {
+	            this.detach();
+	        }
+	        this._isDisposed = true;
+	    };
+	    BasePortalHost.prototype.setDisposeFn = function (fn) {
+	        this._disposeFn = fn;
+	    };
+	    return BasePortalHost;
+	}());
+	exports.BasePortalHost = BasePortalHost;
+	var portal_directives_1 = __webpack_require__(264);
+	exports.PORTAL_DIRECTIVES = portal_directives_1.PORTAL_DIRECTIVES;
+	exports.TemplatePortalDirective = portal_directives_1.TemplatePortalDirective;
+	exports.PortalHostDirective = portal_directives_1.PortalHostDirective;
+	var dom_portal_host_1 = __webpack_require__(263);
+	exports.DomPortalHost = dom_portal_host_1.DomPortalHost;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/portal/portal.js.map
+
+/***/ },
 /* 115 */,
 /* 116 */,
 /* 117 */,
@@ -590,12 +757,14 @@ webpackJsonp([3],[
 /* 137 */,
 /* 138 */,
 /* 139 */,
-/* 140 */
+/* 140 */,
+/* 141 */,
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var angular2_hmr_1 = __webpack_require__(653);
+	var angular2_hmr_1 = __webpack_require__(679);
 	var AppState = (function () {
 	    function AppState() {
 	        // `HmrState` is used by `HMR` to track the any `state` during reloading
@@ -640,11 +809,10 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 141 */,
-/* 142 */,
 /* 143 */,
 /* 144 */,
-/* 145 */
+/* 145 */,
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -664,8 +832,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var Observable_1 = __webpack_require__(8);
-	var maps_api_loader_1 = __webpack_require__(146);
+	var Observable_1 = __webpack_require__(378);
+	var maps_api_loader_1 = __webpack_require__(147);
 	/**
 	 * Wrapper class that handles the communication with the Google Maps Javascript
 	 * API v3
@@ -738,7 +906,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -772,7 +940,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -792,8 +960,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var Observable_1 = __webpack_require__(8);
-	var google_maps_api_wrapper_1 = __webpack_require__(145);
+	var Observable_1 = __webpack_require__(378);
+	var google_maps_api_wrapper_1 = __webpack_require__(146);
 	var MarkerManager = (function () {
 	    function MarkerManager(_mapsWrapper, _zone) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -860,7 +1028,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -923,7 +1091,6 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 149 */,
 /* 150 */,
 /* 151 */,
 /* 152 */,
@@ -932,7 +1099,8 @@ webpackJsonp([3],[
 /* 155 */,
 /* 156 */,
 /* 157 */,
-/* 158 */
+/* 158 */,
+/* 159 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1096,11 +1264,11 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var animate_1 = __webpack_require__(158);
+	var animate_1 = __webpack_require__(159);
 	var Ink = (function () {
 	    function Ink() {
 	    }
@@ -1160,169 +1328,138 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 160 */
+/* 161 */
+/***/ function(module, exports) {
+
+	"use strict";
+	/**
+	 * OverlayState is a bag of values for either the initial configuration or current state of an
+	 * overlay.
+	 */
+	var OverlayState = (function () {
+	    function OverlayState() {
+	    }
+	    return OverlayState;
+	}());
+	exports.OverlayState = OverlayState;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/overlay-state.js.map
+
+/***/ },
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	};
-	var portal_errors_1 = __webpack_require__(260);
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var __param = (this && this.__param) || function (paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	};
+	var core_1 = __webpack_require__(1);
+	var overlay_state_1 = __webpack_require__(161);
+	var dom_portal_host_1 = __webpack_require__(263);
+	var overlay_ref_1 = __webpack_require__(260);
+	var overlay_position_builder_1 = __webpack_require__(453);
+	var viewport_ruler_1 = __webpack_require__(262);
+	/** Token used to inject the DOM element that serves as the overlay container. */
+	exports.OVERLAY_CONTAINER_TOKEN = new core_1.OpaqueToken('overlayContainer');
+	/** Next overlay unique ID. */
+	var nextUniqueId = 0;
+	/** The default state for newly created overlays. */
+	var defaultState = new overlay_state_1.OverlayState();
 	/**
-	 * A `Portal` is something that you want to render somewhere else.
-	 * It can be attach to / detached from a `PortalHost`.
+	 * Service to create Overlays. Overlays are dynamically added pieces of floating UI, meant to be
+	 * used as a low-level building building block for other components. Dialogs, tooltips, menus,
+	 * selects, etc. can all be built using overlays. The service should primarily be used by authors
+	 * of re-usable components rather than developers building end-user applications.
+	 *
+	 * An overlay *is* a PortalHost, so any kind of Portal can be loaded into one.
 	 */
-	var Portal = (function () {
-	    function Portal() {
+	var Overlay = (function () {
+	    function Overlay(_overlayContainerElement, _componentResolver, _positionBuilder) {
+	        this._overlayContainerElement = _overlayContainerElement;
+	        this._componentResolver = _componentResolver;
+	        this._positionBuilder = _positionBuilder;
 	    }
-	    /** Attach this portal to a host. */
-	    Portal.prototype.attach = function (host) {
-	        if (host == null) {
-	            throw new portal_errors_1.MdNullPortalHostError();
-	        }
-	        if (host.hasAttached()) {
-	            throw new portal_errors_1.MdPortalAlreadyAttachedError();
-	        }
-	        this._attachedHost = host;
-	        return host.attach(this);
-	    };
-	    /** Detach this portal from its host */
-	    Portal.prototype.detach = function () {
-	        var host = this._attachedHost;
-	        if (host == null) {
-	            throw new portal_errors_1.MdNoPortalAttachedErron();
-	        }
-	        this._attachedHost = null;
-	        return host.detach();
-	    };
-	    Object.defineProperty(Portal.prototype, "isAttached", {
-	        /** Whether this portal is attached to a host. */
-	        get: function () {
-	            return this._attachedHost != null;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
 	    /**
-	     * Sets the PortalHost reference without performing `attach()`. This is used directly by
-	     * the PortalHost when it is performing an `attach()` or `detatch()`.
+	     * Creates an overlay.
+	     * @param state State to apply to the overlay.
+	     * @returns A reference to the created overlay.
 	     */
-	    Portal.prototype.setAttachedHost = function (host) {
-	        this._attachedHost = host;
+	    Overlay.prototype.create = function (state) {
+	        var _this = this;
+	        if (state === void 0) { state = defaultState; }
+	        return this._createPaneElement().then(function (pane) { return _this._createOverlayRef(pane, state); });
 	    };
-	    return Portal;
+	    /**
+	     * Returns a position builder that can be used, via fluent API,
+	     * to construct and configure a position strategy.
+	     */
+	    Overlay.prototype.position = function () {
+	        return this._positionBuilder;
+	    };
+	    /**
+	     * Creates the DOM element for an overlay and appends it to the overlay container.
+	     * @returns Promise resolving to the created element.
+	     */
+	    Overlay.prototype._createPaneElement = function () {
+	        var pane = document.createElement('div');
+	        pane.id = "md-overlay-" + nextUniqueId++;
+	        pane.classList.add('md-overlay-pane');
+	        this._overlayContainerElement.appendChild(pane);
+	        return Promise.resolve(pane);
+	    };
+	    /**
+	     * Create a DomPortalHost into which the overlay content can be loaded.
+	     * @param pane The DOM element to turn into a portal host.
+	     * @returns A portal host for the given DOM element.
+	     */
+	    Overlay.prototype._createPortalHost = function (pane) {
+	        return new dom_portal_host_1.DomPortalHost(pane, this._componentResolver);
+	    };
+	    /**
+	     * Creates an OverlayRef for an overlay in the given DOM element.
+	     * @param pane DOM element for the overlay
+	     * @param state
+	     * @returns {OverlayRef}
+	     */
+	    Overlay.prototype._createOverlayRef = function (pane, state) {
+	        return new overlay_ref_1.OverlayRef(this._createPortalHost(pane), pane, state);
+	    };
+	    Overlay = __decorate([
+	        core_1.Injectable(),
+	        __param(0, core_1.Inject(exports.OVERLAY_CONTAINER_TOKEN)), 
+	        __metadata('design:paramtypes', [HTMLElement, core_1.ComponentResolver, overlay_position_builder_1.OverlayPositionBuilder])
+	    ], Overlay);
+	    return Overlay;
 	}());
-	exports.Portal = Portal;
-	/**
-	 * A `ComponentPortal` is a portal that instantiates some Component upon attachment.
-	 */
-	var ComponentPortal = (function (_super) {
-	    __extends(ComponentPortal, _super);
-	    function ComponentPortal(component, viewContainerRef) {
-	        if (viewContainerRef === void 0) { viewContainerRef = null; }
-	        _super.call(this);
-	        this.component = component;
-	        this.viewContainerRef = viewContainerRef;
-	    }
-	    return ComponentPortal;
-	}(Portal));
-	exports.ComponentPortal = ComponentPortal;
-	/**
-	 * A `TemplatePortal` is a portal that represents some embedded template (TemplateRef).
-	 */
-	var TemplatePortal = (function (_super) {
-	    __extends(TemplatePortal, _super);
-	    function TemplatePortal(template, viewContainerRef) {
-	        _super.call(this);
-	        /**
-	         * Additional locals for the instantiated embedded view.
-	         * These locals can be seen as "exports" for the template, such as how ngFor has
-	         * index / event / odd.
-	         * See https://angular.io/docs/ts/latest/api/core/EmbeddedViewRef-class.html
-	         */
-	        this.locals = new Map();
-	        this.templateRef = template;
-	        this.viewContainerRef = viewContainerRef;
-	    }
-	    Object.defineProperty(TemplatePortal.prototype, "origin", {
-	        get: function () {
-	            return this.templateRef.elementRef;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    TemplatePortal.prototype.attach = function (host, locals) {
-	        this.locals = locals == null ? new Map() : locals;
-	        return _super.prototype.attach.call(this, host);
-	    };
-	    TemplatePortal.prototype.detach = function () {
-	        this.locals = new Map();
-	        return _super.prototype.detach.call(this);
-	    };
-	    return TemplatePortal;
-	}(Portal));
-	exports.TemplatePortal = TemplatePortal;
-	/**
-	 * Partial implementation of PortalHost that only deals with attaching either a
-	 * ComponentPortal or a TemplatePortal.
-	 */
-	var BasePortalHost = (function () {
-	    function BasePortalHost() {
-	        /** Whether this host has already been permanently disposed. */
-	        this._isDisposed = false;
-	    }
-	    /** Whether this host has an attached portal. */
-	    BasePortalHost.prototype.hasAttached = function () {
-	        return this._attachedPortal != null;
-	    };
-	    BasePortalHost.prototype.attach = function (portal) {
-	        if (portal == null) {
-	            throw new portal_errors_1.MdNullPortalError();
-	        }
-	        if (this.hasAttached()) {
-	            throw new portal_errors_1.MdPortalAlreadyAttachedError();
-	        }
-	        if (this._isDisposed) {
-	            throw new portal_errors_1.MdPortalHostAlreadyDisposedError();
-	        }
-	        if (portal instanceof ComponentPortal) {
-	            this._attachedPortal = portal;
-	            return this.attachComponentPortal(portal);
-	        }
-	        else if (portal instanceof TemplatePortal) {
-	            this._attachedPortal = portal;
-	            return this.attachTemplatePortal(portal);
-	        }
-	        throw new portal_errors_1.MdUnknownPortalTypeErron();
-	    };
-	    BasePortalHost.prototype.detach = function () {
-	        this._attachedPortal.setAttachedHost(null);
-	        this._attachedPortal = null;
-	        if (this._disposeFn != null) {
-	            this._disposeFn();
-	            this._disposeFn = null;
-	        }
-	        return Promise.resolve(null);
-	    };
-	    BasePortalHost.prototype.dispose = function () {
-	        if (this.hasAttached()) {
-	            this.detach();
-	        }
-	        this._isDisposed = true;
-	    };
-	    BasePortalHost.prototype.setDisposeFn = function (fn) {
-	        this._disposeFn = fn;
-	    };
-	    return BasePortalHost;
-	}());
-	exports.BasePortalHost = BasePortalHost;
-	//# sourceMappingURL=portal.js.map
+	exports.Overlay = Overlay;
+	/** Providers for Overlay and its related injectables. */
+	exports.OVERLAY_PROVIDERS = [
+	    viewport_ruler_1.ViewportRuler,
+	    overlay_position_builder_1.OverlayPositionBuilder,
+	    Overlay,
+	];
+	// Re-export overlay-related modules so they can be imported directly from here.
+	var overlay_state_2 = __webpack_require__(161);
+	exports.OverlayState = overlay_state_2.OverlayState;
+	var overlay_ref_2 = __webpack_require__(260);
+	exports.OverlayRef = overlay_ref_2.OverlayRef;
+	var overlay_container_1 = __webpack_require__(449);
+	exports.createOverlayContainer = overlay_container_1.createOverlayContainer;
+	var overlay_directives_1 = __webpack_require__(450);
+	exports.OVERLAY_DIRECTIVES = overlay_directives_1.OVERLAY_DIRECTIVES;
+	exports.ConnectedOverlayDirective = overlay_directives_1.ConnectedOverlayDirective;
+	exports.OverlayOrigin = overlay_directives_1.OverlayOrigin;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/overlay.js.map
 
 /***/ },
-/* 161 */,
-/* 162 */,
 /* 163 */,
 /* 164 */,
 /* 165 */,
@@ -1382,7 +1519,8 @@ webpackJsonp([3],[
 /* 219 */,
 /* 220 */,
 /* 221 */,
-/* 222 */
+/* 222 */,
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//auth.service.ts
@@ -1404,10 +1542,10 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(808)();
+	exports = module.exports = __webpack_require__(834)();
 	// imports
 
 
@@ -1418,7 +1556,8 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 224 */
+/* 225 */,
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1427,7 +1566,7 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(68);
+	var root_1 = __webpack_require__(80);
 	var Subscription_1 = __webpack_require__(95);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
@@ -1558,25 +1697,25 @@ webpackJsonp([3],[
 	//# sourceMappingURL=FutureAction.js.map
 
 /***/ },
-/* 225 */,
-/* 226 */,
 /* 227 */,
-/* 228 */
+/* 228 */,
+/* 229 */,
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(370));
-	__export(__webpack_require__(371));
-	__export(__webpack_require__(368));
-	__export(__webpack_require__(369));
-	__export(__webpack_require__(647));
+	__export(__webpack_require__(374));
+	__export(__webpack_require__(375));
+	__export(__webpack_require__(372));
+	__export(__webpack_require__(373));
+	__export(__webpack_require__(664));
 
 
 /***/ },
-/* 229 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1596,7 +1735,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var info_window_manager_1 = __webpack_require__(230);
+	var info_window_manager_1 = __webpack_require__(233);
 	var infoWindowId = 0;
 	/**
 	 * SebmGoogleMapInfoWindow renders a info window inside a {@link SebmGoogleMapMarker} or standalone.
@@ -1689,7 +1828,31 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 230 */
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module, global) {"use strict";
+	var objectTypes = {
+	    'boolean': false,
+	    'function': true,
+	    'object': true,
+	    'number': false,
+	    'string': false,
+	    'undefined': false
+	};
+	exports.root = (objectTypes[typeof self] && self) || (objectTypes[typeof window] && window);
+	/* tslint:disable:no-unused-variable */
+	var freeExports = objectTypes[typeof exports] && exports && !exports.nodeType && exports;
+	var freeModule = objectTypes[typeof module] && module && !module.nodeType && module;
+	var freeGlobal = objectTypes[typeof global] && global;
+	if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal)) {
+	    exports.root = freeGlobal;
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(441)(module), (function() { return this; }())))
+
+/***/ },
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1709,8 +1872,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var google_maps_api_wrapper_1 = __webpack_require__(145);
-	var marker_manager_1 = __webpack_require__(147);
+	var google_maps_api_wrapper_1 = __webpack_require__(146);
+	var marker_manager_1 = __webpack_require__(148);
 	var InfoWindowManager = (function () {
 	    function InfoWindowManager(_mapsWrapper, _zone, _markerManager) {
 	        this._mapsWrapper = _mapsWrapper;
@@ -1780,9 +1943,6 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 231 */,
-/* 232 */,
-/* 233 */,
 /* 234 */,
 /* 235 */,
 /* 236 */,
@@ -1801,13 +1961,16 @@ webpackJsonp([3],[
 /* 249 */,
 /* 250 */,
 /* 251 */,
-/* 252 */
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var file_like_object_class_1 = __webpack_require__(405);
-	var file_item_class_1 = __webpack_require__(809);
-	var file_type_class_1 = __webpack_require__(810);
+	var file_like_object_class_1 = __webpack_require__(413);
+	var file_item_class_1 = __webpack_require__(835);
+	var file_type_class_1 = __webpack_require__(836);
 	function isFile(value) {
 	    return (File && value instanceof File);
 	}
@@ -2194,7 +2357,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 253 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2216,10 +2379,10 @@ webpackJsonp([3],[
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
 	var core_1 = __webpack_require__(1);
-	__webpack_require__(361);
-	__webpack_require__(141);
+	__webpack_require__(367);
+	__webpack_require__(225);
 	var checkbox_1 = __webpack_require__(59);
-	var data_table_1 = __webpack_require__(410);
+	var data_table_1 = __webpack_require__(418);
 	var AbstractMdDataTableSelectableRow = (function () {
 	    function AbstractMdDataTableSelectableRow(table, _element) {
 	        this.table = table;
@@ -2339,7 +2502,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 254 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2354,7 +2517,7 @@ webpackJsonp([3],[
 	};
 	var core_1 = __webpack_require__(1);
 	var viewport_1 = __webpack_require__(113);
-	var BehaviorSubject_1 = __webpack_require__(360);
+	var BehaviorSubject_1 = __webpack_require__(366);
 	exports.MEDIA = {
 	    'xs': '(max-width: 599px)',
 	    'gt-xs': '(min-width: 600px)',
@@ -2461,7 +2624,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 255 */
+/* 258 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2503,8 +2666,8 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 256 */,
-/* 257 */
+/* 259 */,
+/* 260 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2513,11 +2676,16 @@ webpackJsonp([3],[
 	 * Used to manipulate or dispose of said overlay.
 	 */
 	var OverlayRef = (function () {
-	    function OverlayRef(_portalHost) {
+	    function OverlayRef(_portalHost, _pane, _state) {
 	        this._portalHost = _portalHost;
+	        this._pane = _pane;
+	        this._state = _state;
 	    }
 	    OverlayRef.prototype.attach = function (portal) {
-	        return this._portalHost.attach(portal);
+	        var _this = this;
+	        return this._portalHost.attach(portal).then(function () {
+	            _this._updatePosition();
+	        });
 	    };
 	    OverlayRef.prototype.detach = function () {
 	        return this._portalHost.detach();
@@ -2528,30 +2696,41 @@ webpackJsonp([3],[
 	    OverlayRef.prototype.hasAttached = function () {
 	        return this._portalHost.hasAttached();
 	    };
+	    /** Gets the current state config of the overlay. */
+	    OverlayRef.prototype.getState = function () {
+	        return this._state;
+	    };
+	    /** Updates the position of the overlay based on the position strategy. */
+	    OverlayRef.prototype._updatePosition = function () {
+	        if (this._state.positionStrategy) {
+	            this._state.positionStrategy.apply(this._pane);
+	        }
+	    };
 	    return OverlayRef;
 	}());
 	exports.OverlayRef = OverlayRef;
-	//# sourceMappingURL=overlay-ref.js.map
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/overlay-ref.js.map
 
 /***/ },
-/* 258 */
+/* 261 */
 /***/ function(module, exports) {
 
 	"use strict";
-	/**
-	 * OverlayState is a bag of values for either the initial configuration or current state of an
-	 * overlay.
-	 */
-	var OverlayState = (function () {
-	    function OverlayState() {
+	/** The points of the origin element and the overlay element to connect. */
+	var ConnectionPositionPair = (function () {
+	    function ConnectionPositionPair(origin, overlay) {
+	        this.originX = origin.originX;
+	        this.originY = origin.originY;
+	        this.overlayX = overlay.overlayX;
+	        this.overlayY = overlay.overlayY;
 	    }
-	    return OverlayState;
+	    return ConnectionPositionPair;
 	}());
-	exports.OverlayState = OverlayState;
-	//# sourceMappingURL=overlay-state.js.map
+	exports.ConnectionPositionPair = ConnectionPositionPair;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/position/connected-position.js.map
 
 /***/ },
-/* 259 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2564,127 +2743,72 @@ webpackJsonp([3],[
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var __param = (this && this.__param) || function (paramIndex, decorator) {
-	    return function (target, key) { decorator(target, key, paramIndex); }
-	};
 	var core_1 = __webpack_require__(1);
-	var overlay_state_1 = __webpack_require__(258);
-	var dom_portal_host_1 = __webpack_require__(439);
-	var overlay_ref_1 = __webpack_require__(257);
-	var global_position_strategy_1 = __webpack_require__(437);
-	var relative_position_strategy_1 = __webpack_require__(438);
-	// Re-export overlay-related modules so they can be imported directly from here.
-	var overlay_state_2 = __webpack_require__(258);
-	exports.OverlayState = overlay_state_2.OverlayState;
-	var overlay_ref_2 = __webpack_require__(257);
-	exports.OverlayRef = overlay_ref_2.OverlayRef;
-	var overlay_container_1 = __webpack_require__(436);
-	exports.createOverlayContainer = overlay_container_1.createOverlayContainer;
-	/** Token used to inject the DOM element that serves as the overlay container. */
-	exports.OVERLAY_CONTAINER_TOKEN = new core_1.OpaqueToken('overlayContainer');
-	/** Next overlay unique ID. */
-	var nextUniqueId = 0;
-	/** The default state for newly created overlays. */
-	var defaultState = new overlay_state_1.OverlayState();
 	/**
-	 * Service to create Overlays. Overlays are dynamically added pieces of floating UI, meant to be
-	 * used as a low-level building building block for other components. Dialogs, tooltips, menus,
-	 * selects, etc. can all be built using overlays. The service should primarily be used by authors
-	 * of re-usable components rather than developers building end-user applications.
-	 *
-	 * An overlay *is* a PortalHost, so any kind of Portal can be loaded into one.
+	 * Simple utility for getting the bounds of the browser viewport.
+	 * TODO: internal
 	 */
-	var Overlay = (function () {
-	    function Overlay(_overlayContainerElement, _dynamicComponentLoader) {
-	        this._overlayContainerElement = _overlayContainerElement;
-	        this._dynamicComponentLoader = _dynamicComponentLoader;
+	var ViewportRuler = (function () {
+	    function ViewportRuler() {
 	    }
-	    /**
-	     * Creates an overlay.
-	     * @param state State to apply to the overlay.
-	     * @returns A reference to the created overlay.
-	     */
-	    Overlay.prototype.create = function (state) {
-	        var _this = this;
-	        if (state === void 0) { state = defaultState; }
-	        return this._createPaneElement(state).then(function (pane) { return _this._createOverlayRef(pane); });
+	    // TODO(jelbourn): cache the document's bounding rect and only update it when the window
+	    // is resized (debounced).
+	    /** Gets a ClientRect for the viewport's bounds. */
+	    ViewportRuler.prototype.getViewportRect = function () {
+	        // Use the document element's bounding rect rather than the window scroll properties
+	        // (e.g. pageYOffset, scrollY) due to in issue in Chrome and IE where window scroll
+	        // properties and client coordinates (boundingClientRect, clientX/Y, etc.) are in different
+	        // conceptual viewports. Under most circumstances these viewports are equivalent, but they
+	        // can disagree when the page is pinch-zoomed (on devices that support touch).
+	        // See https://bugs.chromium.org/p/chromium/issues/detail?id=489206#c4
+	        // We use the documentElement instead of the body because, by default (without a css reset)
+	        // browsers typically give the document body an 8px margin, which is not included in
+	        // getBoundingClientRect().
+	        var documentRect = document.documentElement.getBoundingClientRect();
+	        var scrollPosition = this.getViewportScrollPosition(documentRect);
+	        var height = window.innerHeight;
+	        var width = window.innerWidth;
+	        return {
+	            top: scrollPosition.top,
+	            left: scrollPosition.left,
+	            bottom: scrollPosition.top + height,
+	            right: scrollPosition.left + width,
+	            height: height,
+	            width: width,
+	        };
 	    };
 	    /**
-	     * Returns a position builder that can be used, via fluent API,
-	     * to construct and configure a position strategy.
+	     * Gets the (top, left) scroll position of the viewport.
+	     * @param documentRect
 	     */
-	    Overlay.prototype.position = function () {
-	        return POSITION_BUILDER;
+	    ViewportRuler.prototype.getViewportScrollPosition = function (documentRect) {
+	        if (documentRect === void 0) { documentRect = document.documentElement.getBoundingClientRect(); }
+	        // The top-left-corner of the viewport is determined by the scroll position of the document
+	        // body, normally just (scrollLeft, scrollTop). However, Chrome and Firefox disagree about
+	        // whether `document.body` or `document.documentElement` is the scrolled element, so reading
+	        // `scrollTop` and `scrollLeft` is inconsistent. However, using the bounding rect of
+	        // `document.documentElement` works consistently, where the `top` and `left` values will
+	        // equal negative the scroll position.
+	        var top = documentRect.top < 0 && document.body.scrollTop == 0 ?
+	            -documentRect.top :
+	            document.body.scrollTop;
+	        var left = documentRect.left < 0 && document.body.scrollLeft == 0 ?
+	            -documentRect.left :
+	            document.body.scrollLeft;
+	        return { top: top, left: left };
 	    };
-	    /**
-	     * Creates the DOM element for an overlay.
-	     * @param state State to apply to the created element.
-	     * @returns Promise resolving to the created element.
-	     */
-	    Overlay.prototype._createPaneElement = function (state) {
-	        var pane = document.createElement('div');
-	        pane.id = "md-overlay-" + nextUniqueId++;
-	        pane.classList.add('md-overlay-pane');
-	        this.applyState(pane, state);
-	        this._overlayContainerElement.appendChild(pane);
-	        return Promise.resolve(pane);
-	    };
-	    /**
-	     * Applies a given state to the given pane element.
-	     * @param pane The pane to modify.
-	     * @param state The state to apply.
-	     */
-	    Overlay.prototype.applyState = function (pane, state) {
-	        if (state.positionStrategy != null) {
-	            state.positionStrategy.apply(pane);
-	        }
-	    };
-	    /**
-	     * Create a DomPortalHost into which the overlay content can be loaded.
-	     * @param pane The DOM element to turn into a portal host.
-	     * @returns A portal host for the given DOM element.
-	     */
-	    Overlay.prototype._createPortalHost = function (pane) {
-	        return new dom_portal_host_1.DomPortalHost(pane, this._dynamicComponentLoader);
-	    };
-	    /**
-	     * Creates an OverlayRef for an overlay in the given DOM element.
-	     * @param pane DOM element for the overlay
-	     * @returns {OverlayRef}
-	     */
-	    Overlay.prototype._createOverlayRef = function (pane) {
-	        return new overlay_ref_1.OverlayRef(this._createPortalHost(pane));
-	    };
-	    Overlay = __decorate([
-	        core_1.Injectable(),
-	        __param(0, core_1.Inject(exports.OVERLAY_CONTAINER_TOKEN)), 
-	        __metadata('design:paramtypes', [HTMLElement, core_1.DynamicComponentLoader])
-	    ], Overlay);
-	    return Overlay;
+	    ViewportRuler = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], ViewportRuler);
+	    return ViewportRuler;
 	}());
-	exports.Overlay = Overlay;
-	/** Builder for overlay position strategy. */
-	var OverlayPositionBuilder = (function () {
-	    function OverlayPositionBuilder() {
-	    }
-	    /** Creates a global position strategy. */
-	    OverlayPositionBuilder.prototype.global = function () {
-	        return new global_position_strategy_1.GlobalPositionStrategy();
-	    };
-	    /** Creates a relative position strategy. */
-	    OverlayPositionBuilder.prototype.relativeTo = function (elementRef) {
-	        return new relative_position_strategy_1.RelativePositionStrategy(elementRef);
-	    };
-	    return OverlayPositionBuilder;
-	}());
-	exports.OverlayPositionBuilder = OverlayPositionBuilder;
-	// We only ever need one position builder.
-	var POSITION_BUILDER = new OverlayPositionBuilder();
-	//# sourceMappingURL=overlay.js.map
+	exports.ViewportRuler = ViewportRuler;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/position/viewport-ruler.js.map
 
 /***/ },
-/* 260 */
-/***/ function(module, exports) {
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var __extends = (this && this.__extends) || function (d, b) {
@@ -2692,6 +2816,188 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
+	var portal_1 = __webpack_require__(114);
+	var portal_errors_1 = __webpack_require__(265);
+	/**
+	 * A PortalHost for attaching portals to an arbitrary DOM element outside of the Angular
+	 * application context.
+	 *
+	 * This is the only part of the portal core that directly touches the DOM.
+	 */
+	var DomPortalHost = (function (_super) {
+	    __extends(DomPortalHost, _super);
+	    function DomPortalHost(_hostDomElement, _componentResolver) {
+	        _super.call(this);
+	        this._hostDomElement = _hostDomElement;
+	        this._componentResolver = _componentResolver;
+	    }
+	    /** Attach the given ComponentPortal to DOM element using the ComponentResolver. */
+	    DomPortalHost.prototype.attachComponentPortal = function (portal) {
+	        var _this = this;
+	        if (portal.viewContainerRef == null) {
+	            throw new portal_errors_1.MdComponentPortalAttachedToDomWithoutOriginError();
+	        }
+	        return this._componentResolver.resolveComponent(portal.component).then(function (componentFactory) {
+	            var ref = portal.viewContainerRef.createComponent(componentFactory, portal.viewContainerRef.length, portal.viewContainerRef.parentInjector);
+	            var hostView = ref.hostView;
+	            _this._hostDomElement.appendChild(hostView.rootNodes[0]);
+	            _this.setDisposeFn(function () { return ref.destroy(); });
+	            return ref;
+	        });
+	    };
+	    DomPortalHost.prototype.attachTemplatePortal = function (portal) {
+	        var _this = this;
+	        var viewContainer = portal.viewContainerRef;
+	        var viewRef = viewContainer.createEmbeddedView(portal.templateRef);
+	        viewRef.rootNodes.forEach(function (rootNode) { return _this._hostDomElement.appendChild(rootNode); });
+	        this.setDisposeFn((function () {
+	            var index = viewContainer.indexOf(viewRef);
+	            if (index != -1) {
+	                viewContainer.remove(index);
+	            }
+	        }));
+	        // TODO(jelbourn): Return locals from view.
+	        return Promise.resolve(new Map());
+	    };
+	    DomPortalHost.prototype.dispose = function () {
+	        _super.prototype.dispose.call(this);
+	        if (this._hostDomElement.parentNode != null) {
+	            this._hostDomElement.parentNode.removeChild(this._hostDomElement);
+	        }
+	    };
+	    return DomPortalHost;
+	}(portal_1.BasePortalHost));
+	exports.DomPortalHost = DomPortalHost;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/portal/dom-portal-host.js.map
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(1);
+	var portal_1 = __webpack_require__(114);
+	/**
+	 * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
+	 * the directive instance itself can be attached to a host, enabling declarative use of portals.
+	 *
+	 * Usage:
+	 * <template portal #greeting>
+	 *   <p> Hello {{name}} </p>
+	 * </template>
+	 */
+	var TemplatePortalDirective = (function (_super) {
+	    __extends(TemplatePortalDirective, _super);
+	    function TemplatePortalDirective(templateRef, viewContainerRef) {
+	        _super.call(this, templateRef, viewContainerRef);
+	    }
+	    TemplatePortalDirective = __decorate([
+	        core_1.Directive({
+	            selector: '[portal]',
+	            exportAs: 'portal',
+	        }), 
+	        __metadata('design:paramtypes', [core_1.TemplateRef, core_1.ViewContainerRef])
+	    ], TemplatePortalDirective);
+	    return TemplatePortalDirective;
+	}(portal_1.TemplatePortal));
+	exports.TemplatePortalDirective = TemplatePortalDirective;
+	/**
+	 * Directive version of a PortalHost. Because the directive *is* a PortalHost, portals can be
+	 * directly attached to it, enabling declarative use.
+	 *
+	 * Usage:
+	 * <template [portalHost]="greeting"></template>
+	 */
+	var PortalHostDirective = (function (_super) {
+	    __extends(PortalHostDirective, _super);
+	    function PortalHostDirective(_componentResolver, _viewContainerRef) {
+	        _super.call(this);
+	        this._componentResolver = _componentResolver;
+	        this._viewContainerRef = _viewContainerRef;
+	    }
+	    Object.defineProperty(PortalHostDirective.prototype, "portal", {
+	        get: function () {
+	            return this._portal;
+	        },
+	        set: function (p) {
+	            this._replaceAttachedPortal(p);
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** Attach the given ComponentPortal to this PortlHost using the ComponentResolver. */
+	    PortalHostDirective.prototype.attachComponentPortal = function (portal) {
+	        var _this = this;
+	        portal.setAttachedHost(this);
+	        // If the portal specifies an origin, use that as the logical location of the component
+	        // in the application tree. Otherwise use the location of this PortalHost.
+	        var viewContainerRef = portal.viewContainerRef != null ?
+	            portal.viewContainerRef :
+	            this._viewContainerRef;
+	        return this._componentResolver.resolveComponent(portal.component).then(function (componentFactory) {
+	            var ref = viewContainerRef.createComponent(componentFactory, viewContainerRef.length, viewContainerRef.parentInjector);
+	            _this.setDisposeFn(function () { return ref.destroy(); });
+	            return ref;
+	        });
+	    };
+	    /** Attach the given TemplatePortal to this PortlHost as an embedded View. */
+	    PortalHostDirective.prototype.attachTemplatePortal = function (portal) {
+	        var _this = this;
+	        portal.setAttachedHost(this);
+	        this._viewContainerRef.createEmbeddedView(portal.templateRef);
+	        this.setDisposeFn(function () { return _this._viewContainerRef.clear(); });
+	        // TODO(jelbourn): return locals from view
+	        return Promise.resolve(new Map());
+	    };
+	    /** Detatches the currently attached Portal (if there is one) and attaches the given Portal. */
+	    PortalHostDirective.prototype._replaceAttachedPortal = function (p) {
+	        var _this = this;
+	        var maybeDetach = this.hasAttached() ? this.detach() : Promise.resolve();
+	        maybeDetach.then(function () {
+	            if (p != null) {
+	                _this.attach(p);
+	                _this._portal = p;
+	            }
+	        });
+	    };
+	    PortalHostDirective = __decorate([
+	        core_1.Directive({
+	            selector: '[portalHost]',
+	            inputs: ['portal: portalHost']
+	        }), 
+	        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ViewContainerRef])
+	    ], PortalHostDirective);
+	    return PortalHostDirective;
+	}(portal_1.BasePortalHost));
+	exports.PortalHostDirective = PortalHostDirective;
+	exports.PORTAL_DIRECTIVES = [TemplatePortalDirective, PortalHostDirective];
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/portal/portal-directives.js.map
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var error_1 = __webpack_require__(446);
 	/** Exception thrown when a ComponentPortal is attached to a DomPortalHost without an origin. */
 	var MdComponentPortalAttachedToDomWithoutOriginError = (function (_super) {
 	    __extends(MdComponentPortalAttachedToDomWithoutOriginError, _super);
@@ -2700,73 +3006,87 @@ webpackJsonp([3],[
 	            'because the DOM element is not part of the Angular application context.');
 	    }
 	    return MdComponentPortalAttachedToDomWithoutOriginError;
-	}(Error));
+	}(error_1.MdError));
 	exports.MdComponentPortalAttachedToDomWithoutOriginError = MdComponentPortalAttachedToDomWithoutOriginError;
-	/** Exception thrown when attmepting to attach a null portal to a host. */
+	/** Exception thrown when attempting to attach a null portal to a host. */
 	var MdNullPortalError = (function (_super) {
 	    __extends(MdNullPortalError, _super);
 	    function MdNullPortalError() {
 	        _super.call(this, 'Must provide a portal to attach');
 	    }
 	    return MdNullPortalError;
-	}(Error));
+	}(error_1.MdError));
 	exports.MdNullPortalError = MdNullPortalError;
-	/** Exception thrown when attmepting to attach a portal to a host that is already attached. */
+	/** Exception thrown when attempting to attach a portal to a host that is already attached. */
 	var MdPortalAlreadyAttachedError = (function (_super) {
 	    __extends(MdPortalAlreadyAttachedError, _super);
 	    function MdPortalAlreadyAttachedError() {
 	        _super.call(this, 'Host already has a portal attached');
 	    }
 	    return MdPortalAlreadyAttachedError;
-	}(Error));
+	}(error_1.MdError));
 	exports.MdPortalAlreadyAttachedError = MdPortalAlreadyAttachedError;
-	/** Exception thrown when attmepting to attach a portal to an already-disposed host. */
+	/** Exception thrown when attempting to attach a portal to an already-disposed host. */
 	var MdPortalHostAlreadyDisposedError = (function (_super) {
 	    __extends(MdPortalHostAlreadyDisposedError, _super);
 	    function MdPortalHostAlreadyDisposedError() {
 	        _super.call(this, 'This PortalHost has already been disposed');
 	    }
 	    return MdPortalHostAlreadyDisposedError;
-	}(Error));
+	}(error_1.MdError));
 	exports.MdPortalHostAlreadyDisposedError = MdPortalHostAlreadyDisposedError;
-	/** Exception thrown when attmepting to attach an unknown portal type. */
-	var MdUnknownPortalTypeErron = (function (_super) {
-	    __extends(MdUnknownPortalTypeErron, _super);
-	    function MdUnknownPortalTypeErron() {
+	/** Exception thrown when attempting to attach an unknown portal type. */
+	var MdUnknownPortalTypeError = (function (_super) {
+	    __extends(MdUnknownPortalTypeError, _super);
+	    function MdUnknownPortalTypeError() {
 	        _super.call(this, 'Attempting to attach an unknown Portal type. ' +
 	            'BasePortalHost accepts either a ComponentPortal or a TemplatePortal.');
 	    }
-	    return MdUnknownPortalTypeErron;
-	}(Error));
-	exports.MdUnknownPortalTypeErron = MdUnknownPortalTypeErron;
-	/** Exception thrown when attmepting to attach a portal to a null host. */
+	    return MdUnknownPortalTypeError;
+	}(error_1.MdError));
+	exports.MdUnknownPortalTypeError = MdUnknownPortalTypeError;
+	/** Exception thrown when attempting to attach a portal to a null host. */
 	var MdNullPortalHostError = (function (_super) {
 	    __extends(MdNullPortalHostError, _super);
 	    function MdNullPortalHostError() {
 	        _super.call(this, 'Attmepting to attach a portal to a null PortalHost');
 	    }
 	    return MdNullPortalHostError;
-	}(Error));
+	}(error_1.MdError));
 	exports.MdNullPortalHostError = MdNullPortalHostError;
-	/** Exception thrown when attmepting to detach a portal that is not attached. */
-	var MdNoPortalAttachedErron = (function (_super) {
-	    __extends(MdNoPortalAttachedErron, _super);
-	    function MdNoPortalAttachedErron() {
+	/** Exception thrown when attempting to detach a portal that is not attached. */
+	var MdNoPortalAttachedError = (function (_super) {
+	    __extends(MdNoPortalAttachedError, _super);
+	    function MdNoPortalAttachedError() {
 	        _super.call(this, 'Attmepting to detach a portal that is not attached to a host');
 	    }
-	    return MdNoPortalAttachedErron;
-	}(Error));
-	exports.MdNoPortalAttachedErron = MdNoPortalAttachedErron;
-	//# sourceMappingURL=portal-errors.js.map
+	    return MdNoPortalAttachedError;
+	}(error_1.MdError));
+	exports.MdNoPortalAttachedError = MdNoPortalAttachedError;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/portal/portal-errors.js.map
 
 /***/ },
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
 /* 266 */,
-/* 267 */,
+/* 267 */
+/***/ function(module, exports) {
+
+	"use strict";
+	/**
+	 * Applies a CSS transform to an element, including browser-prefixed properties.
+	 * @param element
+	 * @param transformValue
+	 */
+	function applyCssTransform(element, transformValue) {
+	    // It's important to trim the result, because the browser will ignore the set operation
+	    // if the string contains only whitespace.
+	    var value = transformValue.trim();
+	    element.style.transform = value;
+	    element.style.webkitTransform = value;
+	}
+	exports.applyCssTransform = applyCssTransform;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/style/apply-transform.js.map
+
+/***/ },
 /* 268 */,
 /* 269 */,
 /* 270 */,
@@ -2855,7 +3175,13 @@ webpackJsonp([3],[
 /* 353 */,
 /* 354 */,
 /* 355 */,
-/* 356 */
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2989,8 +3315,8 @@ webpackJsonp([3],[
 	        core_1.Component({
 	            moduleId: module.id,
 	            selector: 'map-autocomplete',
-	            template: __webpack_require__(577),
-	            styles: [__webpack_require__(576)],
+	            template: __webpack_require__(590),
+	            styles: [__webpack_require__(589)],
 	        }), 
 	        __metadata('design:paramtypes', [core_2.NgZone, user_service_1.UserService])
 	    ], MapAutocomplete);
@@ -3000,7 +3326,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 357 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// ```
@@ -3012,7 +3338,7 @@ webpackJsonp([3],[
 	"use strict";
 	// # Product Service
 	var http_1 = __webpack_require__(21);
-	var store_1 = __webpack_require__(228);
+	var store_1 = __webpack_require__(230);
 	var core_1 = __webpack_require__(1);
 	var HEADER = {
 	    headers: new http_1.Headers({
@@ -3066,7 +3392,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 358 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3107,19 +3433,19 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 359 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var button_1 = __webpack_require__(74);
-	var card_1 = __webpack_require__(75);
+	var button_1 = __webpack_require__(73);
+	var card_1 = __webpack_require__(74);
 	var checkbox_1 = __webpack_require__(59);
 	var sidenav_1 = __webpack_require__(61);
-	var input_1 = __webpack_require__(76);
+	var input_1 = __webpack_require__(75);
 	var list_1 = __webpack_require__(60);
-	var radio_1 = __webpack_require__(162);
+	var radio_1 = __webpack_require__(164);
 	var progress_bar_1 = __webpack_require__(102);
-	var progress_circle_1 = __webpack_require__(161);
+	var progress_circle_1 = __webpack_require__(163);
 	var toolbar_1 = __webpack_require__(62);
 	/*
 	 * We are grouping the module so we only need to
@@ -3143,7 +3469,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 360 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3152,9 +3478,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(38);
-	var throwError_1 = __webpack_require__(367);
-	var ObjectUnsubscribedError_1 = __webpack_require__(365);
+	var Subject_1 = __webpack_require__(35);
+	var throwError_1 = __webpack_require__(662);
+	var ObjectUnsubscribedError_1 = __webpack_require__(370);
 	/**
 	 * @class BehaviorSubject<T>
 	 */
@@ -3165,8 +3491,8 @@ webpackJsonp([3],[
 	        this._value = _value;
 	    }
 	    BehaviorSubject.prototype.getValue = function () {
-	        if (this.hasErrored) {
-	            throwError_1.throwError(this.errorValue);
+	        if (this.hasError) {
+	            throwError_1.throwError(this.thrownError);
 	        }
 	        else if (this.isUnsubscribed) {
 	            throwError_1.throwError(new ObjectUnsubscribedError_1.ObjectUnsubscribedError());
@@ -3189,12 +3515,8 @@ webpackJsonp([3],[
 	        }
 	        return subscription;
 	    };
-	    BehaviorSubject.prototype._next = function (value) {
-	        _super.prototype._next.call(this, this._value = value);
-	    };
-	    BehaviorSubject.prototype._error = function (err) {
-	        this.hasErrored = true;
-	        _super.prototype._error.call(this, this.errorValue = err);
+	    BehaviorSubject.prototype.next = function (value) {
+	        _super.prototype.next.call(this, this._value = value);
 	    };
 	    return BehaviorSubject;
 	}(Subject_1.Subject));
@@ -3202,23 +3524,23 @@ webpackJsonp([3],[
 	//# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ },
-/* 361 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var share_1 = __webpack_require__(632);
+	var share_1 = __webpack_require__(648);
 	Observable_1.Observable.prototype.share = share_1.share;
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 362 */,
-/* 363 */
+/* 368 */,
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueueAction_1 = __webpack_require__(636);
-	var FutureAction_1 = __webpack_require__(224);
+	var QueueAction_1 = __webpack_require__(652);
+	var FutureAction_1 = __webpack_require__(226);
 	var QueueScheduler = (function () {
 	    function QueueScheduler() {
 	        this.active = false;
@@ -3262,11 +3584,9 @@ webpackJsonp([3],[
 	//# sourceMappingURL=QueueScheduler.js.map
 
 /***/ },
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */
+/* 370 */,
+/* 371 */,
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3275,7 +3595,7 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subject_1 = __webpack_require__(38);
+	var Subject_1 = __webpack_require__(35);
 	var Dispatcher = (function (_super) {
 	    __extends(Dispatcher, _super);
 	    function Dispatcher() {
@@ -3290,14 +3610,14 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 369 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var queue_1 = __webpack_require__(638);
-	__webpack_require__(613);
-	__webpack_require__(616);
-	__webpack_require__(615);
+	var queue_1 = __webpack_require__(654);
+	__webpack_require__(627);
+	__webpack_require__(630);
+	__webpack_require__(629);
 	exports.ActionTypes = {
 	    INIT: '@@ngrx/INIT'
 	};
@@ -3334,7 +3654,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 370 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3343,9 +3663,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var BehaviorSubject_1 = __webpack_require__(360);
-	__webpack_require__(141);
-	__webpack_require__(612);
+	var BehaviorSubject_1 = __webpack_require__(366);
+	__webpack_require__(225);
+	__webpack_require__(625);
 	var Store = (function (_super) {
 	    __extends(Store, _super);
 	    function Store(_dispatcher, _backend, initialState) {
@@ -3390,7 +3710,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 371 */
+/* 375 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3441,7 +3761,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 372 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3461,8 +3781,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var marker_manager_1 = __webpack_require__(147);
-	var google_map_info_window_1 = __webpack_require__(229);
+	var marker_manager_1 = __webpack_require__(148);
+	var google_map_info_window_1 = __webpack_require__(231);
 	var markerId = 0;
 	/**
 	 * SebmGoogleMapMarker renders a map marker inside a {@link SebmGoogleMap}.
@@ -3578,7 +3898,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 373 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3598,9 +3918,9 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var google_maps_api_wrapper_1 = __webpack_require__(145);
-	var marker_manager_1 = __webpack_require__(147);
-	var info_window_manager_1 = __webpack_require__(230);
+	var google_maps_api_wrapper_1 = __webpack_require__(146);
+	var marker_manager_1 = __webpack_require__(148);
+	var info_window_manager_1 = __webpack_require__(233);
 	/**
 	 * SebMGoogleMap renders a Google Map.
 	 * **Important note**: To be able see a map in the browser, you have to define a height for the CSS
@@ -3830,7 +4150,178 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 374 */
+/* 378 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var root_1 = __webpack_require__(232);
+	var observable_1 = __webpack_require__(670);
+	var toSubscriber_1 = __webpack_require__(674);
+	/**
+	 * A representation of any set of values over any amount of time. This the most basic building block
+	 * of RxJS.
+	 *
+	 * @class Observable<T>
+	 */
+	var Observable = (function () {
+	    /**
+	     * @constructor
+	     * @param {Function} subscribe the function that is  called when the Observable is
+	     * initially subscribed to. This function is given a Subscriber, to which new values
+	     * can be `next`ed, or an `error` method can be called to raise an error, or
+	     * `complete` can be called to notify of a successful completion.
+	     */
+	    function Observable(subscribe) {
+	        this._isScalar = false;
+	        if (subscribe) {
+	            this._subscribe = subscribe;
+	        }
+	    }
+	    /**
+	     * Creates a new Observable, with this Observable as the source, and the passed
+	     * operator defined as the new observable's operator.
+	     * @method lift
+	     * @param {Operator} operator the operator defining the operation to take on the observable
+	     * @return {Observable} a new observable with the Operator applied
+	     */
+	    Observable.prototype.lift = function (operator) {
+	        var observable = new Observable();
+	        observable.source = this;
+	        observable.operator = operator;
+	        return observable;
+	    };
+	    /**
+	     * Registers handlers for handling emitted values, error and completions from the observable, and
+	     *  executes the observable's subscriber function, which will take action to set up the underlying data stream
+	     * @method subscribe
+	     * @param {PartialObserver|Function} observerOrNext (optional) either an observer defining all functions to be called,
+	     *  or the first of three possible handlers, which is the handler for each value emitted from the observable.
+	     * @param {Function} error (optional) a handler for a terminal event resulting from an error. If no error handler is provided,
+	     *  the error will be thrown as unhandled
+	     * @param {Function} complete (optional) a handler for a terminal event resulting from successful completion.
+	     * @return {ISubscription} a subscription reference to the registered handlers
+	     */
+	    Observable.prototype.subscribe = function (observerOrNext, error, complete) {
+	        var operator = this.operator;
+	        var sink = toSubscriber_1.toSubscriber(observerOrNext, error, complete);
+	        sink.add(operator ? operator.call(sink, this) : this._subscribe(sink));
+	        if (sink.syncErrorThrowable) {
+	            sink.syncErrorThrowable = false;
+	            if (sink.syncErrorThrown) {
+	                throw sink.syncErrorValue;
+	            }
+	        }
+	        return sink;
+	    };
+	    /**
+	     * @method forEach
+	     * @param {Function} next a handler for each value emitted by the observable
+	     * @param {PromiseConstructor} [PromiseCtor] a constructor function used to instantiate the Promise
+	     * @return {Promise} a promise that either resolves on observable completion or
+	     *  rejects with the handled error
+	     */
+	    Observable.prototype.forEach = function (next, PromiseCtor) {
+	        var _this = this;
+	        if (!PromiseCtor) {
+	            if (root_1.root.Rx && root_1.root.Rx.config && root_1.root.Rx.config.Promise) {
+	                PromiseCtor = root_1.root.Rx.config.Promise;
+	            }
+	            else if (root_1.root.Promise) {
+	                PromiseCtor = root_1.root.Promise;
+	            }
+	        }
+	        if (!PromiseCtor) {
+	            throw new Error('no Promise impl found');
+	        }
+	        return new PromiseCtor(function (resolve, reject) {
+	            var subscription = _this.subscribe(function (value) {
+	                if (subscription) {
+	                    // if there is a subscription, then we can surmise
+	                    // the next handling is asynchronous. Any errors thrown
+	                    // need to be rejected explicitly and unsubscribe must be
+	                    // called manually
+	                    try {
+	                        next(value);
+	                    }
+	                    catch (err) {
+	                        reject(err);
+	                        subscription.unsubscribe();
+	                    }
+	                }
+	                else {
+	                    // if there is NO subscription, then we're getting a nexted
+	                    // value synchronously during subscription. We can just call it.
+	                    // If it errors, Observable's `subscribe` imple will ensure the
+	                    // unsubscription logic is called, then synchronously rethrow the error.
+	                    // After that, Promise will trap the error and send it
+	                    // down the rejection path.
+	                    next(value);
+	                }
+	            }, reject, resolve);
+	        });
+	    };
+	    Observable.prototype._subscribe = function (subscriber) {
+	        return this.source.subscribe(subscriber);
+	    };
+	    /**
+	     * An interop point defined by the es7-observable spec https://github.com/zenparsing/es-observable
+	     * @method Symbol.observable
+	     * @return {Observable} this instance of the observable
+	     */
+	    Observable.prototype[observable_1.$$observable] = function () {
+	        return this;
+	    };
+	    // HACK: Since TypeScript inherits static properties too, we have to
+	    // fight against TypeScript here so Subject can have a different static create signature
+	    /**
+	     * Creates a new cold Observable by calling the Observable constructor
+	     * @static true
+	     * @owner Observable
+	     * @method create
+	     * @param {Function} subscribe? the subscriber function to be passed to the Observable constructor
+	     * @return {Observable} a new cold observable
+	     */
+	    Observable.create = function (subscribe) {
+	        return new Observable(subscribe);
+	    };
+	    return Observable;
+	}());
+	exports.Observable = Observable;
+	
+
+/***/ },
+/* 379 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var root_1 = __webpack_require__(232);
+	var Symbol = root_1.root.Symbol;
+	exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
+	    Symbol.for('rxSubscriber') : '@@rxSubscriber';
+	
+
+/***/ },
+/* 380 */
+/***/ function(module, exports) {
+
+	"use strict";
+	// typeof any so that it we don't have to cast when comparing a result to the error object
+	exports.errorObject = { e: {} };
+	
+
+/***/ },
+/* 381 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function isFunction(x) {
+	    return typeof x === 'function';
+	}
+	exports.isFunction = isFunction;
+	
+
+/***/ },
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3858,7 +4349,7 @@ webpackJsonp([3],[
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
 	var core_1 = __webpack_require__(1);
-	var maps_api_loader_1 = __webpack_require__(146);
+	var maps_api_loader_1 = __webpack_require__(147);
 	(function (GoogleMapsScriptProtocol) {
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTP"] = 0] = "HTTP";
 	    GoogleMapsScriptProtocol[GoogleMapsScriptProtocol["HTTPS"] = 1] = "HTTPS";
@@ -3999,14 +4490,6 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
 /* 383 */,
 /* 384 */,
 /* 385 */,
@@ -4028,7 +4511,15 @@ webpackJsonp([3],[
 /* 401 */,
 /* 402 */,
 /* 403 */,
-/* 404 */
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4042,7 +4533,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var file_uploader_class_1 = __webpack_require__(252);
+	var file_uploader_class_1 = __webpack_require__(255);
 	var FileDropDirective = (function () {
 	    function FileDropDirective(element) {
 	        this.fileOver = new core_1.EventEmitter();
@@ -4144,7 +4635,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 405 */
+/* 413 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4177,7 +4668,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 406 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4191,7 +4682,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var file_uploader_class_1 = __webpack_require__(252);
+	var file_uploader_class_1 = __webpack_require__(255);
 	// todo: filters
 	var FileSelectDirective = (function () {
 	    function FileSelectDirective(element) {
@@ -4236,7 +4727,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 407 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4249,7 +4740,7 @@ webpackJsonp([3],[
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var animate_1 = __webpack_require__(158);
+	var animate_1 = __webpack_require__(159);
 	var core_1 = __webpack_require__(1);
 	var viewport_1 = __webpack_require__(113);
 	var MdBackdrop = (function () {
@@ -4374,7 +4865,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 408 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4393,7 +4884,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var ink_1 = __webpack_require__(159);
+	var ink_1 = __webpack_require__(160);
 	var BUTTON_TEMPLATE = "<span class=\"md-button-wrapper\"><ng-content></ng-content></span>";
 	var MdButton = (function () {
 	    function MdButton(_element) {
@@ -4488,7 +4979,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 409 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4515,7 +5006,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 410 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4532,9 +5023,9 @@ webpackJsonp([3],[
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	var core_1 = __webpack_require__(1);
-	__webpack_require__(361);
-	var data_table_selectable_tr_1 = __webpack_require__(253);
-	__export(__webpack_require__(253));
+	__webpack_require__(367);
+	var data_table_selectable_tr_1 = __webpack_require__(256);
+	__export(__webpack_require__(256));
 	var MdDataTable = (function () {
 	    function MdDataTable() {
 	        this.onSelectableAll = new core_1.EventEmitter(false);
@@ -4623,19 +5114,19 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 411 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(410));
-	__export(__webpack_require__(253));
+	__export(__webpack_require__(418));
+	__export(__webpack_require__(256));
 	
 
 /***/ },
-/* 412 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4649,7 +5140,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var dialog_1 = __webpack_require__(415);
+	var dialog_1 = __webpack_require__(423);
 	var MdDialogActions = (function () {
 	    function MdDialogActions() {
 	    }
@@ -4679,7 +5170,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 413 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4698,7 +5189,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var core_2 = __webpack_require__(435);
+	var core_2 = __webpack_require__(445);
 	var MdDialogPortal = (function (_super) {
 	    __extends(MdDialogPortal, _super);
 	    function MdDialogPortal(templateRef, viewContainerRef) {
@@ -4714,7 +5205,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 414 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4749,7 +5240,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 415 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4763,12 +5254,12 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var overlay_1 = __webpack_require__(259);
-	var animate_1 = __webpack_require__(158);
-	var dialog_portal_1 = __webpack_require__(413);
-	var dialog_actions_1 = __webpack_require__(412);
-	var dialog_title_1 = __webpack_require__(414);
-	var key_codes_1 = __webpack_require__(427);
+	var overlay_1 = __webpack_require__(162);
+	var animate_1 = __webpack_require__(159);
+	var dialog_portal_1 = __webpack_require__(421);
+	var dialog_actions_1 = __webpack_require__(420);
+	var dialog_title_1 = __webpack_require__(422);
+	var key_codes_1 = __webpack_require__(435);
 	var MdDialog = (function () {
 	    function MdDialog(overlay) {
 	        this.overlay = overlay;
@@ -4877,21 +5368,21 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 416 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(415));
-	__export(__webpack_require__(412));
-	__export(__webpack_require__(413));
-	__export(__webpack_require__(414));
+	__export(__webpack_require__(423));
+	__export(__webpack_require__(420));
+	__export(__webpack_require__(421));
+	__export(__webpack_require__(422));
 	
 
 /***/ },
-/* 417 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -4922,7 +5413,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 418 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5067,7 +5558,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 419 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5082,7 +5573,7 @@ webpackJsonp([3],[
 	};
 	var common_1 = __webpack_require__(7);
 	var core_1 = __webpack_require__(1);
-	var util_1 = __webpack_require__(255);
+	var util_1 = __webpack_require__(258);
 	var PATTERN_VALIDATOR = new core_1.Provider(common_1.NG_VALIDATORS, {
 	    useExisting: core_1.forwardRef(function () { return MdPatternValidator; }),
 	    multi: true
@@ -5243,7 +5734,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 420 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5275,7 +5766,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 421 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5289,7 +5780,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var ink_1 = __webpack_require__(159);
+	var ink_1 = __webpack_require__(160);
 	var MdInk = (function () {
 	    function MdInk(_element) {
 	        this._element = _element;
@@ -5322,7 +5813,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 422 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5370,7 +5861,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 423 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5384,8 +5875,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var media_1 = __webpack_require__(254);
-	var util_1 = __webpack_require__(255);
+	var media_1 = __webpack_require__(257);
+	var util_1 = __webpack_require__(258);
 	var viewport_1 = __webpack_require__(113);
 	var MdPeekaboo = (function () {
 	    function MdPeekaboo(media, element, viewport, _app) {
@@ -5615,7 +6106,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 424 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5648,7 +6139,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 425 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5662,8 +6153,8 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var key_codes_1 = __webpack_require__(427);
-	var util_1 = __webpack_require__(255);
+	var key_codes_1 = __webpack_require__(435);
+	var util_1 = __webpack_require__(258);
 	var MdSwitch = (function () {
 	    function MdSwitch() {
 	        this.checkedChange = new core_1.EventEmitter(false);
@@ -5752,7 +6243,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 426 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5769,7 +6260,7 @@ webpackJsonp([3],[
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	};
 	var core_1 = __webpack_require__(1);
-	var ink_1 = __webpack_require__(159);
+	var ink_1 = __webpack_require__(160);
 	var common_1 = __webpack_require__(7);
 	var MdTab = (function () {
 	    function MdTab(viewContainer, templateRef) {
@@ -5901,7 +6392,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 427 */
+/* 435 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -5915,16 +6406,16 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 428 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var select_1 = __webpack_require__(430);
+	var select_1 = __webpack_require__(438);
 	exports.SELECT_DIRECTIVES = [select_1.SelectComponent];
 
 
 /***/ },
-/* 429 */
+/* 437 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -5935,7 +6426,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 430 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5954,10 +6445,10 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var select_item_1 = __webpack_require__(813);
-	var select_pipes_1 = __webpack_require__(814);
-	var common_1 = __webpack_require__(429);
-	var off_click_1 = __webpack_require__(812);
+	var select_item_1 = __webpack_require__(839);
+	var select_pipes_1 = __webpack_require__(840);
+	var common_1 = __webpack_require__(437);
+	var off_click_1 = __webpack_require__(838);
 	var optionsTemplate = "\n    <ul *ngIf=\"optionsOpened && options && options.length > 0 && !firstItemHasChildren\"\n        class=\"ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu\">\n      <li class=\"ui-select-choices-group\">\n        <div *ngFor=\"let o of options\"\n             class=\"ui-select-choices-row\"\n             [class.active]=\"isActive(o)\"\n             (mouseenter)=\"selectActive(o)\"\n             (click)=\"selectMatch(o, $event)\">\n          <a href=\"javascript:void(0)\" class=\"ui-select-choices-row-inner\">\n            <div [innerHtml]=\"o.text | highlight:inputValue\"></div>\n          </a>\n        </div>\n      </li>\n    </ul>\n\n    <ul *ngIf=\"optionsOpened && options && options.length > 0 && firstItemHasChildren\"\n        class=\"ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu\">\n      <li *ngFor=\"let c of options; let index=index\" class=\"ui-select-choices-group\">\n        <div class=\"divider\" *ngIf=\"index > 0\"></div>\n        <div class=\"ui-select-choices-group-label dropdown-header\">{{c.text}}</div>\n\n        <div *ngFor=\"let o of c.children\"\n             class=\"ui-select-choices-row\"\n             [class.active]=\"isActive(o)\"\n             (mouseenter)=\"selectActive(o)\"\n             (click)=\"selectMatch(o, $event)\"\n             [ngClass]=\"{'active': isActive(o)}\">\n          <a href=\"javascript:void(0)\" class=\"ui-select-choices-row-inner\">\n            <div [innerHtml]=\"o.text | highlight:inputValue\"></div>\n          </a>\n        </div>\n      </li>\n    </ul>\n";
 	var SelectComponent = (function () {
 	    function SelectComponent(element) {
@@ -6443,20 +6934,22 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 431 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	Object.defineProperty(exports, '__esModule', { value: true });
+
 	var _angular_core = __webpack_require__(1);
 	var _angular_http = __webpack_require__(21);
 	var rxjs_Observable = __webpack_require__(8);
-	var rxjs_add_operator_map = __webpack_require__(141);
-	var rxjs_add_observable_interval = __webpack_require__(610);
-	var rxjs_add_observable_fromEvent = __webpack_require__(609);
-	var rxjs_add_operator_concatMap = __webpack_require__(611);
-	var rxjs_add_operator_take = __webpack_require__(617);
-	var rxjs_add_operator_takeWhile = __webpack_require__(618);
+	var rxjs_add_operator_do = __webpack_require__(626);
+	var rxjs_add_observable_interval = __webpack_require__(623);
+	var rxjs_add_observable_fromEvent = __webpack_require__(622);
+	var rxjs_add_operator_concatMap = __webpack_require__(624);
+	var rxjs_add_operator_take = __webpack_require__(631);
+	var rxjs_add_operator_takeWhile = __webpack_require__(632);
 
 	function __extends(d, b) {
 	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6478,6 +6971,7 @@ webpackJsonp([3],[
 	var Config = (function () {
 	    function Config(config) {
 	        var _this = this;
+	        this.withCredentials = false;
 	        this.tokenRoot = null;
 	        this.cordova = false;
 	        this.baseUrl = '/';
@@ -6833,6 +7327,14 @@ webpackJsonp([3],[
 	    });
 	}
 
+	function getFullOpts(user, userOpts) {
+	    var opts = userOpts || {};
+	    if (user) {
+	        opts.body = typeof user === 'string' ? user : JSON.stringify(user);
+	    }
+	    opts.method = opts.method || 'POST';
+	    return opts;
+	}
 	var Local = (function () {
 	    function Local(http, shared, config) {
 	        this.http = http;
@@ -6841,24 +7343,15 @@ webpackJsonp([3],[
 	    }
 	    Local.prototype.login = function (user, opts) {
 	        var _this = this;
-	        opts = opts || {};
-	        var url = opts.url ? opts.url : joinUrl(this.config.baseUrl, this.config.loginUrl);
-	        if (user) {
-	            opts.body = typeof user === 'string' ? user : JSON.stringify(user);
-	        }
-	        opts.method = opts.method || 'POST';
-	        return this.http.request(url, opts)
-	            .map(function (response) {
-	            _this.shared.setToken(response);
-	            return response;
-	        });
+	        var fullOpts = getFullOpts(user, opts);
+	        var url = fullOpts.url ? fullOpts.url : joinUrl(this.config.baseUrl, this.config.loginUrl);
+	        return this.http.request(url, fullOpts)
+	            .do(function (response) { return _this.shared.setToken(response); });
 	    };
 	    Local.prototype.signup = function (user, opts) {
-	        opts = opts || {};
-	        var url = opts.url ? opts.url : joinUrl(this.config.baseUrl, this.config.signupUrl);
-	        opts.body = JSON.stringify(user) || opts.body;
-	        opts.method = opts.method || 'POST';
-	        return this.http.request(url, opts);
+	        var fullOpts = getFullOpts(user, opts);
+	        var url = fullOpts.url ? fullOpts.url : joinUrl(this.config.baseUrl, this.config.signupUrl);
+	        return this.http.request(url, getFullOpts(user, fullOpts));
 	    };
 	    Local = __decorate([
 	        _angular_core.Injectable(), 
@@ -7020,7 +7513,7 @@ webpackJsonp([3],[
 	        var data = extend({}, userData);
 	        extend(data, oauthData);
 	        var exchangeForTokenUrl = this.config.baseUrl ? joinUrl(this.config.baseUrl, this.defaults.url) : this.defaults.url;
-	        return this.http.post(exchangeForTokenUrl, data);
+	        return this.http.post(exchangeForTokenUrl, data, { withCredentials: this.config.withCredentials });
 	    };
 	    Oauth1.prototype.buildQueryString = function (obj) {
 	        return Object.keys(obj).map(function (key) {
@@ -7106,7 +7599,7 @@ webpackJsonp([3],[
 	            data.state = oauthData.state;
 	        }
 	        var exchangeForTokenUrl = this.config.baseUrl ? joinUrl(this.config.baseUrl, this.defaults.url) : this.defaults.url;
-	        return this.http.post(exchangeForTokenUrl, JSON.stringify(data));
+	        return this.http.post(exchangeForTokenUrl, JSON.stringify(data), { withCredentials: this.config.withCredentials });
 	    };
 	    Oauth2.prototype.buildQueryString = function () {
 	        var _this = this;
@@ -7165,11 +7658,10 @@ webpackJsonp([3],[
 	        var _this = this;
 	        var provider = this.config.providers[name].type === '1.0' ? this.injector.get(Oauth1) : this.injector.get(Oauth2);
 	        return provider.open(this.config.providers[name], userData || {})
-	            .map(function (response) {
+	            .do(function (response) {
 	            if (_this.config.providers[name].url) {
 	                _this.shared.setToken(response);
 	            }
-	            return response;
 	        });
 	    };
 	    Oauth.prototype.unlink = function (provider, opts) {
@@ -7334,10 +7826,12 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -7345,14 +7839,176 @@ webpackJsonp([3],[
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// RTL
-	__export(__webpack_require__(261));
+	__export(__webpack_require__(266));
 	// Portals
-	__export(__webpack_require__(160));
-	__export(__webpack_require__(440));
-	//# sourceMappingURL=core.js.map
+	__export(__webpack_require__(114));
+	__export(__webpack_require__(264));
+	// Gestures
+	__export(__webpack_require__(447));
+	__export(__webpack_require__(448));
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/core.js.map
 
 /***/ },
-/* 436 */
+/* 446 */
+/***/ function(module, exports) {
+
+	// TODO(kara): Revisit why error messages are not being properly set.
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * Wrapper around Error that sets the error message.
+	 */
+	var MdError = (function (_super) {
+	    __extends(MdError, _super);
+	    function MdError(value) {
+	        _super.call(this);
+	        _super.prototype.message = value;
+	    }
+	    return MdError;
+	}(Error));
+	exports.MdError = MdError;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/errors/error.js.map
+
+/***/ },
+/* 447 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(1);
+	var platform_browser_1 = __webpack_require__(137);
+	/* Adjusts configuration of our gesture library, Hammer. */
+	var MdGestureConfig = (function (_super) {
+	    __extends(MdGestureConfig, _super);
+	    function MdGestureConfig() {
+	        _super.apply(this, arguments);
+	        /* List of new event names to add to the gesture support list */
+	        this.events = [
+	            'drag',
+	            'dragstart',
+	            'dragend',
+	            'dragright',
+	            'dragleft',
+	            'longpress',
+	        ];
+	    }
+	    /*
+	     * Builds Hammer instance manually to add custom recognizers that match the Material Design spec.
+	     *
+	     * Our gesture names come from the Material Design gestures spec:
+	     * https://www.google.com/design/spec/patterns/gestures.html#gestures-touch-mechanics
+	     *
+	     * More information on default recognizers can be found in Hammer docs:
+	     * http://hammerjs.github.io/recognizer-pan/
+	     * http://hammerjs.github.io/recognizer-press/
+	     *
+	     * TODO: Confirm threshold numbers with Material Design UX Team
+	     * */
+	    MdGestureConfig.prototype.buildHammer = function (element) {
+	        var mc = new Hammer(element);
+	        // create custom gesture recognizers
+	        var drag = new Hammer.Pan({ event: 'drag', threshold: 6 });
+	        var longpress = new Hammer.Press({ event: 'longpress', time: 500 });
+	        // ensure custom recognizers can coexist with the default gestures (i.e. pan, press, swipe)
+	        var pan = new Hammer.Pan();
+	        var press = new Hammer.Press();
+	        var swipe = new Hammer.Swipe();
+	        drag.recognizeWith(pan);
+	        drag.recognizeWith(swipe);
+	        pan.recognizeWith(swipe);
+	        longpress.recognizeWith(press);
+	        // add customized gestures to Hammer manager
+	        mc.add([drag, pan, swipe, press, longpress]);
+	        return mc;
+	    };
+	    MdGestureConfig = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [])
+	    ], MdGestureConfig);
+	    return MdGestureConfig;
+	}(platform_browser_1.HammerGestureConfig));
+	exports.MdGestureConfig = MdGestureConfig;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/gestures/MdGestureConfig.js.map
+
+/***/ },
+/* 448 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(1);
+	/**
+	 * Shared directive to count lines inside a text area, such as a list item.
+	 * Line elements can be extracted with a @ContentChildren(MdLine) query, then
+	 * counted by checking the query list's length.
+	 */
+	var MdLine = (function () {
+	    function MdLine() {
+	    }
+	    MdLine = __decorate([
+	        core_1.Directive({ selector: '[md-line]' }), 
+	        __metadata('design:paramtypes', [])
+	    ], MdLine);
+	    return MdLine;
+	}());
+	exports.MdLine = MdLine;
+	/* Helper that takes a query list of lines and sets the correct class on the host */
+	var MdLineSetter = (function () {
+	    function MdLineSetter(_lines, _renderer, _element) {
+	        var _this = this;
+	        this._lines = _lines;
+	        this._renderer = _renderer;
+	        this._element = _element;
+	        this._setLineClass(this._lines.length);
+	        this._lines.changes.subscribe(function () {
+	            _this._setLineClass(_this._lines.length);
+	        });
+	    }
+	    MdLineSetter.prototype._setLineClass = function (count) {
+	        this._resetClasses();
+	        if (count === 2 || count === 3) {
+	            this._setClass("md-" + count + "-line", true);
+	        }
+	    };
+	    MdLineSetter.prototype._resetClasses = function () {
+	        this._setClass('md-2-line', false);
+	        this._setClass('md-3-line', false);
+	    };
+	    MdLineSetter.prototype._setClass = function (className, bool) {
+	        this._renderer.setElementClass(this._element.nativeElement, className, bool);
+	    };
+	    return MdLineSetter;
+	}());
+	exports.MdLineSetter = MdLineSetter;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/line/line.js.map
+
+/***/ },
+/* 449 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -7367,13 +8023,295 @@ webpackJsonp([3],[
 	    return container;
 	}
 	exports.createOverlayContainer = createOverlayContainer;
-	//# sourceMappingURL=overlay-container.js.map
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/overlay-container.js.map
 
 /***/ },
-/* 437 */
-/***/ function(module, exports) {
+/* 450 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(1);
+	var overlay_1 = __webpack_require__(162);
+	var portal_1 = __webpack_require__(114);
+	var overlay_state_1 = __webpack_require__(161);
+	var connected_position_1 = __webpack_require__(261);
+	/** Default set of positions for the overlay. Follows the behavior of a dropdown. */
+	var defaultPositionList = [
+	    new connected_position_1.ConnectionPositionPair({ originX: 'start', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' }),
+	    new connected_position_1.ConnectionPositionPair({ originX: 'start', originY: 'top' }, { overlayX: 'start', overlayY: 'bottom' }),
+	];
+	/**
+	 * Directive to facilitate declarative creation of an Overlay using a ConnectedPositionStrategy.
+	 */
+	var ConnectedOverlayDirective = (function () {
+	    // TODO(jelbourn): inputs for size, scroll behavior, animation, etc.
+	    function ConnectedOverlayDirective(_overlay, templateRef, viewContainerRef) {
+	        this._overlay = _overlay;
+	        this._templatePortal = new portal_1.TemplatePortal(templateRef, viewContainerRef);
+	    }
+	    Object.defineProperty(ConnectedOverlayDirective.prototype, "overlayRef", {
+	        get: function () {
+	            return this._overlayRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /** TODO: internal */
+	    ConnectedOverlayDirective.prototype.ngOnInit = function () {
+	        this._createOverlay();
+	    };
+	    /** TODO: internal */
+	    ConnectedOverlayDirective.prototype.ngOnDestroy = function () {
+	        this._destroyOverlay();
+	    };
+	    /** Creates an overlay and attaches this directive's template to it. */
+	    ConnectedOverlayDirective.prototype._createOverlay = function () {
+	        var _this = this;
+	        if (!this.positions || !this.positions.length) {
+	            this.positions = defaultPositionList;
+	        }
+	        var overlayConfig = new overlay_state_1.OverlayState();
+	        overlayConfig.positionStrategy =
+	            this._overlay.position().connectedTo(this.origin.elementRef, { originX: this.positions[0].overlayX, originY: this.positions[0].originY }, { overlayX: this.positions[0].overlayX, overlayY: this.positions[0].overlayY });
+	        this._overlay.create(overlayConfig).then(function (ref) {
+	            _this._overlayRef = ref;
+	            _this._overlayRef.attach(_this._templatePortal);
+	        });
+	    };
+	    /** Destroys the overlay created by this directive. */
+	    ConnectedOverlayDirective.prototype._destroyOverlay = function () {
+	        this._overlayRef.dispose();
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', OverlayOrigin)
+	    ], ConnectedOverlayDirective.prototype, "origin", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Array)
+	    ], ConnectedOverlayDirective.prototype, "positions", void 0);
+	    ConnectedOverlayDirective = __decorate([
+	        core_1.Directive({
+	            selector: '[connected-overlay]'
+	        }), 
+	        __metadata('design:paramtypes', [overlay_1.Overlay, core_1.TemplateRef, core_1.ViewContainerRef])
+	    ], ConnectedOverlayDirective);
+	    return ConnectedOverlayDirective;
+	}());
+	exports.ConnectedOverlayDirective = ConnectedOverlayDirective;
+	/**
+	 * Directive applied to an element to make it usable as an origin for an Overlay using a
+	 * ConnectedPositionStrategy.
+	 */
+	var OverlayOrigin = (function () {
+	    function OverlayOrigin(_elementRef) {
+	        this._elementRef = _elementRef;
+	    }
+	    Object.defineProperty(OverlayOrigin.prototype, "elementRef", {
+	        get: function () {
+	            return this._elementRef;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    OverlayOrigin = __decorate([
+	        core_1.Directive({
+	            selector: '[overlay-origin]',
+	            exportAs: 'overlayOrigin',
+	        }), 
+	        __metadata('design:paramtypes', [core_1.ElementRef])
+	    ], OverlayOrigin);
+	    return OverlayOrigin;
+	}());
+	exports.OverlayOrigin = OverlayOrigin;
+	exports.OVERLAY_DIRECTIVES = [ConnectedOverlayDirective, OverlayOrigin];
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/overlay-directives.js.map
+
+/***/ },
+/* 451 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var apply_transform_1 = __webpack_require__(267);
+	var connected_position_1 = __webpack_require__(261);
+	/**
+	 * A strategy for positioning overlays. Using this strategy, an overlay is given an
+	 * implict position relative some origin element. The relative position is defined in terms of
+	 * a point on the origin element that is connected to a point on the overlay element. For example,
+	 * a basic dropdown is connecting the bottom-left corner of the origin to the top-left corner
+	 * of the overlay.
+	 */
+	var ConnectedPositionStrategy = (function () {
+	    function ConnectedPositionStrategy(_connectedTo, _originPos, _overlayPos, _viewportRuler) {
+	        this._connectedTo = _connectedTo;
+	        this._originPos = _originPos;
+	        this._overlayPos = _overlayPos;
+	        this._viewportRuler = _viewportRuler;
+	        // TODO(jelbourn): set RTL to the actual value from the app.
+	        /** Whether the we're dealing with an RTL context */
+	        this._isRtl = false;
+	        /** Ordered list of preferred positions, from most to least desirable. */
+	        this._preferredPositions = [];
+	        this._origin = this._connectedTo.nativeElement;
+	        this.withFallbackPosition(_originPos, _overlayPos);
+	    }
+	    Object.defineProperty(ConnectedPositionStrategy.prototype, "positions", {
+	        get: function () {
+	            return this._preferredPositions;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    /**
+	     * Updates the position of the overlay element, using whichever preferred position relative
+	     * to the origin fits on-screen.
+	     * TODO: internal
+	     */
+	    ConnectedPositionStrategy.prototype.apply = function (element) {
+	        // We need the bounding rects for the origin and the overlay to determine how to position
+	        // the overlay relative to the origin.
+	        var originRect = this._origin.getBoundingClientRect();
+	        var overlayRect = element.getBoundingClientRect();
+	        // We use the viewport rect to determine whether a position would go off-screen.
+	        var viewportRect = this._viewportRuler.getViewportRect();
+	        var firstOverlayPoint = null;
+	        // We want to place the overlay in the first of the preferred positions such that the
+	        // overlay fits on-screen.
+	        for (var _i = 0, _a = this._preferredPositions; _i < _a.length; _i++) {
+	            var pos = _a[_i];
+	            // Get the (x, y) point of connection on the origin, and then use that to get the
+	            // (top, left) coordinate for the overlay at `pos`.
+	            var originPoint = this._getOriginConnectionPoint(originRect, pos);
+	            var overlayPoint = this._getOverlayPoint(originPoint, overlayRect, pos);
+	            firstOverlayPoint = firstOverlayPoint || overlayPoint;
+	            // If the overlay in the calculated position fits on-screen, put it there and we're done.
+	            if (this._willOverlayFitWithinViewport(overlayPoint, overlayRect, viewportRect)) {
+	                this._setElementPosition(element, overlayPoint);
+	                return Promise.resolve();
+	            }
+	        }
+	        // TODO(jelbourn): fallback behavior for when none of the preferred positions fit on-screen.
+	        // For now, just stick it in the first position and let it go off-screen.
+	        this._setElementPosition(element, firstOverlayPoint);
+	        return Promise.resolve();
+	    };
+	    ConnectedPositionStrategy.prototype.withFallbackPosition = function (originPos, overlayPos) {
+	        this._preferredPositions.push(new connected_position_1.ConnectionPositionPair(originPos, overlayPos));
+	        return this;
+	    };
+	    /**
+	     * Gets the horizontal (x) "start" dimension based on whether the overlay is in an RTL context.
+	     * @param rect
+	     */
+	    ConnectedPositionStrategy.prototype._getStartX = function (rect) {
+	        return this._isRtl ? rect.right : rect.left;
+	    };
+	    /**
+	     * Gets the horizontal (x) "end" dimension based on whether the overlay is in an RTL context.
+	     * @param rect
+	     */
+	    ConnectedPositionStrategy.prototype._getEndX = function (rect) {
+	        return this._isRtl ? rect.left : rect.right;
+	    };
+	    /**
+	     * Gets the (x, y) coordinate of a connection point on the origin based on a relative position.
+	     * @param originRect
+	     * @param pos
+	     */
+	    ConnectedPositionStrategy.prototype._getOriginConnectionPoint = function (originRect, pos) {
+	        var originStartX = this._getStartX(originRect);
+	        var originEndX = this._getEndX(originRect);
+	        var x;
+	        if (pos.originX == 'center') {
+	            x = originStartX + (originRect.width / 2);
+	        }
+	        else {
+	            x = pos.originX == 'start' ? originStartX : originEndX;
+	        }
+	        var y;
+	        if (pos.originY == 'center') {
+	            y = originRect.top + (originRect.height / 2);
+	        }
+	        else {
+	            y = pos.originY == 'top' ? originRect.top : originRect.bottom;
+	        }
+	        return { x: x, y: y };
+	    };
+	    /**
+	     * Gets the (x, y) coordinate of the top-left corner of the overlay given a given position and
+	     * origin point to which the overlay should be connected.
+	     * @param originPoint
+	     * @param overlayRect
+	     * @param pos
+	     */
+	    ConnectedPositionStrategy.prototype._getOverlayPoint = function (originPoint, overlayRect, pos) {
+	        // Calculate the (overlayStartX, overlayStartY), the start of the potential overlay position
+	        // relative to the origin point.
+	        var overlayStartX;
+	        if (pos.overlayX == 'center') {
+	            overlayStartX = -overlayRect.width / 2;
+	        }
+	        else {
+	            overlayStartX = pos.overlayX == 'start' ? 0 : -overlayRect.width;
+	        }
+	        var overlayStartY;
+	        if (pos.overlayY == 'center') {
+	            overlayStartY = -overlayRect.height / 2;
+	        }
+	        else {
+	            overlayStartY = pos.overlayY == 'top' ? 0 : -overlayRect.height;
+	        }
+	        return {
+	            x: originPoint.x + overlayStartX,
+	            y: originPoint.y + overlayStartY
+	        };
+	    };
+	    /**
+	     * Gets whether the overlay positioned at the given point will fit on-screen.
+	     * @param overlayPoint The top-left coordinate of the overlay.
+	     * @param overlayRect Bounding rect of the overlay, used to get its size.
+	     * @param viewportRect The bounding viewport.
+	     */
+	    ConnectedPositionStrategy.prototype._willOverlayFitWithinViewport = function (overlayPoint, overlayRect, viewportRect) {
+	        // TODO(jelbourn): probably also want some space between overlay edge and viewport edge.
+	        return overlayPoint.x >= viewportRect.left &&
+	            overlayPoint.x + overlayRect.width <= viewportRect.right &&
+	            overlayPoint.y >= viewportRect.top &&
+	            overlayPoint.y + overlayRect.height <= viewportRect.bottom;
+	    };
+	    /**
+	     * Physically positions the overlay element to the given coordinate.
+	     * @param element
+	     * @param overlayPoint
+	     */
+	    ConnectedPositionStrategy.prototype._setElementPosition = function (element, overlayPoint) {
+	        var scrollPos = this._viewportRuler.getViewportScrollPosition();
+	        var x = overlayPoint.x + scrollPos.left;
+	        var y = overlayPoint.y + scrollPos.top;
+	        // TODO(jelbourn): we don't want to always overwrite the transform property here,
+	        // because it will need to be used for animations.
+	        apply_transform_1.applyCssTransform(element, "translateX(" + x + "px) translateY(" + y + "px)");
+	    };
+	    return ConnectedPositionStrategy;
+	}());
+	exports.ConnectedPositionStrategy = ConnectedPositionStrategy;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/position/connected-position-strategy.js.map
+
+/***/ },
+/* 452 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var apply_transform_1 = __webpack_require__(267);
 	/**
 	 * A strategy for positioning overlays. Using this strategy, an overlay is given an
 	 * explicit position relative to the browser's viewport.
@@ -7450,7 +8388,10 @@ webpackJsonp([3],[
 	        this._translateY = ['-50%', offset];
 	        return this;
 	    };
-	    /** Apply the position to the element. */
+	    /**
+	     * Apply the position to the element.
+	     * TODO: internal
+	     */
 	    GlobalPositionStrategy.prototype.apply = function (element) {
 	        element.style.position = this._cssPosition;
 	        element.style.top = this._top;
@@ -7461,9 +8402,7 @@ webpackJsonp([3],[
 	        // because it will need to be used for animations.
 	        var tranlateX = this._reduceTranslateValues('translateX', this._translateX);
 	        var translateY = this._reduceTranslateValues('translateY', this._translateY);
-	        // It's important to trim the result, because the browser will ignore the set operation
-	        // if the string contains only whitespace.
-	        element.style.transform = (tranlateX + " " + translateY).trim();
+	        apply_transform_1.applyCssTransform(element, tranlateX + " " + translateY);
 	        return Promise.resolve();
 	    };
 	    /** Reduce a list of translate values to a string that can be used in the transform property */
@@ -7473,99 +8412,13 @@ webpackJsonp([3],[
 	    return GlobalPositionStrategy;
 	}());
 	exports.GlobalPositionStrategy = GlobalPositionStrategy;
-	//# sourceMappingURL=global-position-strategy.js.map
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/position/global-position-strategy.js.map
 
 /***/ },
-/* 438 */
-/***/ function(module, exports) {
-
-	"use strict";
-	var RelativePositionStrategy = (function () {
-	    function RelativePositionStrategy(_relativeTo) {
-	        this._relativeTo = _relativeTo;
-	    }
-	    RelativePositionStrategy.prototype.apply = function (element) {
-	        // Not yet implemented.
-	        return null;
-	    };
-	    return RelativePositionStrategy;
-	}());
-	exports.RelativePositionStrategy = RelativePositionStrategy;
-	//# sourceMappingURL=relative-position-strategy.js.map
-
-/***/ },
-/* 439 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
-	var portal_1 = __webpack_require__(160);
-	var portal_errors_1 = __webpack_require__(260);
-	/**
-	 * A PortalHost for attaching portals to an arbitrary DOM element outside of the Angular
-	 * application context.
-	 *
-	 * This is the only part of the portal core that directly touches the DOM.
-	 */
-	var DomPortalHost = (function (_super) {
-	    __extends(DomPortalHost, _super);
-	    function DomPortalHost(_hostDomElement, _componentLoader) {
-	        _super.call(this);
-	        this._hostDomElement = _hostDomElement;
-	        this._componentLoader = _componentLoader;
-	    }
-	    /** Attach the given ComponentPortal to DOM element using the DynamicComponentLoader. */
-	    DomPortalHost.prototype.attachComponentPortal = function (portal) {
-	        var _this = this;
-	        if (portal.viewContainerRef == null) {
-	            throw new portal_errors_1.MdComponentPortalAttachedToDomWithoutOriginError();
-	        }
-	        return this._componentLoader.loadNextToLocation(portal.component, portal.viewContainerRef).then(function (ref) {
-	            var hostView = ref.hostView;
-	            _this._hostDomElement.appendChild(hostView.rootNodes[0]);
-	            _this.setDisposeFn(function () { return ref.destroy(); });
-	            return ref;
-	        });
-	    };
-	    DomPortalHost.prototype.attachTemplatePortal = function (portal) {
-	        var _this = this;
-	        var viewContainer = portal.viewContainerRef;
-	        var viewRef = viewContainer.createEmbeddedView(portal.templateRef);
-	        viewRef.rootNodes.forEach(function (rootNode) { return _this._hostDomElement.appendChild(rootNode); });
-	        this.setDisposeFn((function () {
-	            var index = viewContainer.indexOf(viewRef);
-	            if (index != -1) {
-	                viewContainer.remove(index);
-	            }
-	        }));
-	        // TODO(jelbourn): Return locals from view.
-	        return Promise.resolve(new Map());
-	    };
-	    DomPortalHost.prototype.dispose = function () {
-	        _super.prototype.dispose.call(this);
-	        if (this._hostDomElement.parentNode != null) {
-	            this._hostDomElement.parentNode.removeChild(this._hostDomElement);
-	        }
-	    };
-	    return DomPortalHost;
-	}(portal_1.BasePortalHost));
-	exports.DomPortalHost = DomPortalHost;
-	//# sourceMappingURL=dom-portal-host.js.map
-
-/***/ },
-/* 440 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __extends = (this && this.__extends) || function (d, b) {
-	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-	    function __() { this.constructor = d; }
-	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-	};
 	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7575,118 +8428,33 @@ webpackJsonp([3],[
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
+	var viewport_ruler_1 = __webpack_require__(262);
+	var connected_position_strategy_1 = __webpack_require__(451);
 	var core_1 = __webpack_require__(1);
-	var portal_1 = __webpack_require__(160);
-	/**
-	 * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
-	 * the directive instance itself can be attached to a host, enabling declarative use of portals.
-	 *
-	 * Usage:
-	 * <template portal #greeting>
-	 *   <p> Hello {{name}} </p>
-	 * </template>
-	 */
-	var TemplatePortalDirective = (function (_super) {
-	    __extends(TemplatePortalDirective, _super);
-	    function TemplatePortalDirective(templateRef, viewContainerRef) {
-	        _super.call(this, templateRef, viewContainerRef);
+	var global_position_strategy_1 = __webpack_require__(452);
+	/** Builder for overlay position strategy. */
+	var OverlayPositionBuilder = (function () {
+	    function OverlayPositionBuilder(_viewportRuler) {
+	        this._viewportRuler = _viewportRuler;
 	    }
-	    TemplatePortalDirective = __decorate([
-	        core_1.Directive({
-	            selector: '[portal]',
-	            exportAs: 'portal',
-	        }), 
-	        __metadata('design:paramtypes', [core_1.TemplateRef, core_1.ViewContainerRef])
-	    ], TemplatePortalDirective);
-	    return TemplatePortalDirective;
-	}(portal_1.TemplatePortal));
-	exports.TemplatePortalDirective = TemplatePortalDirective;
-	/**
-	 * Directive version of a PortalHost. Because the directive *is* a PortalHost, portals can be
-	 * directly attached to it, enabling declarative use.
-	 *
-	 * Usage:
-	 * <template [portalHost]="greeting"></template>
-	 */
-	var PortalHostDirective = (function (_super) {
-	    __extends(PortalHostDirective, _super);
-	    function PortalHostDirective(_dynamicComponentLoader, _viewContainerRef) {
-	        _super.call(this);
-	        this._dynamicComponentLoader = _dynamicComponentLoader;
-	        this._viewContainerRef = _viewContainerRef;
-	    }
-	    Object.defineProperty(PortalHostDirective.prototype, "portal", {
-	        get: function () {
-	            return this._portal;
-	        },
-	        set: function (p) {
-	            this._replaceAttachedPortal(p);
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    /** Attach the given ComponentPortal to this PortlHost using the DynamicComponentLoader. */
-	    PortalHostDirective.prototype.attachComponentPortal = function (portal) {
-	        var _this = this;
-	        portal.setAttachedHost(this);
-	        // If the portal specifies an origin, use that as the logical location of the component
-	        // in the application tree. Otherwise use the location of this PortalHost.
-	        var viewContainerRef = portal.viewContainerRef != null ?
-	            portal.viewContainerRef :
-	            this._viewContainerRef;
-	        // Typecast is necessary for Dart transpilation.
-	        return this._dynamicComponentLoader.loadNextToLocation(portal.component, viewContainerRef)
-	            .then(function (ref) {
-	            _this.setDisposeFn(function () { return ref.destroy(); });
-	            return ref;
-	        });
+	    /** Creates a global position strategy. */
+	    OverlayPositionBuilder.prototype.global = function () {
+	        return new global_position_strategy_1.GlobalPositionStrategy();
 	    };
-	    /** Attach the given TemplatePortal to this PortlHost as an embedded View. */
-	    PortalHostDirective.prototype.attachTemplatePortal = function (portal) {
-	        var _this = this;
-	        portal.setAttachedHost(this);
-	        this._viewContainerRef.createEmbeddedView(portal.templateRef);
-	        this.setDisposeFn(function () { return _this._viewContainerRef.clear(); });
-	        // TODO(jelbourn): return locals from view
-	        return Promise.resolve(new Map());
+	    /** Creates a relative position strategy. */
+	    OverlayPositionBuilder.prototype.connectedTo = function (elementRef, originPos, overlayPos) {
+	        return new connected_position_strategy_1.ConnectedPositionStrategy(elementRef, originPos, overlayPos, this._viewportRuler);
 	    };
-	    /** Detatches the currently attached Portal (if there is one) and attaches the given Portal. */
-	    PortalHostDirective.prototype._replaceAttachedPortal = function (p) {
-	        var _this = this;
-	        var maybeDetach = this.hasAttached() ? this.detach() : Promise.resolve();
-	        maybeDetach.then(function () {
-	            if (p != null) {
-	                _this.attach(p);
-	                _this._portal = p;
-	            }
-	        });
-	    };
-	    PortalHostDirective = __decorate([
-	        core_1.Directive({
-	            selector: '[portalHost]',
-	            inputs: ['portal: portalHost']
-	        }), 
-	        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_1.ViewContainerRef])
-	    ], PortalHostDirective);
-	    return PortalHostDirective;
-	}(portal_1.BasePortalHost));
-	exports.PortalHostDirective = PortalHostDirective;
-	//# sourceMappingURL=portal-directives.js.map
+	    OverlayPositionBuilder = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [viewport_ruler_1.ViewportRuler])
+	    ], OverlayPositionBuilder);
+	    return OverlayPositionBuilder;
+	}());
+	exports.OverlayPositionBuilder = OverlayPositionBuilder;
+	//# sourceMappingURL=/usr/local/google/home/jelbourn/material2/tmp/broccoli_type_script_compiler-input_base_path-OxHzApZr.tmp/0/core/overlay/position/overlay-position-builder.js.map
 
 /***/ },
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */,
-/* 453 */,
 /* 454 */,
 /* 455 */,
 /* 456 */,
@@ -7759,7 +8527,20 @@ webpackJsonp([3],[
 /* 523 */,
 /* 524 */,
 /* 525 */,
-/* 526 */
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -7769,40 +8550,40 @@ webpackJsonp([3],[
 	//import {Router} from '@angular/router';
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var ng2_material_1 = __webpack_require__(73);
-	var app_service_1 = __webpack_require__(140);
-	var router_active_directive_1 = __webpack_require__(557);
+	var ng2_material_1 = __webpack_require__(72);
+	var app_service_1 = __webpack_require__(142);
+	var router_active_directive_1 = __webpack_require__(570);
 	var core_3 = __webpack_require__(27);
-	var auth_service_1 = __webpack_require__(555);
-	var home_1 = __webpack_require__(537);
-	var shop_component_1 = __webpack_require__(563);
-	var add_component_1 = __webpack_require__(558);
-	var list_component_1 = __webpack_require__(560);
-	var search_component_1 = __webpack_require__(562);
-	var md_dropdown_component_1 = __webpack_require__(531);
-	var test_1 = __webpack_require__(564);
-	var signin_component_1 = __webpack_require__(527);
-	var signup_component_1 = __webpack_require__(528);
-	var material2_app_component_1 = __webpack_require__(541);
+	var auth_service_1 = __webpack_require__(568);
+	var home_1 = __webpack_require__(550);
+	var shop_component_1 = __webpack_require__(576);
+	var add_component_1 = __webpack_require__(571);
+	var list_component_1 = __webpack_require__(573);
+	var search_component_1 = __webpack_require__(575);
+	var md_dropdown_component_1 = __webpack_require__(544);
+	var test_1 = __webpack_require__(577);
+	var signin_component_1 = __webpack_require__(540);
+	var signup_component_1 = __webpack_require__(541);
+	var material2_app_component_1 = __webpack_require__(554);
 	//import {Product} from './product/product.component';
 	//import {Products} from './product/products.component';
 	///import {PrdRoot} from './prd/prd-root.component';
 	//import {Shop} from './shop/shop.component';
 	// Import Products component
-	var products_component_1 = __webpack_require__(550);
-	var product_component_1 = __webpack_require__(547);
-	var add_component_2 = __webpack_require__(542);
-	var list_component_2 = __webpack_require__(545);
-	var plist_component_1 = __webpack_require__(546);
-	var list_component_3 = __webpack_require__(530);
-	var details_component_1 = __webpack_require__(543);
-	var shared_service_1 = __webpack_require__(222);
+	var products_component_1 = __webpack_require__(563);
+	var product_component_1 = __webpack_require__(560);
+	var add_component_2 = __webpack_require__(555);
+	var list_component_2 = __webpack_require__(558);
+	var plist_component_1 = __webpack_require__(559);
+	var list_component_3 = __webpack_require__(543);
+	var details_component_1 = __webpack_require__(556);
+	var shared_service_1 = __webpack_require__(223);
 	var user_service_1 = __webpack_require__(23);
-	var file_upload_1 = __webpack_require__(533);
-	var demo_1 = __webpack_require__(532);
-	var map_auto_1 = __webpack_require__(356);
-	var avatar_component_1 = __webpack_require__(553);
-	var profile_component_1 = __webpack_require__(554);
+	var file_upload_1 = __webpack_require__(546);
+	var demo_1 = __webpack_require__(545);
+	var map_auto_1 = __webpack_require__(362);
+	var avatar_component_1 = __webpack_require__(566);
+	var profile_component_1 = __webpack_require__(567);
 	/*
 	 * App Component
 	 */
@@ -7959,9 +8740,9 @@ webpackJsonp([3],[
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n    }\n  "],
 	            // Load our main `Sass` file into our `app` `component`
-	            styleUrls: [__webpack_require__(821)],
+	            styleUrls: [__webpack_require__(847)],
 	            //template: require('./app.side.nav.html')
-	            template: __webpack_require__(571)
+	            template: __webpack_require__(584)
 	        }),
 	        router_deprecated_1.RouteConfig([
 	            { path: '/', name: 'Index', component: home_1.Home, useAsDefault: true },
@@ -7989,7 +8770,7 @@ webpackJsonp([3],[
 	            { path: '/plist/:shopid', component: plist_component_1.PList, name: 'PList' },
 	            { path: '/productdetails/:id', component: details_component_1.ProductDetails, name: 'ProductDetails' },
 	            // Async load
-	            { path: '/about', name: 'About', loader: function () { return __webpack_require__(570)('About'); } },
+	            { path: '/about', name: 'About', loader: function () { return __webpack_require__(583)('About'); } },
 	        ]), 
 	        __metadata('design:paramtypes', [app_service_1.AppState, auth_service_1.AuthService, shared_service_1.SharedService, user_service_1.UserService])
 	    ], App);
@@ -7999,7 +8780,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 527 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8009,13 +8790,13 @@ webpackJsonp([3],[
 	var common_1 = __webpack_require__(7);
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var button_1 = __webpack_require__(74);
+	var button_1 = __webpack_require__(73);
 	var checkbox_1 = __webpack_require__(59);
 	var progress_bar_1 = __webpack_require__(102);
-	var card_1 = __webpack_require__(75);
-	var input_1 = __webpack_require__(76);
+	var card_1 = __webpack_require__(74);
+	var input_1 = __webpack_require__(75);
 	var user_service_1 = __webpack_require__(23);
-	var ng2_ui_auth_1 = __webpack_require__(431);
+	var ng2_ui_auth_1 = __webpack_require__(439);
 	var Signin = (function () {
 	    function Signin(auth, u, router) {
 	        //super();
@@ -8063,7 +8844,7 @@ webpackJsonp([3],[
 	    Signin = __decorate([
 	        core_1.Component({
 	            selector: 'signin',
-	            template: __webpack_require__(572),
+	            template: __webpack_require__(585),
 	            //  providers: [Router],
 	            directives: [
 	                sidenav_1.MD_SIDENAV_DIRECTIVES,
@@ -8083,7 +8864,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 528 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8096,14 +8877,14 @@ webpackJsonp([3],[
 	//import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var button_1 = __webpack_require__(74);
+	var button_1 = __webpack_require__(73);
 	var checkbox_1 = __webpack_require__(59);
 	//import {MdRadioButton} from '@angular2-material/radio';
 	//import {MdRadioDispatcher} from '@angular2-material/radio/radio_dispatcher';
 	//import {MdSpinner} from '@angular2-material/progress-circle';
 	var progress_bar_1 = __webpack_require__(102);
-	var card_1 = __webpack_require__(75);
-	var input_1 = __webpack_require__(76);
+	var card_1 = __webpack_require__(74);
+	var input_1 = __webpack_require__(75);
 	//import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 	var user_service_1 = __webpack_require__(23);
 	var Signup = (function () {
@@ -8159,7 +8940,7 @@ webpackJsonp([3],[
 	    Signup = __decorate([
 	        core_1.Component({
 	            selector: 'signup',
-	            template: __webpack_require__(573),
+	            template: __webpack_require__(586),
 	            directives: [
 	                sidenav_1.MD_SIDENAV_DIRECTIVES,
 	                card_1.MD_CARD_DIRECTIVES,
@@ -8181,7 +8962,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 529 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8229,7 +9010,7 @@ webpackJsonp([3],[
 	            ],
 	            pipes: [],
 	            styles: [],
-	            template: __webpack_require__(574)
+	            template: __webpack_require__(587)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], CartLine);
@@ -8239,7 +9020,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 530 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8252,12 +9033,12 @@ webpackJsonp([3],[
 	var user_service_1 = __webpack_require__(23);
 	var core_2 = __webpack_require__(27);
 	var core_3 = __webpack_require__(27);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	//import {Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, RouteParams} from
 	//'@angular/router';
 	var router_deprecated_1 = __webpack_require__(34);
 	var common_1 = __webpack_require__(7);
-	var line_component_1 = __webpack_require__(529);
+	var line_component_1 = __webpack_require__(542);
 	// Create metadata with the `@Component` decorator
 	var CartList = (function () {
 	    function CartList(params, productService, shopService, u) {
@@ -8318,7 +9099,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 200px;\n    }\n  "],
-	            template: __webpack_require__(575)
+	            template: __webpack_require__(588)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, product_service_1.ProductService, shop_service_1.ShopService, user_service_1.UserService])
 	    ], CartList);
@@ -8328,7 +9109,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 531 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8379,8 +9160,8 @@ webpackJsonp([3],[
 	        core_1.Component({
 	            moduleId: module.id,
 	            selector: 'md-dropdown',
-	            template: __webpack_require__(579),
-	            styles: [__webpack_require__(578)],
+	            template: __webpack_require__(592),
+	            styles: [__webpack_require__(591)],
 	            pipes: [filterItemsPipe]
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -8391,13 +9172,13 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 532 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	// webpack html imports
-	var template = __webpack_require__(580);
+	var template = __webpack_require__(593);
 	var Demo = (function () {
 	    function Demo() {
 	    }
@@ -8415,15 +9196,15 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 533 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	var common_1 = __webpack_require__(7);
-	var ng2_file_upload_1 = __webpack_require__(811);
+	var ng2_file_upload_1 = __webpack_require__(837);
 	// webpack html imports
-	var template = __webpack_require__(581);
+	var template = __webpack_require__(594);
 	var URL = '/api/upload';
 	// const URL = 'http://localhost:8080/api/upload';
 	var FileUpload = (function () {
@@ -8452,18 +9233,18 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 534 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(535));
+	__export(__webpack_require__(548));
 	
 
 /***/ },
-/* 535 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8492,16 +9273,16 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 536 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var app_service_1 = __webpack_require__(140);
-	var title_1 = __webpack_require__(538);
-	var x_large_1 = __webpack_require__(534);
-	var accordion_component_1 = __webpack_require__(358);
-	var accordion_group_component_1 = __webpack_require__(556);
+	var app_service_1 = __webpack_require__(142);
+	var title_1 = __webpack_require__(551);
+	var x_large_1 = __webpack_require__(547);
+	var accordion_component_1 = __webpack_require__(364);
+	var accordion_group_component_1 = __webpack_require__(569);
 	// Import NgFor directive
 	var common_1 = __webpack_require__(7);
 	var Home = (function () {
@@ -8556,9 +9337,9 @@ webpackJsonp([3],[
 	            // We need to tell Angular's compiler which custom pipes are in our template.
 	            pipes: [],
 	            // Our list of styles in our component. We may add more to compose many styles together
-	            styles: [__webpack_require__(582)],
+	            styles: [__webpack_require__(595)],
 	            // Every Angular template is first compiled by the browser before Angular runs it's compiler
-	            template: __webpack_require__(583)
+	            template: __webpack_require__(596)
 	        }), 
 	        __metadata('design:paramtypes', [app_service_1.AppState, title_1.Title])
 	    ], Home);
@@ -8568,29 +9349,29 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 537 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(536));
+	__export(__webpack_require__(549));
 	
 
 /***/ },
-/* 538 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(539));
+	__export(__webpack_require__(552));
 	
 
 /***/ },
-/* 539 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8619,7 +9400,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 540 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8627,9 +9408,9 @@ webpackJsonp([3],[
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// App
-	__export(__webpack_require__(526));
-	__export(__webpack_require__(140));
-	var app_service_2 = __webpack_require__(140);
+	__export(__webpack_require__(539));
+	__export(__webpack_require__(142));
+	var app_service_2 = __webpack_require__(142);
 	// Application wide providers
 	exports.APP_PROVIDERS = [
 	    app_service_2.AppState
@@ -8638,11 +9419,11 @@ webpackJsonp([3],[
 	//
 	//** These `redux` `stores` are available in any template **
 	// Import module to provide an app `store` for the life-cycle of the app
-	var store_1 = __webpack_require__(228);
+	var store_1 = __webpack_require__(230);
 	// Import all of the files necessary for our `products` component
-	var product_service_1 = __webpack_require__(357);
-	var products_reducer_1 = __webpack_require__(551);
-	var selected_product_reducer_1 = __webpack_require__(552);
+	var product_service_1 = __webpack_require__(363);
+	var products_reducer_1 = __webpack_require__(564);
+	var selected_product_reducer_1 = __webpack_require__(565);
 	//# Application Redux Stores
 	//
 	//** Redux stores for use with our Angular 2 app **
@@ -8658,21 +9439,21 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 541 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var button_1 = __webpack_require__(74);
+	var button_1 = __webpack_require__(73);
 	var checkbox_1 = __webpack_require__(59);
-	var radio_1 = __webpack_require__(162);
-	var radio_dispatcher_1 = __webpack_require__(163);
-	var progress_circle_1 = __webpack_require__(161);
+	var radio_1 = __webpack_require__(164);
+	var radio_dispatcher_1 = __webpack_require__(165);
+	var progress_circle_1 = __webpack_require__(163);
 	var progress_bar_1 = __webpack_require__(102);
-	var card_1 = __webpack_require__(75);
-	var input_1 = __webpack_require__(76);
+	var card_1 = __webpack_require__(74);
+	var input_1 = __webpack_require__(75);
 	var list_1 = __webpack_require__(60);
 	//import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 	var Material2App = (function () {
@@ -8694,7 +9475,7 @@ webpackJsonp([3],[
 	            moduleId: module.id,
 	            selector: 'material2-app',
 	            //templateUrl: 'material2-app.component.html',
-	            template: __webpack_require__(584),
+	            template: __webpack_require__(597),
 	            //template: '<h1>ff</h1>',
 	            //styleUrls: ['material2-app.component.css'],
 	            providers: [radio_dispatcher_1.MdRadioDispatcher,
@@ -8720,7 +9501,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 542 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8728,7 +9509,7 @@ webpackJsonp([3],[
 	var product_service_1 = __webpack_require__(94);
 	var http_1 = __webpack_require__(21);
 	var user_service_1 = __webpack_require__(23);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	var router_deprecated_1 = __webpack_require__(34);
 	var common_1 = __webpack_require__(7);
 	var ProductAdd = (function () {
@@ -8824,7 +9605,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: [],
-	            template: __webpack_require__(585)
+	            template: __webpack_require__(598)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, router_deprecated_1.Router, product_service_1.ProductService, user_service_1.UserService])
 	    ], ProductAdd);
@@ -8834,7 +9615,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 543 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8935,7 +9716,7 @@ webpackJsonp([3],[
 	        core_1.Component({
 	            selector: 'product-details',
 	            providers: http_1.HTTP_PROVIDERS.concat([product_service_1.ProductService, shop_service_1.ShopService]),
-	            template: __webpack_require__(586)
+	            template: __webpack_require__(599)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, router_deprecated_1.Router, product_service_1.ProductService, shop_service_1.ShopService, user_service_1.UserService])
 	    ], ProductDetails);
@@ -8945,7 +9726,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 544 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8991,7 +9772,7 @@ webpackJsonp([3],[
 	            ],
 	            pipes: [],
 	            styles: [],
-	            template: __webpack_require__(587)
+	            template: __webpack_require__(600)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], ProductLine);
@@ -9001,7 +9782,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 545 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9014,7 +9795,7 @@ webpackJsonp([3],[
 	var user_service_1 = __webpack_require__(23);
 	var core_2 = __webpack_require__(27);
 	var core_3 = __webpack_require__(27);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	//import {Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, RouteParams} from
 	//'@angular/router';
 	var router_deprecated_1 = __webpack_require__(34);
@@ -9187,7 +9968,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 200px;\n    }\n  "],
-	            template: __webpack_require__(588)
+	            template: __webpack_require__(601)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, product_service_1.ProductService, shop_service_1.ShopService, user_service_1.UserService])
 	    ], ProductList);
@@ -9197,7 +9978,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 546 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9210,12 +9991,12 @@ webpackJsonp([3],[
 	var user_service_1 = __webpack_require__(23);
 	var core_2 = __webpack_require__(27);
 	var core_3 = __webpack_require__(27);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	//import {Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, RouteParams} from
 	//'@angular/router';
 	var router_deprecated_1 = __webpack_require__(34);
 	var common_1 = __webpack_require__(7);
-	var line_component_1 = __webpack_require__(544);
+	var line_component_1 = __webpack_require__(557);
 	// Create metadata with the `@Component` decorator
 	var PList = (function () {
 	    function PList(params, productService, shopService, u) {
@@ -9379,7 +10160,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 200px;\n    }\n  "],
-	            template: __webpack_require__(589)
+	            template: __webpack_require__(602)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, product_service_1.ProductService, shop_service_1.ShopService, user_service_1.UserService])
 	    ], PList);
@@ -9389,7 +10170,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 547 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9470,7 +10251,7 @@ webpackJsonp([3],[
 	            selector: 'product',
 	            // Let Angular 2 know about `Http` and `ProductService`
 	            providers: http_1.HTTP_PROVIDERS.concat([product_service_1.ProductService]),
-	            template: __webpack_require__(590)
+	            template: __webpack_require__(603)
 	        }), 
 	        __metadata('design:paramtypes', [product_service_1.ProductService, user_service_1.UserService])
 	    ], Product);
@@ -9480,7 +10261,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 548 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// ```
@@ -9614,7 +10395,7 @@ webpackJsonp([3],[
 	    ProductDetails = __decorate([
 	        core_1.Component({
 	            selector: 'product-detail',
-	            template: __webpack_require__(591),
+	            template: __webpack_require__(604),
 	            directives: []
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -9625,7 +10406,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 549 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// ```
@@ -9659,7 +10440,7 @@ webpackJsonp([3],[
 	    ProductList = __decorate([
 	        core_1.Component({
 	            selector: 'product-list',
-	            template: __webpack_require__(592),
+	            template: __webpack_require__(605),
 	            directives: []
 	        }), 
 	        __metadata('design:paramtypes', [])
@@ -9670,7 +10451,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 550 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// ```
@@ -9682,10 +10463,10 @@ webpackJsonp([3],[
 	"use strict";
 	// # Products Component
 	var core_1 = __webpack_require__(1);
-	var store_1 = __webpack_require__(228);
-	var product_service_1 = __webpack_require__(357);
-	var product_details_component_1 = __webpack_require__(548);
-	var product_list_component_1 = __webpack_require__(549);
+	var store_1 = __webpack_require__(230);
+	var product_service_1 = __webpack_require__(363);
+	var product_details_component_1 = __webpack_require__(561);
+	var product_list_component_1 = __webpack_require__(562);
 	var Products = (function () {
 	    function Products(productService, store) {
 	        this.productService = productService;
@@ -9740,7 +10521,7 @@ webpackJsonp([3],[
 	        core_1.Component({
 	            selector: 'products',
 	            providers: [],
-	            template: __webpack_require__(593),
+	            template: __webpack_require__(606),
 	            directives: [product_list_component_1.ProductList, product_details_component_1.ProductDetails],
 	            changeDetection: core_1.ChangeDetectionStrategy.OnPush
 	        }), 
@@ -9752,7 +10533,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 551 */
+/* 564 */
 /***/ function(module, exports) {
 
 	// ```
@@ -9811,7 +10592,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 552 */
+/* 565 */
 /***/ function(module, exports) {
 
 	// ```
@@ -9846,7 +10627,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 553 */
+/* 566 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9854,10 +10635,10 @@ webpackJsonp([3],[
 	var common_1 = __webpack_require__(7);
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var button_1 = __webpack_require__(74);
+	var button_1 = __webpack_require__(73);
 	var checkbox_1 = __webpack_require__(59);
-	var card_1 = __webpack_require__(75);
-	var input_1 = __webpack_require__(76);
+	var card_1 = __webpack_require__(74);
+	var input_1 = __webpack_require__(75);
 	var user_service_1 = __webpack_require__(23);
 	var Avatar = (function () {
 	    function Avatar(u) {
@@ -9893,7 +10674,7 @@ webpackJsonp([3],[
 	    Avatar = __decorate([
 	        core_1.Component({
 	            selector: 'avatar',
-	            template: __webpack_require__(594),
+	            template: __webpack_require__(607),
 	            directives: [
 	                sidenav_1.MD_SIDENAV_DIRECTIVES,
 	                card_1.MD_CARD_DIRECTIVES,
@@ -9911,7 +10692,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 554 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9919,10 +10700,10 @@ webpackJsonp([3],[
 	var common_1 = __webpack_require__(7);
 	var sidenav_1 = __webpack_require__(61);
 	var toolbar_1 = __webpack_require__(62);
-	var button_1 = __webpack_require__(74);
+	var button_1 = __webpack_require__(73);
 	var checkbox_1 = __webpack_require__(59);
-	var card_1 = __webpack_require__(75);
-	var input_1 = __webpack_require__(76);
+	var card_1 = __webpack_require__(74);
+	var input_1 = __webpack_require__(75);
 	var user_service_1 = __webpack_require__(23);
 	var Profile = (function () {
 	    //public cusine: string = '';
@@ -9985,7 +10766,7 @@ webpackJsonp([3],[
 	    Profile = __decorate([
 	        core_1.Component({
 	            selector: 'profile',
-	            template: __webpack_require__(595),
+	            template: __webpack_require__(608),
 	            directives: [
 	                sidenav_1.MD_SIDENAV_DIRECTIVES,
 	                card_1.MD_CARD_DIRECTIVES,
@@ -10003,7 +10784,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 555 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//auth.service.ts
@@ -10041,14 +10822,14 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 556 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	// Import NgClass directive
 	var common_1 = __webpack_require__(7);
-	var accordion_component_1 = __webpack_require__(358);
+	var accordion_component_1 = __webpack_require__(364);
 	var AccordionGroup = (function () {
 	    function AccordionGroup(accordion) {
 	        this.accordion = accordion;
@@ -10080,7 +10861,7 @@ webpackJsonp([3],[
 	            selector: 'accordion-group, [accordion-group]',
 	            inputs: ['heading', 'isOpen'],
 	            directives: [common_1.NgClass],
-	            template: __webpack_require__(596)
+	            template: __webpack_require__(609)
 	        }), 
 	        __metadata('design:paramtypes', [accordion_component_1.Accordion])
 	    ], AccordionGroup);
@@ -10090,7 +10871,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 557 */
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10164,7 +10945,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 558 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10174,10 +10955,10 @@ webpackJsonp([3],[
 	// specify providers within our component
 	var http_1 = __webpack_require__(21);
 	var user_service_1 = __webpack_require__(23);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	var common_1 = __webpack_require__(7);
 	var router_deprecated_1 = __webpack_require__(34);
-	var map_auto_1 = __webpack_require__(356);
+	var map_auto_1 = __webpack_require__(362);
 	// Create metadata with the `@Component` decorator
 	var ShopAdd = (function () {
 	    function ShopAdd(router, shopService, u) {
@@ -10342,7 +11123,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 200px;\n    }\n  "],
-	            template: __webpack_require__(597)
+	            template: __webpack_require__(610)
 	        }), 
 	        __metadata('design:paramtypes', [router_deprecated_1.Router, shop_service_1.ShopService, user_service_1.UserService])
 	    ], ShopAdd);
@@ -10352,7 +11133,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 559 */
+/* 572 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10398,7 +11179,7 @@ webpackJsonp([3],[
 	            ],
 	            pipes: [],
 	            styles: [],
-	            template: __webpack_require__(598)
+	            template: __webpack_require__(611)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], ShopLine);
@@ -10408,7 +11189,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 560 */
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10511,7 +11292,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n    }\n  "],
-	            template: __webpack_require__(599)
+	            template: __webpack_require__(612)
 	        }), 
 	        __metadata('design:paramtypes', [shop_service_1.ShopService, user_service_1.UserService])
 	    ], ShopList);
@@ -10521,7 +11302,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 561 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10529,7 +11310,7 @@ webpackJsonp([3],[
 	var core_2 = __webpack_require__(27);
 	var core_3 = __webpack_require__(27);
 	var list_1 = __webpack_require__(60);
-	var line_component_1 = __webpack_require__(559);
+	var line_component_1 = __webpack_require__(572);
 	var ShopSearchResults = (function () {
 	    function ShopSearchResults() {
 	        this.shops = [];
@@ -10570,7 +11351,7 @@ webpackJsonp([3],[
 	            ],
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n    }\n  "],
-	            template: __webpack_require__(600)
+	            template: __webpack_require__(613)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], ShopSearchResults);
@@ -10580,7 +11361,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 562 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10592,9 +11373,9 @@ webpackJsonp([3],[
 	var user_service_1 = __webpack_require__(23);
 	var core_2 = __webpack_require__(27);
 	var core_3 = __webpack_require__(27);
-	var ng2_material_1 = __webpack_require__(73);
+	var ng2_material_1 = __webpack_require__(72);
 	var common_1 = __webpack_require__(7);
-	var results_component_1 = __webpack_require__(561);
+	var results_component_1 = __webpack_require__(574);
 	// Create metadata with the `@Component` decorator
 	var ShopSearch = (function () {
 	    function ShopSearch(shopService, u) {
@@ -10748,7 +11529,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 200px;\n    }\n  "],
-	            template: __webpack_require__(601)
+	            template: __webpack_require__(614)
 	        }), 
 	        __metadata('design:paramtypes', [shop_service_1.ShopService, user_service_1.UserService])
 	    ], ShopSearch);
@@ -10758,7 +11539,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 563 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10854,7 +11635,7 @@ webpackJsonp([3],[
 	            //encapsulation: ViewEncapsulation.None,
 	            pipes: [],
 	            styles: ["\n    .sebm-google-map-container {\n      height: 300px;\n    }\n  "],
-	            template: __webpack_require__(602)
+	            template: __webpack_require__(615)
 	        }), 
 	        __metadata('design:paramtypes', [shop_service_1.ShopService, user_service_1.UserService])
 	    ], Shop);
@@ -10864,7 +11645,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 564 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10873,11 +11654,11 @@ webpackJsonp([3],[
 	var common_1 = __webpack_require__(7);
 	//import {MATERIAL_DIRECTIVES} from 'ng2-material';
 	//import {RouterLink} from '@angular/router';
-	var ng2_material_1 = __webpack_require__(73);
-	var shared_service_1 = __webpack_require__(222);
+	var ng2_material_1 = __webpack_require__(72);
+	var shared_service_1 = __webpack_require__(223);
 	var common_2 = __webpack_require__(7);
 	//import {BUTTON_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
-	var ng2_select_1 = __webpack_require__(815);
+	var ng2_select_1 = __webpack_require__(841);
 	var COLORS = [
 	    { 'name': 'Blue 10', 'hex': '#C0E6FF' },
 	    { 'name': 'Blue 20', 'hex': '#7CC7FF' },
@@ -10976,7 +11757,7 @@ webpackJsonp([3],[
 	    Test = __decorate([
 	        core_1.Component({
 	            selector: 'test',
-	            template: __webpack_require__(603),
+	            template: __webpack_require__(616),
 	            providers: [],
 	            // template: '<h1>dd</h1>'
 	            //directives: [MATERIAL_DIRECTIVES]
@@ -10993,7 +11774,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 565 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//# Global Directives
@@ -11006,7 +11787,7 @@ webpackJsonp([3],[
 	// Angular 2 Material 2
 	//
 	// TODO(datatypevoid): replace with @angular2-material/all
-	var angular2_material2_1 = __webpack_require__(359);
+	var angular2_material2_1 = __webpack_require__(365);
 	// APPLICATION_DIRECTIVES
 	//
 	// directives that are global through out the application
@@ -11017,20 +11798,20 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 566 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(565));
-	__export(__webpack_require__(567));
-	__export(__webpack_require__(568));
+	__export(__webpack_require__(578));
+	__export(__webpack_require__(580));
+	__export(__webpack_require__(581));
 	
 
 /***/ },
-/* 567 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//# Global Pipes
@@ -11048,7 +11829,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 568 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//# Global Providers
@@ -11064,7 +11845,7 @@ webpackJsonp([3],[
 	// Angular 2 Material 2
 	//
 	// TODO:(datatypevoid): replace with @angular2-material/all
-	var angular2_material2_1 = __webpack_require__(359);
+	var angular2_material2_1 = __webpack_require__(365);
 	//# Application Providers/Directives/Pipes
 	//
 	//** providers/directives/pipes that only live in our browser environment **
@@ -11075,7 +11856,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 569 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11096,222 +11877,222 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 570 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (namespace) {
 	  return new Promise(function (resolve) {
 	    __webpack_require__.e/* nsure */(1, function (require) {
 	      if (namespace) {
-	        resolve(__webpack_require__(432)[namespace]);
+	        resolve(__webpack_require__(442)[namespace]);
 	      } else {
-	        resolve(__webpack_require__(432));
+	        resolve(__webpack_require__(442));
 	      }
 	    });
 	  });
 	}
 
 /***/ },
-/* 571 */
+/* 584 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-sidenav-layout layout=\"row\" fullscreen>\r\n    <md-sidenav #menu class=\"app-menu\">\r\n        <md-toolbar>\r\n            <h3>ng2-shop</h3>\r\n        </md-toolbar>\r\n        <md-list>\r\n\r\n\r\n            <md-list-item>\r\n\r\n                <md-button md-button router-active [routerLink]=\" ['CartList'] \">\r\n                    Cart\r\n                </md-button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n\r\n                <md-button md-button router-active [routerLink]=\" ['ShopSearch'] \">\r\n                    Search\r\n                </md-button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n\r\n                <button md-button router-active [routerLink]=\" ['Test'] \">\r\n                    Test\r\n                </button>\r\n\r\n            </md-list-item>\r\n            <md-list-item>\r\n\r\n\r\n                <button md-button router-active [routerLink]=\" ['ShopAdd'] \">\r\n                    Shop Add\r\n                </button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n                <button md-button router-active [routerLink]=\" ['ShopList'] \">\r\n                    Shop List\r\n                </button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n\r\n                <button md-button router-active [routerLink]=\" ['Products'] \">\r\n                    Products Flux\r\n                </button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n                <button md-button router-active [routerLink]=\" ['Product'] \">\r\n                    Products\r\n                </button>\r\n            </md-list-item>\r\n            <md-list-item>\r\n\r\n                <button md-button router-active [routerLink]=\" ['Signin'] \">\r\n                    Login\r\n                </button>\r\n            </md-list-item>\r\n\r\n        </md-list>\r\n\r\n    </md-sidenav>\r\n\r\n    <md-content #content>\r\n        <md-toolbar color=\"primary\" class=\"hero\">\r\n\r\n\r\n            <button md-button\r\n                    class=\"md-hamburger md-icon-button\"\r\n                    xx-hide-gt-lg\r\n                    (click)=\"menu.open($event)\"\r\n                    aria-label=\"Home\">\r\n                <i md-icon class=\"md-dark\">menu</i>\r\n            </button>\r\n\r\n\r\n\r\n\r\n            <md-button md-button router-active [routerLink]=\" ['CartList'] \">\r\n                Cart\r\n            </md-button>\r\n\r\n            <md-button md-button router-active [routerLink]=\" ['ShopSearch'] \">\r\n                Search\r\n            </md-button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Test'] \">\r\n                Test\r\n            </button>\r\n\r\n\r\n\r\n            <button md-button router-active [routerLink]=\" ['ShopAdd'] \">\r\n                Shop Add\r\n            </button>\r\n            <button md-button router-active [routerLink]=\" ['ShopList'] \">\r\n                Shop List\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Products'] \">\r\n                Products Flux\r\n            </button>\r\n            <button md-button router-active [routerLink]=\" ['Product'] \">\r\n                Products\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Signin'] \">\r\n                Login\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['FileUpload'] \">\r\n                File\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Demo'] \">\r\n                File Upload Demo\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['MapAutocomplete'] \">\r\n                Map\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Profile'] \">\r\n                Profile\r\n            </button>\r\n\r\n            <button md-button router-active [routerLink]=\" ['Avatar'] \">\r\n                Avatar\r\n            </button>\r\n\r\n\r\n            <h1></h1>\r\n\r\n            <h1 md-peekaboo\r\n                breakAction=\"hide\">\r\n                {{navigation?.currentTitle}}\r\n            </h1>\r\n        </md-toolbar>\r\n\r\n\r\n        <md-content>\r\n            <router-outlet></router-outlet>\r\n            <map-autocomplete2>            </map-autocomplete2>\r\n\r\n        </md-content>\r\n\r\n\r\n\r\n    </md-content>\r\n</md-sidenav-layout>\r\n"
 
 /***/ },
-/* 572 */
+/* 585 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n            <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n                <h3 class=\"md-display-1\"> Login </h3>\r\n            </div>\r\n        </md-toolbar>\r\n        <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n            <form [ngFormModel]=\"signinForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n                <md-input-container>\r\n                    <md-input placeholder=\"E-Mail\" ngControl=\"email\" aria-label=\"email\">\r\n\r\n                    </md-input>\r\n                    <md-input placeholder=\"Password\" md-input type=\"password\" ngControl=\"password\" aria-label=\"password\"></md-input>\r\n                </md-input-container>\r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\">\r\n                        !Log in nnn!\r\n                    </button>\r\n                </div>\r\n\r\n\r\n                <button class=\"btn btn-block btn-google-plus\" (click)=\"authenticate('google')\">\r\n                    <i class=\"fa fa-google-plus\"></i>\r\n                    sign in with Google\r\n                </button>\r\n                 \r\n            </form>\r\n        </div>\r\n    </md-whiteframe>\r\n</md-content>\r\n"
 
 /***/ },
-/* 573 */
+/* 586 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n  <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n    <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n      <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n        <h3 class=\"md-display-1\"> Sign up </h3>\r\n      </div>\r\n    </md-toolbar>\r\n    <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n      <form [ngFormModel]=\"signupForm\" #f=\"ngForm\" (submit)=\"signup(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n        <md-input-container>\r\n            <md-input placeholder=\"E-Mail\"  ngControl=\"email\" aria-label=\"email\" >\r\n  \r\n            </md-input>\r\n            <md-input placeholder=\"Password\" md-input type=\"password\" ngControl=\"password\" aria-label=\"password\" ></md-input>\r\n        </md-input-container>\r\n        <div layout=\"row\" layout-align=\"space-between center\">\r\n          <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\">Sign Up!\r\n          </button>\r\n        </div>\r\n      </form>      \r\n    </div>           \r\n  </md-whiteframe>\r\n</md-content>\r\n"
 
 /***/ },
-/* 574 */
+/* 587 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-list-item *ngIf=\"!item.removed\" class=\"\">\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n        \r\n        <a router-active [routerLink]=\" ['ProductDetails',{'id' :item._id }] \"> {{ item.title }} @ {{ item.rate }}</a>\r\n\r\n        <md-input-container>\r\n            <md-input placeholder=\"Quantity\" [(ngModel)]=\"item.quantity\" aria-label=\"quantity\">\r\n            </md-input> # {{item.quantity*item.rate}}\r\n\r\n        </md-input-container>\r\n        <button md-raised-button color=\"primary\" (click)=\"remove()\"\r\n                type=\"submit\" aria-label=\"Search\">\r\n            Remove\r\n        </button>\r\n    </div>\r\n</md-list-item>\r\n\r\n"
 
 /***/ },
-/* 575 */
+/* 588 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar>\r\n            <div layout=\"row\">\r\n                <h3 class=\"md-display-1\"> My Shopping Cart </h3>\r\n            </div>\r\n        </md-toolbar>\r\n        <div class=\"\" *ngFor=\"let item of items; let index = index\">\r\n            \r\n            <cart-line [item]=\"item\"></cart-line>\r\n        </div>\r\n        <md-list>\r\n            <md-subheader class=\"md-no-sticky\"></md-subheader>\r\n            <md-list-item class=\"md-3-line\" >\r\n                <div class=\"md-list-item-text\" layout=\"column\">\r\n                    \r\n                </div>\r\n            </md-list-item>\r\n            <md-divider></md-divider>\r\n            <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\" (click)=\"order()\">\r\n                Confirm Order\r\n            </button>\r\n\r\n        </md-list>\r\n    </md-whiteframe>\r\n</md-content>\r\n\r\n"
 
 /***/ },
-/* 576 */
+/* 589 */
 /***/ function(module, exports) {
 
 	module.exports = "#map {\r\n    height: 100%;\r\n}\r\n\r\n.controls {\r\n    margin-top: 10px;\r\n    border: 1px solid transparent;\r\n    border-radius: 2px 0 0 2px;\r\n    box-sizing: border-box;\r\n    -moz-box-sizing: border-box;\r\n    height: 32px;\r\n    outline: none;\r\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n#pac-input {\r\n    background-color: #fff;\r\n    font-family: Roboto;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n    margin-left: 12px;\r\n    padding: 0 11px 0 13px;\r\n    text-overflow: ellipsis;\r\n    width: 300px;\r\n}\r\n\r\n#pac-input:focus {\r\n    border-color: #4d90fe;\r\n}\r\n\r\n.pac-container {\r\n    font-family: Roboto;\r\n}\r\n\r\n#type-selector {\r\n    color: #fff;\r\n    background-color: #4d90fe;\r\n    padding: 5px 11px 0px 11px;\r\n}\r\n\r\n#type-selector label {\r\n    font-family: Roboto;\r\n    font-size: 13px;\r\n    font-weight: 300;\r\n}\r\n\r\n"
 
 /***/ },
-/* 577 */
+/* 590 */
 /***/ function(module, exports) {
 
 	module.exports = "<input id=\"pac-input\" class=\"controls\" type=\"text\"\r\n        placeholder=\"Enter your location\" [(ngModel)]=\"address\">\r\n\r\n<button id=\"pick-location\" class=\"controls\" type=\"button\"\r\n       placeholder=\"Enter your location\" value=\"My Current Location\" (click)=\"pickLocation()\">Geo Location\r\n</button>\r\n\r\n<div id=\"map\"></div>\r\n\r\n"
 
 /***/ },
-/* 578 */
+/* 591 */
 /***/ function(module, exports) {
 
 	module.exports = "   .arrow-down {\r\n    display: inline-block;\r\n    width: 0;\r\n    height: 0;\r\n    /* top: 20px; */\r\n    border-left: 10px solid transparent;\r\n    border-right: 10px solid transparent;\r\n    margin-left: -28px;\r\n    vertical-align: middle;\r\n    border-top: 14px dashed;\r\n    /* border-bottom: 16px solid; */\r\n}\r\n\r\n    \r\n.md-dropdown-outer-container {\r\n  \r\n}\r\n\r\n.md-dropdown-popup-container {\r\n  position: relative;\r\n}\r\n\r\n.md-dropdown-toggle:focus {\r\n  outline: 0;\r\n}\r\n.md-dropdown-popup {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 10 px;\r\n  z-index: 1000;\r\n/*  display: block; */\r\n  float: left;\r\n  min-width: 160px;\r\n  max-height: 300px;\r\n  overflow-y:scroll;\r\n  padding: 5px 0;\r\n  margin: 2px 0 0;\r\n  font-size: 14px;\r\n  text-align: left;\r\n  list-style: none;\r\n  background-color: #fff;\r\n  -webkit-background-clip: padding-box;\r\n          background-clip: padding-box;\r\n  border: 1px solid #ccc;\r\n  border: 1px solid rgba(0, 0, 0, .15);\r\n  border-radius: 4px;\r\n  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);\r\n          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);\r\n}\r\n.md-dropdown-popup.pull-right {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropdown-popup .divider {\r\n  height: 1px;\r\n  margin: 9px 0;\r\n  overflow: hidden;\r\n  background-color: #e5e5e5;\r\n}\r\n.md-dropdown-popup > li > a {\r\n  display: block;\r\n  padding: 3px 20px;\r\n  clear: both;\r\n  font-weight: normal;\r\n  line-height: 1.42857143;\r\n  color: #333;\r\n  white-space: nowrap;\r\n}\r\n.md-dropdown-popup > li > a:hover,\r\n.md-dropdown-popup > li > a:focus {\r\n  color: #262626;\r\n  text-decoration: none;\r\n  background-color: #f5f5f5;\r\n}\r\n.md-dropdown-popup > .active > a,\r\n.md-dropdown-popup > .active > a:hover,\r\n.md-dropdown-popup > .active > a:focus {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  background-color: #337ab7;\r\n  outline: 0;\r\n}\r\n.md-dropdown-popup > .disabled > a,\r\n.md-dropdown-popup > .disabled > a:hover,\r\n.md-dropdown-popup > .disabled > a:focus {\r\n  color: #777;\r\n}\r\n.md-dropdown-popup > .disabled > a:hover,\r\n.md-dropdown-popup > .disabled > a:focus {\r\n  text-decoration: none;\r\n  cursor: not-allowed;\r\n  background-color: transparent;\r\n  background-image: none;\r\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\r\n}\r\n.open > .md-dropdown-popup {\r\n  display: block;\r\n}\r\n.open > a {\r\n  outline: 0;\r\n}\r\n.md-dropdown-popup-right {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropdown-popup-left {\r\n  right: auto;\r\n  left: 0;\r\n}\r\n.md-dropdown-header {\r\n  display: block;\r\n  padding: 3px 20px;\r\n  font-size: 12px;\r\n  line-height: 1.42857143;\r\n  color: #777;\r\n  white-space: nowrap;\r\n}\r\n.md-dropdown-backdrop {\r\n  position: fixed;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 990;\r\n}\r\n.pull-right > .md-dropdown-popup {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropup .caret,\r\n.navbar-fixed-bottom .md-dropdown .caret {\r\n  content: \"\";\r\n  border-top: 0;\r\n  border-bottom: 4px dashed;\r\n  border-bottom: 4px solid \\9;\r\n}\r\n.md-dropup .md-dropdown-popup,\r\n.navbar-fixed-bottom .md-dropdown .md-dropdown-popup {\r\n  top: auto;\r\n  bottom: 100%;\r\n  margin-bottom: 2px;\r\n}\r\n@media (min-width: 768px) {\r\n  .md-dropdown-popup {\r\n  /*  right: 0;\r\n    left: auto;*/\r\n  }\r\n   .md-dropdown-popup-left {\r\n    /*right: auto;\r\n    left: 0;*/\r\n  }\r\n}\r\n"
 
 /***/ },
-/* 579 */
+/* 592 */
 /***/ function(module, exports) {
 
 	module.exports = "<style>\r\n</style>\r\n\r\nItems {{items|json}}\r\n<div class=\"md-dropdown-outer-container\">\r\n    <input type=\"text\" \r\n           name=\"md-dropdown-input\" \r\n           class=\"md-dropdown-input\" [(ngModel)]=\"itemText\" (change)=\"change($event)\"\r\n            (keyup)=\"change($event)\" /> \r\n    <span class=\"arrow-down\" (click)=toggle()></span>\r\n    {{itemText}}\r\n    <div *ngIf=\"showPopup\" class=\"md-dropdown-popup-container\">\r\n        <ul class=\"md-dropdown-popup\">\r\n            <li class=\"md-dropdown-item\"\r\n                (click1) =\"select(item)\" \r\n                *ngFor=\"let item of items | filterItems :itemText ; let index = index \">\r\n                <a style=\"vertical-align:middle\">\r\n                    <span style=\"vertical-align:central;min-height:42px;min-width:80px;display:inline-block\">\r\n                    {{item}}  \r\n                        <ng-content></ng-content>\r\n                    </span>\r\n\r\n                        <img src=\"https://source.unsplash.com/category/food/40x40/?apple\" />\r\n                 \r\n                </a>\r\n             </li>           \r\n        </ul>\r\n    </div>\r\n</div> \r\n\r\n\r\n"
 
 /***/ },
-/* 580 */
+/* 593 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>\r\n    <input/>\r\n</h1>"
 
 /***/ },
-/* 581 */
+/* 594 */
 /***/ function(module, exports) {
 
 	module.exports = "<style>\n    .my-drop-zone { border: dotted 3px lightgray; }\n    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */\n    .another-file-over-class { border: dotted 3px green; }\n\n    html, body { height: 100%; }\n</style>\n\n<div class=\"container\">\n\n    <div class=\"navbar navbar-default\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" href>Angular2 File Upload</a>\n        </div>\n    </div>\n\n    <div class=\"row\">\n\n        <div class=\"col-md-3\">\n\n            <h3>Select files</h3>\n\n            <div ng2FileDrop\n                 [ngClass]=\"{'nv-file-over': hasBaseDropZoneOver}\"\n                 (fileOver)=\"fileOverBase($event)\"\n                 [uploader]=\"uploader\"\n                 class=\"well my-drop-zone\">\n                Base drop zone\n            </div>\n\n            <div ng2FileDrop\n                 [ngClass]=\"{'another-file-over-class': hasAnotherDropZoneOver}\"\n                 (fileOver)=\"fileOverAnother($event)\"\n                 [uploader]=\"uploader\"\n                 class=\"well my-drop-zone\">\n                Another drop zone\n            </div>\n\n            Multiple\n            <input type=\"file\" ng2FileSelect [uploader]=\"uploader\" multiple  /><br/>\n\n            Single\n            <input type=\"file\" ng2FileSelect [uploader]=\"uploader\" />\n        </div>\n\n        <div class=\"col-md-9\" style=\"margin-bottom: 40px\">\n\n            <h3>Upload queue</h3>\n            <p>Queue length: {{ uploader?.queue?.length }}</p>\n\n            <table class=\"table\">\n                <thead>\n                <tr>\n                    <th width=\"50%\">Name</th>\n                    <th>Size</th>\n                    <th>Progress</th>\n                    <th>Status</th>\n                    <th>Actions</th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr *ngFor=\"let item of uploader.queue\">\n                    <td><strong>{{ item?.file?.name }}</strong></td>\n                    <td *ngIf=\"uploader.isHTML5\" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>\n                    <td *ngIf=\"uploader.isHTML5\">\n                        <div class=\"progress\" style=\"margin-bottom: 0;\">\n                            <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': item.progress + '%' }\"></div>\n                        </div>\n                    </td>\n                    <td class=\"text-center\">\n                        <span *ngIf=\"item.isSuccess\"><i class=\"glyphicon glyphicon-ok\"></i></span>\n                        <span *ngIf=\"item.isCancel\"><i class=\"glyphicon glyphicon-ban-circle\"></i></span>\n                        <span *ngIf=\"item.isError\"><i class=\"glyphicon glyphicon-remove\"></i></span>\n                    </td>\n                    <td nowrap>\n                        <button type=\"button\" class=\"btn btn-success btn-xs\"\n                                (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\n                            <span class=\"glyphicon glyphicon-upload\"></span> Upload\n                        </button>\n                        <button type=\"button\" class=\"btn btn-warning btn-xs\"\n                                (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\n                            <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel\n                        </button>\n                        <button type=\"button\" class=\"btn btn-danger btn-xs\"\n                                (click)=\"item.remove()\">\n                            <span class=\"glyphicon glyphicon-trash\"></span> Remove\n                        </button>\n                    </td>\n                </tr>\n                </tbody>\n            </table>\n\n            <div>\n                <div>\n                    Queue progress:\n                    <div class=\"progress\" style=\"\">\n                        <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': uploader.progress + '%' }\"></div>\n                    </div>\n                </div>\n                <button type=\"button\" class=\"btn btn-success btn-s\"\n                        (click)=\"uploader.uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\n                    <span class=\"glyphicon glyphicon-upload\"></span> Upload all\n                </button>\n                <button type=\"button\" class=\"btn btn-warning btn-s\"\n                        (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\n                    <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel all\n                </button>\n                <button type=\"button\" class=\"btn btn-danger btn-s\"\n                        (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\n                    <span class=\"glyphicon glyphicon-trash\"></span> Remove all\n                </button>\n            </div>\n\n        </div>\n\n    </div>\n\n</div>\n"
 
 /***/ },
-/* 582 */
+/* 595 */
 /***/ function(module, exports) {
 
 	module.exports = ""
 
 /***/ },
-/* 583 */
+/* 596 */
 /***/ function(module, exports) {
 
 	module.exports = "home"
 
 /***/ },
-/* 584 */
+/* 597 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-sidenav-layout>\n  <md-sidenav #sidenav mode=\"side\" class=\"app-sidenav\">\n    Sidenav\n  </md-sidenav>\n\n  <md-toolbar color=\"primary\">\n    <button class=\"app-icon-button\" (click)=\"sidenav.toggle()\">\n      <i class=\"material-icons app-toolbar-menu\">menu</i>\n    </button>\n\n    Angular Material2 Example App\n\n    <span class=\"app-toolbar-filler\"></span>\n  </md-toolbar>\n\n  <div class=\"app-content\">\n\n    <md-card>\n      <button md-button>FLAT</button>\n      <button md-raised-button>RAISED</button>\n      <button md-raised-button color=\"primary\">PRIMARY RAISED</button>\n      <button md-raised-button color=\"accent\">ACCENT RAISED</button>\n    </md-card>\n\n    <md-card>\n      <md-checkbox>Unchecked</md-checkbox>\n      <md-checkbox [checked]=\"true\">Checked</md-checkbox>\n      <md-checkbox [indeterminate]=\"true\">Indeterminate</md-checkbox>\n      <md-checkbox [disabled]=\"true\">Disabled</md-checkbox>\n    </md-card>\n\n    <md-card>\n      <md-radio-button name=\"symbol\">Alpha</md-radio-button>\n      <md-radio-button name=\"symbol\">Beta</md-radio-button>\n      <md-radio-button name=\"symbol\" disabled>Gamma</md-radio-button>\n    </md-card>\n\n    <md-card class=\"app-input-section\">\n      <md-input placeholder=\"First name\"></md-input>\n\n      <md-input #nickname placeholder=\"Nickname\" maxlength=\"50\">\n        <md-hint align=\"end\">\n          {{nickname.characterCount}} / 50\n        </md-hint>\n      </md-input>\n\n      <md-input>\n        <md-placeholder>\n          <i class=\"material-icons app-input-icon\">android</i> Favorite phone\n        </md-placeholder>\n      </md-input>\n\n      <md-input placeholder=\"Motorcycle model\">\n        <span md-prefix>\n          <i class=\"material-icons app-input-icon\">motorcycle</i>\n          &nbsp;\n        </span>\n      </md-input>\n    </md-card>\n\n    <md-card>\n      <md-list class=\"app-list\">\n        <md-list-item *ngFor=\"let food of foods\">\n          <h3 md-line>{{food.name}}</h3>\n          <p md-line class=\"demo-secondary-text\">{{food.rating}}</p>\n        </md-list-item>\n      </md-list>\n    </md-card>\n\n    <md-card>\n      <md-spinner class=\"app-spinner\"></md-spinner>\n      <md-spinner color=\"accent\" class=\"app-spinner\"></md-spinner>\n    </md-card>\n\n    <md-card>\n      <label>\n        Indeterminate progress-bar\n        <md-progress-bar\n            class=\"app-progress\"\n            mode=\"indeterminate\"\n            aria-label=\"Indeterminate progress-bar example\"></md-progress-bar>\n      </label>\n\n      <label>\n        Determinate progress bar - {{progress}}%\n        <md-progress-bar\n            class=\"app-progress\"\n            color=\"accent\"\n            mode=\"determinate\"\n            [value]=\"progress\"\n            aria-label=\"Determinate progress-bar example\"></md-progress-bar>\n      </label>\n    </md-card>\n\n\n    <md-card>\n      <md-icon>build</md-icon>\n    </md-card>\n\n  </div>\n\n</md-sidenav-layout>\n\n<span class=\"app-action\">\n  <button md-fab><i class=\"material-icons md-24\">check circle</i></button>\n</span>\n"
 
 /***/ },
-/* 585 */
+/* 598 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n            <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n                <h3 class=\"md-display-1\"> Add/Edit Product</h3>\r\n            </div>\r\n        </md-toolbar>\r\n        <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n            <form [ngFormModel]=\"myForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n                <md-input-container>\r\n                    <md-input placeholder=\"Name\" ngControl=\"title\" aria-label=\"title\">\r\n                        {{title}}\r\n                    </md-input>\r\n                    <md-input placeholder=\"Price\" ngControl=\"price\" aria-label=\"cuisine\">\r\n\r\n                    </md-input>\r\n               \r\n                </md-input-container>\r\n                    <md-switch style=\"margin:5px\" [(checked)]=\"isVeg\">Veg {{isveg}}</md-switch>\r\n \r\n                    <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\">\r\n                        Save\r\n                    </button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </md-whiteframe>\r\n</md-content>\r\nShop Id {{shopId}}"
 
 /***/ },
-/* 586 */
+/* 599 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar>\r\n            <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n                <h3 class=\"md-display-1\">\r\n                    \r\n                    Order : {{item.title}} \r\n                </h3>\r\n                \r\n\r\n            </div>\r\n        </md-toolbar>\r\n\r\n        <div  layout=\"column\" layout-fill layout-margin layout-padding>\r\n            <form [ngFormModel]=\"myForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                      @ {{item.rate}} (INR) \r\n                </div>\r\n\r\n                <div layout=\"row\" layout-align=\"space-between center\">                    \r\n                    Also known as Paneer Makhani is a vegetarian dish. The dish combines paneer (Indian cottage cheese) in a butter sauce.\r\n                </div>\r\n                \r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <img src=\"https://source.unsplash.com/category/food/600x300/?pizza\" />\r\n                </div>\r\n    \r\n\r\n                <md-input-container>\r\n                    <md-input placeholder=\"Quantity\" ngControl=\"quantity\" aria-label=\"quantity\">\r\n                        {{quantity}}\r\n                    </md-input>\r\n\r\n                </md-input-container>\r\n                \r\n                \r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"Search\">\r\n                        Add to Cart\r\n                    </button>\r\n                </div>\r\n\r\n            </form>\r\n        </div>\r\n\r\n    </md-whiteframe>\r\n</md-content>\r\n\r\n"
 
 /***/ },
-/* 587 */
+/* 600 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-list-item class=\"\">\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n        <a router-active [routerLink]=\"['ProductDetails',{'id' :item._id }]\">\r\n\r\n            <img src=\"https://source.unsplash.com/category/food/20x20/?salad\" />\r\n            {{ item.title }} @ {{ item.price }}\r\n        </a>\r\n            \r\n</div>\r\n</md-list-item>\r\n<md-divider></md-divider>\r\n\r\n"
 
 /***/ },
-/* 588 */
+/* 601 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe-dis layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"40\" class=\"md-whiteframe-z2-dis\" layout-fill>\r\n        <md-toolbar>\r\n            <div layout=\"row\">\r\n                <h3 class=\"md-display-1\"> {{shop.title}} </h3>\r\n            </div>\r\n\r\n            \r\n        </md-toolbar>\r\n\r\n        <md-list>\r\n            <md-subheader class=\"md-no-sticky\">\r\n\r\n                <button md-button router-active [routerLink]=\"['ProductAdd',{shopid:shopId}]\">\r\n                    Add New Product\r\n                </button>\r\n            </md-subheader>\r\n            <md-list-item class=\"md-3-line\" *ngFor=\"let item of items; let index = index\">\r\n                <div class=\"md-list-item-text\" layout=\"column\">\r\n                    <p>\r\n                        <a router-active [routerLink]=\" ['Home'] \"> {{ item.title }} @ {{ item.price }} </a>\r\n                        <br/>\r\n\r\n                    </p>\r\n                </div>\r\n            </md-list-item>\r\n            <md-divider></md-divider>\r\n            <md-subheader class=\"md-no-sticky\">\r\n\r\n                <button md-button router-active [routerLink]=\"['ProductAdd',{shopid:shopId}]\">\r\n                    Add New Product\r\n                </button>\r\n            </md-subheader>\r\n        </md-list>\r\n    </md-whiteframe-dis>\r\n</md-content>\r\n\r\n"
 
 /***/ },
-/* 589 */
+/* 602 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"40\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar>\r\n            <div layout=\"row\">\r\n                <h3 class=\"md-display\">{{shop.title}}</h3>\r\n            </div>\r\n        </md-toolbar>\r\n        \r\n        <div class=\"\" *ngFor=\"let item of items; let index = index\">\r\n            <product-line [item]=\"item\"></product-line>\r\n        </div>\r\n    </md-whiteframe>\r\n</md-content>"
 
 /***/ },
-/* 590 */
+/* 603 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\r\n    {{mode}}\r\n    {{currentItem.amount}}\r\n    {{currentItem.text}}\r\n    \r\n  \r\n  <div *ngIf=\"!mode\" id=\"data-list\" class=\"row\">\r\n      <ul class=\"col-sm-4 col-sm-offset-4\">\r\n\r\n          <li  *ngFor=\"let item of products\" (click)=\"selectItem(item)\">\r\n               {{ item.title }}\r\n          </li>\r\n\r\n      </ul>\r\n  </div>\r\n    {{mode}}\r\n\r\n            <button *ngIf=\"!mode\" type=\"submit\"\r\n                (click)=\"changeMode('add')\">Add New Product</button>\r\n  \r\n  <div *ngIf=\"mode\">  \r\n \r\n  <div id=\"data-form\" class=\"row\">\r\n      <div class=\"col-sm-8 col-sm-offset-2 text-center\">\r\n          <form>\r\n              <div class=\"form-group\">\r\n\r\n                  <!-- BIND THIS VALUE TO productData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\" \r\n                  placeholder=\"Product Name\" [(ngModel)]=\"currentItem.title\" required>\r\n                  \r\n                  <!-- BIND THIS VALUE TO productData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\"\r\n                         placeholder=\"cuisine\" [(ngModel)]=\"currentItem.cuisine\">\r\n\r\n                  \r\n                  <!-- BIND THIS VALUE TO productData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\" \r\n                  placeholder=\"Product No\" [(ngModel)]=\"currentItem.no\" >\r\n\r\n\r\n                  \r\n              </div>\r\n\r\n              <button type=\"submit\" class=\"btn btn-primary btn-lg\"\r\n                (click)=\"save()\">Save</button>\r\n          </form>\r\n      </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n</div>\r\n"
 
 /***/ },
-/* 591 */
+/* 604 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"product-card\">\n  <div>\n    <h2 *ngIf=\"selectedProduct._id\">Edit {{originalTitle}}</h2>\n    <h2 *ngIf=\"!selectedProduct._id\">Create New Product</h2>\n  </div>\n  <div>\n    <form novalidate>\n        <div>\n          <label>Name</label>\n          <input [(ngModel)]=\"selectedProduct.title\"\n            placeholder=\"Enter a Name\" type=\"text\">\n            \n        </div>\n        <div>\n          <label>Amount</label>\n          <input [(ngModel)]=\"selectedProduct.amount\"\n            placeholder=\"Enter a Name\" type=\"text\">\n            \n        </div>\n        \n    </form>\n  </div>\n  <div>\n      <button type=\"submit\" (click)=\"cancelled.emit(selectedProduct)\">\n        Cancel\n      </button>\n      <button type=\"submit\" (click)=\"saved.emit(selectedProduct)\">\n        Save\n      </button>\n  </div>\n</div>\n"
 
 /***/ },
-/* 592 */
+/* 605 */
 /***/ function(module, exports) {
 
 	module.exports = "<div *ngFor=\"let product of products\" (click)=\"selected.emit(product)\"\n  class=\"product-card\">\n  <div>\n    {{product.title}}+{{product.amount}}\n  </div> \n</div>\n"
 
 /***/ },
-/* 593 */
+/* 606 */
 /***/ function(module, exports) {
 
 	module.exports = "{{mode}}\n   <button *ngIf=\"!mode\" type=\"submit\"\n                (click)=\"changeMode('add')\">Add New</button>\n  \n\n<div *ngIf=\"!mode\">\n  \n  <product-list [products]=\"products | async\"\n    (selected)=\"selectProduct($event)\" (deleted)=\"deleteProduct($event)\">\n  </product-list>\n</div>\n<div *ngIf=\"mode\">\n  <product-detail\n    (saved)=\"saveProduct($event)\" (cancelled)=\"resetProduct($event)\"\n    [product]=\"selectedProduct | async\">\n    \n    </product-detail>\n\n</div>\n"
 
 /***/ },
-/* 594 */
+/* 607 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n  <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n    <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n      <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n        <h3 class=\"md-display-1\"> Profile </h3>\r\n      </div>\r\n    </md-toolbar>\r\n    <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n      <form [ngFormModel]=\"thisForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n        <md-input-container>\r\n            <md-input placeholder=\"E-Mail\"  ngControl=\"email\" aria-label=\"email\" >\r\n  \r\n            </md-input>\r\n            <md-input placeholder=\"Password\" md-input type=\"password\" ngControl=\"password\" aria-label=\"password\" ></md-input>\r\n        </md-input-container>\r\n        <div layout=\"row\" layout-align=\"space-between center\">\r\n          <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\">Sign Up!\r\n          </button>\r\n        </div>\r\n      </form>      \r\n    </div>           \r\n  </md-whiteframe>\r\n</md-content>"
 
 /***/ },
-/* 595 */
+/* 608 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n  <md-whiteframe layout=\"column\" flex flex-md=\"80\" flex-lg-dis=\"66\" flex-gt-lg=\"40\" class=\"md-whiteframe-z2\" layout-fill>\r\n    <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n      <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n        <h3 class=\"md-display-1\"> Edit Profile </h3>\r\n      </div>\r\n    </md-toolbar>\r\n    <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n      <form [ngFormModel]=\"thisForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n          <md-input-container>\r\n\r\n              <md-input placeholder=\"First Name *\" ngControl=\"firstName\" [(ngModel)]=\"u.profile.firstName\" ></md-input>\r\n\r\n              <md-input placeholder=\"Last Name\" ngControl=\"lastName\" [(ngModel)]=\"u.profile.lastName\"></md-input>\r\n\r\n\r\n              <md-input placeholder=\"Address Line 1\" ngControl=\"address1\" [(ngModel)]=\"u.profile.address1\"></md-input>\r\n\r\n              <md-input placeholder=\"Address Line 2\" ngControl=\"address2\" [(ngModel)]=\"u.profile.address2\"></md-input>\r\n\r\n              <md-input placeholder=\"City\" ngControl=\"city\" [(ngModel)]=\"u.profile.city\"></md-input>\r\n\r\n\r\n              <md-input placeholder=\"Country\" ngControl=\"country\" [(ngModel)]=\"u.profile.country\"></md-input>\r\n              <md-input placeholder=\"Mobile\" ngControl=\"mobile\" [(ngModel)]=\"u.profile.mobile\"></md-input>\r\n              <md-input placeholder=\"Phone\" ngControl=\"phone\" [(ngModel)]=\"u.profile.phone\"></md-input>\r\n\r\n\r\n          </md-input-container>\r\n\r\n        <div layout=\"row\" layout-align=\"space-between center\">\r\n          <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"submit\">Submit\r\n          </button>\r\n        </div>\r\n      </form>      \r\n    </div>           \r\n  </md-whiteframe>\r\n</md-content>\r\n"
 
 /***/ },
-/* 596 */
+/* 609 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"panel panel-default\" [ngClass]=\"{'panel-open': isOpen}\">\n  <div class=\"panel-heading\" (click)=\"toggleOpen($event)\">\n    <h4 class=\"panel-title\">\n      <a href tabindex=\"0\"><span>{{heading}}</span></a>\n    </h4>\n  </div>\n  <div class=\"panel-collapse\" [hidden]=\"!isOpen\">\n    <div class=\"panel-body\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n</div>\n"
 
 /***/ },
-/* 597 */
+/* 610 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe-1 layout=\"column\" flex flex-md-dis=\"50\" flex-lg-dis=\"50\" flex-gt-lg=\"66\" class=\"md-whiteframe-z2-dis\" layout-fill>\r\n        <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n            <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n                <h3 class=\"md-display-1\"> Add/Edit Shop </h3>\r\n            </div>\r\n        </md-toolbar>\r\n        \r\n        \r\n        <div layout=\"column\" layout-fill layout-margin layout-padding>\r\n            \r\n            <map-autocomplete style=\"height:250px\" \r\n                              [latitude]=\"u.latitude\"\r\n                                 [longitude]=\"u.longitude\" zoom=\"zoom\" mapClick=\"mapClicked($event)\"\r\n\r\n                              >\r\n                            \r\n            </map-autocomplete>\r\n            \r\n            <form [ngFormModel]=\"myForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n                <md-input-container>\r\n                    <md-input placeholder=\"Shop Name\" ngControl=\"title\"  aria-label=\"title\">\r\n                    </md-input>\r\n                    \r\n                    <md-input placeholder=\"Cuisine\" ngControl=\"cuisine\" aria-label=\"cuisine\">\r\n\r\n                    </md-input>\r\n                    <md-input style=\"width:400px\" placeholder=\"Description\" ngControl=\"description\" aria-label=\"description\">\r\n\r\n                    </md-input>\r\n                    <md-input style=\"width:400px\"  placeholder=\"Address\" ngControl=\"address\" [(ngModel)]=\"u.map_address\" aria-label=\"address\">\r\n\r\n                    </md-input>\r\n\r\n                    <md-switch style=\"margin:5px;width:200px;display:inline-block\" [(checked)]=\"isVeg\">Veg </md-switch>\r\n\r\n                    <md-switch style=\"margin:2px;width:200px;display:inline-block\" [(checked)]=\"isDelivery\">Delivery</md-switch>\r\n                    <md-switch style=\"margin:2px;width:200px;display:inline-block\" [(checked)]=\"isPickup\">Pickup </md-switch>\r\n                </md-input-container>\r\n            \r\n\r\n                \r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"login\">\r\n                        Save\r\n                    </button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </md-whiteframe-1>\r\n</md-content>\r\n\r\n{{u.latitude}}+"
 
 /***/ },
-/* 598 */
+/* 611 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-list-item class=\"\">\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n\r\n        <a router-active [routerLink]=\"['PList',{'shopid': item._id }]\"> \r\n        {{ item.title }} \r\n        </a>\r\n\r\n    </div>\r\n</md-list-item>\r\n<md-list-item class=\"\">\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n\r\n        <a router-active [routerLink]=\"['PList',{'shopid': item._id }]\">\r\n            Distance - 2.5 Miles {{item.cuisine}}\r\n        </a>\r\n\r\n    </div>\r\n</md-list-item>\r\n\r\n\r\n<md-divider></md-divider>"
 
 /***/ },
-/* 599 */
+/* 612 */
 /***/ function(module, exports) {
 
 	module.exports = "\r\n<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"33\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar class=\"md-primary md-tall\" layout=\"column\" layout-align=\"end\" layout-fill>\r\n            <div layout=\"row\">\r\n                <h3 class=\"md-display-1\"> My Shop List </h3>\r\n            </div>   \r\n            <button md-button router-active [routerLink]=\"['ShopAdd']\">\r\n                Add New Shop\r\n            </button>\r\n         \r\n        </md-toolbar>\r\n        <md-list>\r\n            <md-subheader class=\"md-no-sticky\"></md-subheader>\r\n            <div class=\"\" *ngFor=\"let item of shops; let index = index\">\r\n            \r\n                    <div class=\"md-list-item-text\" layout=\"column\">\r\n                    <p>\r\n                        <a router-active [routerLink]=\"['ProductList',{shopid: item._id}]\"> {{ item.title }}</a>\r\n                        \r\n                        <br/>\r\n                        <a router-active [routerLink]=\"['ProductList',{shopid: item._id}] \"> Manage</a>\r\n                        <a router-active [routerLink]=\"['ProductAdd',{shopid: item._id}]\"> Add Product</a>\r\n\r\n                    </p>\r\n\r\n\r\n                </div>\r\n                <md-divider></md-divider>\r\n            </div>\r\n\r\n\r\n            \r\n\r\n        </md-list>\r\n    </md-whiteframe>\r\n</md-content>\r\n\r\n"
 
 /***/ },
-/* 600 */
+/* 613 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-list>\r\n    <md-subheader class=\"md-no-sticky\">Shops near you</md-subheader>\r\n    <div class=\"\" *ngFor=\"let item of items; let index = index\">\r\n        <shop-line [item]=\"item\"></shop-line>\r\n    </div>\r\n    <md-divider></md-divider>\r\n</md-list>\r\n"
 
 /***/ },
-/* 601 */
+/* 614 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-content layout=\"row\" layout-align=\"center start\" layout-fill layout-margin>\r\n    <md-whiteframe layout=\"column\" flex flex-md=\"50\" flex-lg=\"50\" flex-gt-lg=\"40\" class=\"md-whiteframe-z2\" layout-fill>\r\n        <md-toolbar>\r\n            <div layout=\"row\" class=\"md-toolbar-tools md-toolbar-tools-bottom\">\r\n                <h3 class=\"md-display-1\">\r\n                    <md-switch style=\"margin:5px\" [(checked)]=\"searchShop\">\r\n                        <span *ngIf=\"searchShop\"> Search Shop </span>\r\n                        <span *ngIf=\"!searchShop\"> Search Product </span>\r\n                    </md-switch>\r\n                </h3>\r\n            </div>\r\n        </md-toolbar>\r\n        \r\n        <md-switch *ngIf=\"!showSearchForm\" style=\"margin:5px\" [(checked)]=\"showSearchForm\"> Search</md-switch>\r\n\r\n        <div  *ngIf=\"showSearchForm\" layout=\"column\" layout-fill layout-margin layout-padding>\r\n            <form [ngFormModel]=\"myForm\" #f=\"ngForm\" (submit)=\"submit(f.value)\" layout=\"column\" layout-fill layout-padding layout-margin>\r\n                <md-input-container>\r\n                    <md-input placeholder=\"Search\" ngControl=\"query\" aria-label=\"query\">\r\n                        {{query}}\r\n                    </md-input>\r\n\r\n                    <md-input placeholder=\"Near (KM/Mile)\" ngControl=\"radius\" aria-label=\"query\">\r\n                        {{radius}}\r\n                    </md-input>\r\n\r\n                    <div *ngIf=\"showMap\">\r\n                        <sebm-google-map [latitude]=\"u.latitude\"\r\n                                         [longitude]=\"u.longitude\" [zoom]=\"zoom\" (mapClick)=\"mapClicked($event)\">\r\n                            <sebm-google-map-marker [latitude]=\"u.latitude\"\r\n                                                    [longitude]=\"u.longitude\">\r\n                            </sebm-google-map-marker>\r\n                        </sebm-google-map>\r\n                    </div>\r\n               \r\n                </md-input-container>\r\n                <md-switch style=\"margin:5px\" [(checked)]=\"showMore\">\r\n                    <span *ngIf=\"showMore\"> - </span>\r\n                    <span *ngIf=\"!showMore\"> + </span>\r\n                </md-switch>\r\n\r\n                <div *ngIf=\"showMore\">\r\n                    <md-switch style=\"margin:5px\" [(checked)]=\"isVeg\">Veg {{isVeg}}</md-switch>\r\n                    <md-switch style=\"margin:2px\" [(checked)]=\"isDelivery\">Delivery {{isDelivery}}</md-switch>\r\n                    <md-switch style=\"margin:2px\" [(checked)]=\"isPickup\">Pickup {{isPickup}}</md-switch>\r\n                    <md-switch style=\"margin:2px\" [(checked)]=\"showMap\">\r\n                        Pick Location \r\n                    </md-switch>\r\n\r\n\r\n\r\n                </div>\r\n\r\n                <div layout=\"row\" layout-align=\"space-between center\">\r\n                    <button md-raised-button color=\"primary\" type=\"submit\" aria-label=\"Search\">\r\n                        Search\r\n                    </button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n        \r\n        <div *ngIf=\"showResultsShop && showResultsShop\">\r\n\r\n            <shop-search-results [items]=\"shops\">\r\n\r\n            </shop-search-results>\r\n        </div>\r\n\r\n\r\n\r\n\r\n</md-whiteframe>\r\n</md-content>\r\n"
 
 /***/ },
-/* 602 */
+/* 615 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\r\n    {{mode}}\r\n    {{currentItem.amount}}\r\n    {{currentItem.text}}\r\n    \r\n  \r\n  <div *ngIf=\"!mode\" id=\"data-list\" class=\"row\">\r\n      <ul class=\"col-sm-4 col-sm-offset-4\">\r\n\r\n          <li  *ngFor=\"let item of shops\" (click)=\"selectItem(item)\">\r\n               {{ item.title }}\r\n          </li>\r\n\r\n      </ul>\r\n  </div>\r\n    {{mode}}\r\n\r\n            <button *ngIf=\"!mode\" type=\"submit\"\r\n                (click)=\"changeMode('add')\">Add New Shop</button>\r\n  \r\n  <div *ngIf=\"mode\">  \r\n \r\n  <div id=\"data-form\" class=\"row\">\r\n      <div class=\"col-sm-8 col-sm-offset-2 text-center\">\r\n          <form>\r\n              <div class=\"form-group\">\r\n\r\n                  <!-- BIND THIS VALUE TO shopData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\" \r\n                  placeholder=\"Shop Name\" [(ngModel)]=\"currentItem.title\" required>\r\n                  \r\n                  <!-- BIND THIS VALUE TO shopData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\"\r\n                         placeholder=\"cuisine\" [(ngModel)]=\"currentItem.cuisine\">\r\n\r\n                  \r\n                  <!-- BIND THIS VALUE TO shopData.text IN ANGULAR -->\r\n                  <input type=\"text\" class=\"form-control input-lg text-center\" \r\n                  placeholder=\"Shop No\" [(ngModel)]=\"currentItem.no\" >\r\n                  Maps\r\n                  <sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\">\r\n                  </sebm-google-map>\r\n\r\n                  \r\n              </div>\r\n\r\n              <button type=\"submit\" class=\"btn btn-primary btn-lg\"\r\n                (click)=\"save()\">Save</button>\r\n          </form>\r\n      </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n</div>\r\n"
 
 /***/ },
-/* 603 */
+/* 616 */
 /***/ function(module, exports) {
 
 	module.exports = "<style>\r\n.arrow-down {\r\n    display: inline-block;\r\n    width: 0;\r\n    height: 0;\r\n    /* top: 20px; */\r\n    border-left: 10px solid transparent;\r\n    border-right: 10px solid transparent;\r\n    margin-left: -28px;\r\n    vertical-align: middle;\r\n    border-top: 14px dashed;\r\n    /* border-bottom: 16px solid; */\r\n}\r\n.md-dropdown {\r\n  position: relative;\r\n}\r\n.md-dropdown-toggle:focus {\r\n  outline: 0;\r\n}\r\n.md-dropdown-menu {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  z-index: 1000;\r\n  display: block;\r\n  float: left;\r\n  min-width: 160px;\r\n  padding: 5px 0;\r\n  margin: 2px 0 0;\r\n  font-size: 14px;\r\n  text-align: left;\r\n  list-style: none;\r\n  background-color: #fff;\r\n  -webkit-background-clip: padding-box;\r\n          background-clip: padding-box;\r\n  border: 1px solid #ccc;\r\n  border: 1px solid rgba(0, 0, 0, .15);\r\n  border-radius: 4px;\r\n  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);\r\n          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);\r\n}\r\n.md-dropdown-menu.pull-right {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropdown-menu .divider {\r\n  height: 1px;\r\n  margin: 9px 0;\r\n  overflow: hidden;\r\n  background-color: #e5e5e5;\r\n}\r\n.md-dropdown-menu > li > a {\r\n  display: block;\r\n  padding: 3px 20px;\r\n  clear: both;\r\n  font-weight: normal;\r\n  line-height: 1.42857143;\r\n  color: #333;\r\n  white-space: nowrap;\r\n}\r\n.md-dropdown-menu > li > a:hover,\r\n.md-dropdown-menu > li > a:focus {\r\n  color: #262626;\r\n  text-decoration: none;\r\n  background-color: #f5f5f5;\r\n}\r\n.md-dropdown-menu > .active > a,\r\n.md-dropdown-menu > .active > a:hover,\r\n.md-dropdown-menu > .active > a:focus {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  background-color: #337ab7;\r\n  outline: 0;\r\n}\r\n.md-dropdown-menu > .disabled > a,\r\n.md-dropdown-menu > .disabled > a:hover,\r\n.md-dropdown-menu > .disabled > a:focus {\r\n  color: #777;\r\n}\r\n.md-dropdown-menu > .disabled > a:hover,\r\n.md-dropdown-menu > .disabled > a:focus {\r\n  text-decoration: none;\r\n  cursor: not-allowed;\r\n  background-color: transparent;\r\n  background-image: none;\r\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\r\n}\r\n.open > .md-dropdown-menu {\r\n  display: block;\r\n}\r\n.open > a {\r\n  outline: 0;\r\n}\r\n.md-dropdown-menu-right {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropdown-menu-left {\r\n  right: auto;\r\n  left: 0;\r\n}\r\n.md-dropdown-header {\r\n  display: block;\r\n  padding: 3px 20px;\r\n  font-size: 12px;\r\n  line-height: 1.42857143;\r\n  color: #777;\r\n  white-space: nowrap;\r\n}\r\n.md-dropdown-backdrop {\r\n  position: fixed;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 990;\r\n}\r\n.pull-right > .md-dropdown-menu {\r\n  right: 0;\r\n  left: auto;\r\n}\r\n.md-dropup .caret,\r\n.navbar-fixed-bottom .md-dropdown .caret {\r\n  content: \"\";\r\n  border-top: 0;\r\n  border-bottom: 4px dashed;\r\n  border-bottom: 4px solid \\9;\r\n}\r\n.md-dropup .md-dropdown-menu,\r\n.navbar-fixed-bottom .md-dropdown .md-dropdown-menu {\r\n  top: auto;\r\n  bottom: 100%;\r\n  margin-bottom: 2px;\r\n}\r\n@media (min-width: 768px) {\r\n  .md-dropdown-menu {\r\n    right: 0;\r\n    left: auto;\r\n  }\r\n   .md-dropdown-menu-left {\r\n    right: auto;\r\n    left: 0;\r\n  }\r\n}\r\n\r\n</style>\r\n\r\nfffffffff\r\n<br />\r\n<div>\r\n\r\n    <input type=\"text\" name=\"md-dropdown_input\" class=\"md-dropdown-input\" />\r\n\r\n    <span class=\"arrow-down\" (click)=toggle()></span>\r\n\r\n\r\n\r\n    <ul class=\"md-dropdown-menu\">\r\n        <li class=\"md-dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"md-dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n        <li class=\"dropdown-item\">\r\n            <a>Apple2</a>\r\n\r\n        </li>\r\n\r\n\r\n\r\n\r\n    </ul>\r\n    <br />\r\n</div>\r\n\r\n\r\n"
 
 /***/ },
-/* 604 */,
-/* 605 */
+/* 617 */,
+/* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11442,102 +12223,112 @@ webpackJsonp([3],[
 	//# sourceMappingURL=Notification.js.map
 
 /***/ },
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var fromEvent_1 = __webpack_require__(623);
+	var fromEvent_1 = __webpack_require__(638);
 	Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 610 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var interval_1 = __webpack_require__(624);
+	var interval_1 = __webpack_require__(639);
 	Observable_1.Observable.interval = interval_1.interval;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 611 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var concatMap_1 = __webpack_require__(625);
+	var concatMap_1 = __webpack_require__(640);
 	Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 612 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var distinctUntilChanged_1 = __webpack_require__(626);
+	var distinctUntilChanged_1 = __webpack_require__(641);
 	Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 613 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var let_1 = __webpack_require__(627);
+	var do_1 = __webpack_require__(642);
+	Observable_1.Observable.prototype.do = do_1._do;
+	//# sourceMappingURL=do.js.map
+
+/***/ },
+/* 627 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Observable_1 = __webpack_require__(8);
+	var let_1 = __webpack_require__(643);
 	Observable_1.Observable.prototype.let = let_1.letProto;
 	Observable_1.Observable.prototype.letBind = let_1.letProto;
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 614 */,
-/* 615 */
+/* 628 */,
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var observeOn_1 = __webpack_require__(630);
+	var observeOn_1 = __webpack_require__(646);
 	Observable_1.Observable.prototype.observeOn = observeOn_1.observeOn;
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 616 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var scan_1 = __webpack_require__(631);
+	var scan_1 = __webpack_require__(647);
 	Observable_1.Observable.prototype.scan = scan_1.scan;
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 617 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var take_1 = __webpack_require__(633);
+	var take_1 = __webpack_require__(649);
 	Observable_1.Observable.prototype.take = take_1.take;
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 618 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(8);
-	var takeWhile_1 = __webpack_require__(634);
+	var takeWhile_1 = __webpack_require__(650);
 	Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 619 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11546,8 +12337,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
+	var Subject_1 = __webpack_require__(35);
 	var Observable_1 = __webpack_require__(8);
-	var Subscriber_1 = __webpack_require__(39);
+	var Subscriber_1 = __webpack_require__(36);
 	var Subscription_1 = __webpack_require__(95);
 	/**
 	 * @class ConnectableObservable<T>
@@ -11558,131 +12350,136 @@ webpackJsonp([3],[
 	        _super.call(this);
 	        this.source = source;
 	        this.subjectFactory = subjectFactory;
+	        this._refCount = 0;
 	    }
 	    ConnectableObservable.prototype._subscribe = function (subscriber) {
 	        return this.getSubject().subscribe(subscriber);
 	    };
 	    ConnectableObservable.prototype.getSubject = function () {
-	        var subject = this.subject;
-	        if (subject && !subject.isUnsubscribed) {
-	            return subject;
+	        var subject = this._subject;
+	        if (!subject || subject.isStopped) {
+	            this._subject = this.subjectFactory();
 	        }
-	        return (this.subject = this.subjectFactory());
+	        return this._subject;
 	    };
 	    ConnectableObservable.prototype.connect = function () {
-	        var source = this.source;
-	        var subscription = this.subscription;
-	        if (subscription && !subscription.isUnsubscribed) {
-	            return subscription;
+	        var connection = this._connection;
+	        if (!connection) {
+	            connection = this._connection = new Subscription_1.Subscription();
+	            connection.add(this.source
+	                .subscribe(new ConnectableSubscriber(this.getSubject(), this)));
+	            if (connection.isUnsubscribed) {
+	                this._connection = null;
+	                connection = Subscription_1.Subscription.EMPTY;
+	            }
+	            else {
+	                this._connection = connection;
+	            }
 	        }
-	        subscription = source.subscribe(this.getSubject());
-	        subscription.add(new ConnectableSubscription(this));
-	        return (this.subscription = subscription);
+	        return connection;
 	    };
 	    ConnectableObservable.prototype.refCount = function () {
-	        return new RefCountObservable(this);
-	    };
-	    /**
-	     * This method is opened for `ConnectableSubscription`.
-	     * Not to call from others.
-	     */
-	    ConnectableObservable.prototype._closeSubscription = function () {
-	        this.subject = null;
-	        this.subscription = null;
+	        return this.lift(new RefCountOperator(this));
 	    };
 	    return ConnectableObservable;
 	}(Observable_1.Observable));
 	exports.ConnectableObservable = ConnectableObservable;
-	/**
-	 * We need this JSDoc comment for affecting ESDoc.
-	 * @ignore
-	 * @extends {Ignored}
-	 */
-	var ConnectableSubscription = (function (_super) {
-	    __extends(ConnectableSubscription, _super);
-	    function ConnectableSubscription(connectable) {
-	        _super.call(this);
+	var ConnectableSubscriber = (function (_super) {
+	    __extends(ConnectableSubscriber, _super);
+	    function ConnectableSubscriber(destination, connectable) {
+	        _super.call(this, destination);
 	        this.connectable = connectable;
 	    }
-	    ConnectableSubscription.prototype._unsubscribe = function () {
-	        var connectable = this.connectable;
-	        connectable._closeSubscription();
-	        this.connectable = null;
+	    ConnectableSubscriber.prototype._error = function (err) {
+	        this._unsubscribe();
+	        _super.prototype._error.call(this, err);
 	    };
-	    return ConnectableSubscription;
-	}(Subscription_1.Subscription));
-	/**
-	 * We need this JSDoc comment for affecting ESDoc.
-	 * @ignore
-	 * @extends {Ignored}
-	 */
-	var RefCountObservable = (function (_super) {
-	    __extends(RefCountObservable, _super);
-	    function RefCountObservable(connectable, refCount) {
-	        if (refCount === void 0) { refCount = 0; }
-	        _super.call(this);
-	        this.connectable = connectable;
-	        this.refCount = refCount;
-	    }
-	    RefCountObservable.prototype._subscribe = function (subscriber) {
+	    ConnectableSubscriber.prototype._complete = function () {
+	        this._unsubscribe();
+	        _super.prototype._complete.call(this);
+	    };
+	    ConnectableSubscriber.prototype._unsubscribe = function () {
 	        var connectable = this.connectable;
-	        var refCountSubscriber = new RefCountSubscriber(subscriber, this);
-	        var subscription = connectable.subscribe(refCountSubscriber);
-	        if (!subscription.isUnsubscribed && ++this.refCount === 1) {
-	            refCountSubscriber.connection = this.connection = connectable.connect();
+	        if (connectable) {
+	            this.connectable = null;
+	            var connection = connectable._connection;
+	            connectable._refCount = 0;
+	            connectable._subject = null;
+	            connectable._connection = null;
+	            if (connection) {
+	                connection.unsubscribe();
+	            }
+	        }
+	    };
+	    return ConnectableSubscriber;
+	}(Subject_1.SubjectSubscriber));
+	var RefCountOperator = (function () {
+	    function RefCountOperator(connectable) {
+	        this.connectable = connectable;
+	    }
+	    RefCountOperator.prototype.call = function (subscriber, source) {
+	        var connectable = this.connectable;
+	        connectable._refCount++;
+	        var refCounter = new RefCountSubscriber(subscriber, connectable);
+	        var subscription = source._subscribe(refCounter);
+	        if (!refCounter.isUnsubscribed) {
+	            refCounter.connection = connectable.connect();
 	        }
 	        return subscription;
 	    };
-	    return RefCountObservable;
-	}(Observable_1.Observable));
-	/**
-	 * We need this JSDoc comment for affecting ESDoc.
-	 * @ignore
-	 * @extends {Ignored}
-	 */
+	    return RefCountOperator;
+	}());
 	var RefCountSubscriber = (function (_super) {
 	    __extends(RefCountSubscriber, _super);
-	    function RefCountSubscriber(destination, refCountObservable) {
-	        _super.call(this, null);
-	        this.destination = destination;
-	        this.refCountObservable = refCountObservable;
-	        this.connection = refCountObservable.connection;
-	        destination.add(this);
+	    function RefCountSubscriber(destination, connectable) {
+	        _super.call(this, destination);
+	        this.connectable = connectable;
 	    }
-	    RefCountSubscriber.prototype._next = function (value) {
-	        this.destination.next(value);
-	    };
-	    RefCountSubscriber.prototype._error = function (err) {
-	        this._resetConnectable();
-	        this.destination.error(err);
-	    };
-	    RefCountSubscriber.prototype._complete = function () {
-	        this._resetConnectable();
-	        this.destination.complete();
-	    };
-	    RefCountSubscriber.prototype._resetConnectable = function () {
-	        var observable = this.refCountObservable;
-	        var obsConnection = observable.connection;
-	        var subConnection = this.connection;
-	        if (subConnection && subConnection === obsConnection) {
-	            observable.refCount = 0;
-	            obsConnection.unsubscribe();
-	            observable.connection = null;
-	            this.unsubscribe();
-	        }
-	    };
 	    RefCountSubscriber.prototype._unsubscribe = function () {
-	        var observable = this.refCountObservable;
-	        if (observable.refCount === 0) {
+	        var connectable = this.connectable;
+	        if (!connectable) {
+	            this.connection = null;
 	            return;
 	        }
-	        if (--observable.refCount === 0) {
-	            var obsConnection = observable.connection;
-	            var subConnection = this.connection;
-	            if (subConnection && subConnection === obsConnection) {
-	                obsConnection.unsubscribe();
-	                observable.connection = null;
-	            }
+	        this.connectable = null;
+	        var refCount = connectable._refCount;
+	        if (refCount <= 0) {
+	            this.connection = null;
+	            return;
+	        }
+	        connectable._refCount = refCount - 1;
+	        if (refCount > 1) {
+	            this.connection = null;
+	            return;
+	        }
+	        ///
+	        // Compare the local RefCountSubscriber's connection Subscription to the
+	        // connection Subscription on the shared ConnectableObservable. In cases
+	        // where the ConnectableObservable source synchronously emits values, and
+	        // the RefCountSubscriber's dowstream Observers synchronously unsubscribe,
+	        // execution continues to here before the RefCountOperator has a chance to
+	        // supply the RefCountSubscriber with the shared connection Subscription.
+	        // For example:
+	        // ```
+	        // Observable.range(0, 10)
+	        //   .publish()
+	        //   .refCount()
+	        //   .take(5)
+	        //   .subscribe();
+	        // ```
+	        // In order to account for this case, RefCountSubscriber should only dispose
+	        // the ConnectableObservable's shared connection Subscription if the
+	        // connection Subscription exists, *and* either:
+	        //   a. RefCountSubscriber doesn't have a reference to the shared connection
+	        //      Subscription yet, or,
+	        //   b. RefCountSubscriber's connection Subscription reference is identical
+	        //      to the shared connection Subscription
+	        ///
+	        var connection = this.connection;
+	        var sharedConnection = connectable._connection;
+	        this.connection = null;
+	        if (sharedConnection && (!connection || sharedConnection === connection)) {
+	            sharedConnection.unsubscribe();
 	        }
 	    };
 	    return RefCountSubscriber;
@@ -11690,7 +12487,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ },
-/* 620 */
+/* 634 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11770,7 +12567,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-/* 621 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11780,8 +12577,8 @@ webpackJsonp([3],[
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(8);
-	var tryCatch_1 = __webpack_require__(227);
-	var errorObject_1 = __webpack_require__(144);
+	var tryCatch_1 = __webpack_require__(229);
+	var errorObject_1 = __webpack_require__(145);
 	var Subscription_1 = __webpack_require__(95);
 	function isNodeStyleEventEmmitter(sourceObj) {
 	    return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
@@ -11812,16 +12609,42 @@ webpackJsonp([3],[
 	        this.selector = selector;
 	    }
 	    /**
-	     * @param sourceObj
-	     * @param eventName
-	     * @param selector
-	     * @return {FromEventObservable}
+	     * Creates an Observable that emits events of a specific type coming from the
+	     * given event target.
+	     *
+	     * <span class="informal">Creates an Observable from DOM events, or Node
+	     * EventEmitter events or others.</span>
+	     *
+	     * <img src="./img/fromEvent.png" width="100%">
+	     *
+	     * Creates an Observable by attaching an event listener to an "event target",
+	     * which may be an object with `addEventListener` and `removeEventListener`,
+	     * a Node.js EventEmitter, a jQuery style EventEmitter, a NodeList from the
+	     * DOM, or an HTMLCollection from the DOM. The event handler is attached when
+	     * the output Observable is subscribed, and removed when the Subscription is
+	     * unsubscribed.
+	     *
+	     * @example <caption>Emits clicks happening on the DOM document</caption>
+	     * var clicks = Rx.Observable.fromEvent(document, 'click');
+	     * clicks.subscribe(x => console.log(x));
+	     *
+	     * @see {@link from}
+	     * @see {@link fromEventPattern}
+	     *
+	     * @param {EventTargetLike} target The DOMElement, event target, Node.js
+	     * EventEmitter, NodeList or HTMLCollection to attach the event handler to.
+	     * @param {string} eventName The event name of interest, being emitted by the
+	     * `target`.
+	     * @param {function(...args: any): T} [selector] An optional function to
+	     * post-process results. It takes the arguments from the event handler and
+	     * should return a single value.
+	     * @return {Observable<T>}
 	     * @static true
 	     * @name fromEvent
 	     * @owner Observable
 	     */
-	    FromEventObservable.create = function (sourceObj, eventName, selector) {
-	        return new FromEventObservable(sourceObj, eventName, selector);
+	    FromEventObservable.create = function (target, eventName, selector) {
+	        return new FromEventObservable(target, eventName, selector);
 	    };
 	    FromEventObservable.setupSubscription = function (sourceObj, eventName, handler, subscriber) {
 	        var unsubscribe;
@@ -11831,16 +12654,19 @@ webpackJsonp([3],[
 	            }
 	        }
 	        else if (isEventTarget(sourceObj)) {
+	            var source_1 = sourceObj;
 	            sourceObj.addEventListener(eventName, handler);
-	            unsubscribe = function () { return sourceObj.removeEventListener(eventName, handler); };
+	            unsubscribe = function () { return source_1.removeEventListener(eventName, handler); };
 	        }
 	        else if (isJQueryStyleEventEmitter(sourceObj)) {
+	            var source_2 = sourceObj;
 	            sourceObj.on(eventName, handler);
-	            unsubscribe = function () { return sourceObj.off(eventName, handler); };
+	            unsubscribe = function () { return source_2.off(eventName, handler); };
 	        }
 	        else if (isNodeStyleEventEmmitter(sourceObj)) {
+	            var source_3 = sourceObj;
 	            sourceObj.addListener(eventName, handler);
-	            unsubscribe = function () { return sourceObj.removeListener(eventName, handler); };
+	            unsubscribe = function () { return source_3.removeListener(eventName, handler); };
 	        }
 	        subscriber.add(new Subscription_1.Subscription(unsubscribe));
 	    };
@@ -11869,7 +12695,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=FromEventObservable.js.map
 
 /***/ },
-/* 622 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11878,9 +12704,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isNumeric_1 = __webpack_require__(642);
+	var isNumeric_1 = __webpack_require__(658);
 	var Observable_1 = __webpack_require__(8);
-	var async_1 = __webpack_require__(637);
+	var async_1 = __webpack_require__(653);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -11962,29 +12788,59 @@ webpackJsonp([3],[
 	//# sourceMappingURL=IntervalObservable.js.map
 
 /***/ },
-/* 623 */
+/* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromEventObservable_1 = __webpack_require__(621);
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var Observable_1 = __webpack_require__(8);
+	var MulticastObservable = (function (_super) {
+	    __extends(MulticastObservable, _super);
+	    function MulticastObservable(source, connectable, selector) {
+	        _super.call(this);
+	        this.source = source;
+	        this.connectable = connectable;
+	        this.selector = selector;
+	    }
+	    MulticastObservable.prototype._subscribe = function (subscriber) {
+	        var _a = this, selector = _a.selector, connectable = _a.connectable;
+	        var subscription = selector(connectable).subscribe(subscriber);
+	        subscription.add(connectable.connect());
+	        return subscription;
+	    };
+	    return MulticastObservable;
+	}(Observable_1.Observable));
+	exports.MulticastObservable = MulticastObservable;
+	//# sourceMappingURL=MulticastObservable.js.map
+
+/***/ },
+/* 638 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var FromEventObservable_1 = __webpack_require__(635);
 	exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 	//# sourceMappingURL=fromEvent.js.map
 
 /***/ },
-/* 624 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var IntervalObservable_1 = __webpack_require__(622);
+	var IntervalObservable_1 = __webpack_require__(636);
 	exports.interval = IntervalObservable_1.IntervalObservable.create;
 	//# sourceMappingURL=interval.js.map
 
 /***/ },
-/* 625 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeMap_1 = __webpack_require__(362);
+	var mergeMap_1 = __webpack_require__(368);
 	/**
 	 * Projects each source value to an Observable which is merged in the output
 	 * Observable, in a serialized fashion waiting for each one to complete before
@@ -12048,7 +12904,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=concatMap.js.map
 
 /***/ },
-/* 626 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12057,9 +12913,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(39);
-	var tryCatch_1 = __webpack_require__(227);
-	var errorObject_1 = __webpack_require__(144);
+	var Subscriber_1 = __webpack_require__(36);
+	var tryCatch_1 = __webpack_require__(229);
+	var errorObject_1 = __webpack_require__(145);
 	/**
 	 * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
 	 * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
@@ -12130,7 +12986,124 @@ webpackJsonp([3],[
 	//# sourceMappingURL=distinctUntilChanged.js.map
 
 /***/ },
-/* 627 */
+/* 642 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var Subscriber_1 = __webpack_require__(36);
+	/**
+	 * Perform a side effect for every emission on the source Observable, but return
+	 * an Observable that is identical to the source.
+	 *
+	 * <span class="informal">Intercepts each emission on the source and runs a
+	 * function, but returns an output which is identical to the source.</span>
+	 *
+	 * <img src="./img/do.png" width="100%">
+	 *
+	 * Returns a mirrored Observable of the source Observable, but modified so that
+	 * the provided Observer is called to perform a side effect for every value,
+	 * error, and completion emitted by the source. Any errors that are thrown in
+	 * the aforementioned Observer or handlers are safely sent down the error path
+	 * of the output Observable.
+	 *
+	 * This operator is useful for debugging your Observables for the correct values
+	 * or performing other side effects.
+	 *
+	 * Note: this is different to a `subscribe` on the Observable. If the Observable
+	 * returned by `do` is not subscribed, the side effects specified by the
+	 * Observer will never happen. `do` therefore simply spies on existing
+	 * execution, it does not trigger an execution to happen like `subscribe` does.
+	 *
+	 * @example <caption>Map every every click to the clientX position of that click, while also logging the click event</caption>
+	 * var clicks = Rx.Observable.fromEvent(document, 'click');
+	 * var positions = clicks
+	 *   .do(ev => console.log(ev))
+	 *   .map(ev => ev.clientX);
+	 * positions.subscribe(x => console.log(x));
+	 *
+	 * @see {@link map}
+	 * @see {@link subscribe}
+	 *
+	 * @param {Observer|function} [nextOrObserver] A normal Observer object or a
+	 * callback for `next`.
+	 * @param {function} [error] Callback for errors in the source.
+	 * @param {function} [complete] Callback for the completion of the source.
+	 * @return {Observable} An Observable identical to the source, but runs the
+	 * specified Observer or callback(s) for each item.
+	 * @method do
+	 * @name do
+	 * @owner Observable
+	 */
+	function _do(nextOrObserver, error, complete) {
+	    return this.lift(new DoOperator(nextOrObserver, error, complete));
+	}
+	exports._do = _do;
+	var DoOperator = (function () {
+	    function DoOperator(nextOrObserver, error, complete) {
+	        this.nextOrObserver = nextOrObserver;
+	        this.error = error;
+	        this.complete = complete;
+	    }
+	    DoOperator.prototype.call = function (subscriber, source) {
+	        return source._subscribe(new DoSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
+	    };
+	    return DoOperator;
+	}());
+	/**
+	 * We need this JSDoc comment for affecting ESDoc.
+	 * @ignore
+	 * @extends {Ignored}
+	 */
+	var DoSubscriber = (function (_super) {
+	    __extends(DoSubscriber, _super);
+	    function DoSubscriber(destination, nextOrObserver, error, complete) {
+	        _super.call(this, destination);
+	        var safeSubscriber = new Subscriber_1.Subscriber(nextOrObserver, error, complete);
+	        safeSubscriber.syncErrorThrowable = true;
+	        this.add(safeSubscriber);
+	        this.safeSubscriber = safeSubscriber;
+	    }
+	    DoSubscriber.prototype._next = function (value) {
+	        var safeSubscriber = this.safeSubscriber;
+	        safeSubscriber.next(value);
+	        if (safeSubscriber.syncErrorThrown) {
+	            this.destination.error(safeSubscriber.syncErrorValue);
+	        }
+	        else {
+	            this.destination.next(value);
+	        }
+	    };
+	    DoSubscriber.prototype._error = function (err) {
+	        var safeSubscriber = this.safeSubscriber;
+	        safeSubscriber.error(err);
+	        if (safeSubscriber.syncErrorThrown) {
+	            this.destination.error(safeSubscriber.syncErrorValue);
+	        }
+	        else {
+	            this.destination.error(err);
+	        }
+	    };
+	    DoSubscriber.prototype._complete = function () {
+	        var safeSubscriber = this.safeSubscriber;
+	        safeSubscriber.complete();
+	        if (safeSubscriber.syncErrorThrown) {
+	            this.destination.error(safeSubscriber.syncErrorValue);
+	        }
+	        else {
+	            this.destination.complete();
+	        }
+	    };
+	    return DoSubscriber;
+	}(Subscriber_1.Subscriber));
+	//# sourceMappingURL=do.js.map
+
+/***/ },
+/* 643 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12147,19 +13120,23 @@ webpackJsonp([3],[
 	//# sourceMappingURL=let.js.map
 
 /***/ },
-/* 628 */,
-/* 629 */
+/* 644 */,
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ConnectableObservable_1 = __webpack_require__(619);
+	var MulticastObservable_1 = __webpack_require__(637);
+	var ConnectableObservable_1 = __webpack_require__(633);
 	/**
 	 * Returns an Observable that emits the results of invoking a specified selector on items
 	 * emitted by a ConnectableObservable that shares a single subscription to the underlying stream.
 	 *
 	 * <img src="./img/multicast.png" width="100%">
 	 *
-	 * @param {Function} selector - a function that can use the multicasted source stream
+	 * @param {Function|Subject} Factory function to create an intermediate subject through
+	 * which the source sequence's elements will be multicast to the selector function
+	 * or Subject to push source elements into.
+	 * @param {Function} Optional selector function that can use the multicasted source stream
 	 * as many times as needed, without causing multiple subscriptions to the source stream.
 	 * Subscribers to the given source will receive all notifications of the source from the
 	 * time of the subscription forward.
@@ -12169,7 +13146,7 @@ webpackJsonp([3],[
 	 * @method multicast
 	 * @owner Observable
 	 */
-	function multicast(subjectOrSubjectFactory) {
+	function multicast(subjectOrSubjectFactory, selector) {
 	    var subjectFactory;
 	    if (typeof subjectOrSubjectFactory === 'function') {
 	        subjectFactory = subjectOrSubjectFactory;
@@ -12179,13 +13156,14 @@ webpackJsonp([3],[
 	            return subjectOrSubjectFactory;
 	        };
 	    }
-	    return new ConnectableObservable_1.ConnectableObservable(this, subjectFactory);
+	    var connectable = new ConnectableObservable_1.ConnectableObservable(this, subjectFactory);
+	    return selector ? new MulticastObservable_1.MulticastObservable(this, connectable, selector) : connectable;
 	}
 	exports.multicast = multicast;
 	//# sourceMappingURL=multicast.js.map
 
 /***/ },
-/* 630 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12194,8 +13172,8 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(39);
-	var Notification_1 = __webpack_require__(605);
+	var Subscriber_1 = __webpack_require__(36);
+	var Notification_1 = __webpack_require__(618);
 	/**
 	 * @see {@link Notification}
 	 *
@@ -12265,7 +13243,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 631 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12274,9 +13252,9 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(39);
+	var Subscriber_1 = __webpack_require__(36);
 	/**
-	 * Applies an accumulation function over the source Observable, and returns each
+	 * Applies an accumulator function over the source Observable, and returns each
 	 * intermediate result, with an optional seed value.
 	 *
 	 * <span class="informal">It's like {@link reduce}, but emits the current
@@ -12305,8 +13283,8 @@ webpackJsonp([3],[
 	 * @see {@link mergeScan}
 	 * @see {@link reduce}
 	 *
-	 * @param {function(acc: R, value: T): R} accumulator The accumulator function
-	 * called on each source value.
+	 * @param {function(acc: R, value: T, index: number): R} accumulator
+	 * The accumulator function called on each source value.
 	 * @param {T|R} [seed] The initial accumulation value.
 	 * @return {Observable<R>} An observable of the accumulated values.
 	 * @method scan
@@ -12336,9 +13314,9 @@ webpackJsonp([3],[
 	    function ScanSubscriber(destination, accumulator, seed) {
 	        _super.call(this, destination);
 	        this.accumulator = accumulator;
+	        this.index = 0;
 	        this.accumulatorSet = false;
 	        this.seed = seed;
-	        this.accumulator = accumulator;
 	        this.accumulatorSet = typeof seed !== 'undefined';
 	    }
 	    Object.defineProperty(ScanSubscriber.prototype, "seed", {
@@ -12362,9 +13340,10 @@ webpackJsonp([3],[
 	        }
 	    };
 	    ScanSubscriber.prototype._tryNext = function (value) {
+	        var index = this.index++;
 	        var result;
 	        try {
-	            result = this.accumulator(this.seed, value);
+	            result = this.accumulator(this.seed, value, index);
 	        }
 	        catch (err) {
 	            this.destination.error(err);
@@ -12377,12 +13356,12 @@ webpackJsonp([3],[
 	//# sourceMappingURL=scan.js.map
 
 /***/ },
-/* 632 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var multicast_1 = __webpack_require__(629);
-	var Subject_1 = __webpack_require__(38);
+	var multicast_1 = __webpack_require__(645);
+	var Subject_1 = __webpack_require__(35);
 	function shareSubjectFactory() {
 	    return new Subject_1.Subject();
 	}
@@ -12406,7 +13385,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=share.js.map
 
 /***/ },
-/* 633 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12415,23 +13394,48 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(39);
-	var ArgumentOutOfRangeError_1 = __webpack_require__(640);
-	var EmptyObservable_1 = __webpack_require__(620);
+	var Subscriber_1 = __webpack_require__(36);
+	var ArgumentOutOfRangeError_1 = __webpack_require__(656);
+	var EmptyObservable_1 = __webpack_require__(634);
 	/**
+	 * Emits only the first `count` values emitted by the source Observable.
+	 *
+	 * <span class="informal">Takes the first `count` values from the source, then
+	 * completes.</span>
+	 *
+	 * <img src="./img/take.png" width="100%">
+	 *
+	 * `take` returns an Observable that emits only the first `count` values emitted
+	 * by the source Observable. If the source emits fewer than `count` values then
+	 * all of its values are emitted. After that, it completes, regardless if the
+	 * source completes.
+	 *
+	 * @example <caption>Take the first 5 seconds of an infinite 1-second interval Observable</caption>
+	 * var interval = Rx.Observable.interval(1000);
+	 * var five = interval.take(5);
+	 * five.subscribe(x => console.log(x));
+	 *
+	 * @see {@link takeLast}
+	 * @see {@link takeUntil}
+	 * @see {@link takeWhile}
+	 * @see {@link skip}
+	 *
 	 * @throws {ArgumentOutOfRangeError} When using `take(i)`, it delivers an
 	 * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
-	 * @param total
-	 * @return {any}
+	 *
+	 * @param {number} count The maximum number of `next` values to emit.
+	 * @return {Observable<T>} An Observable that emits only the first `count`
+	 * values emitted by the source Observable, or all of the values from the source
+	 * if the source emits fewer than `count` values.
 	 * @method take
 	 * @owner Observable
 	 */
-	function take(total) {
-	    if (total === 0) {
+	function take(count) {
+	    if (count === 0) {
 	        return new EmptyObservable_1.EmptyObservable();
 	    }
 	    else {
-	        return this.lift(new TakeOperator(total));
+	        return this.lift(new TakeOperator(count));
 	    }
 	}
 	exports.take = take;
@@ -12474,7 +13478,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=take.js.map
 
 /***/ },
-/* 634 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12483,10 +13487,40 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscriber_1 = __webpack_require__(39);
+	var Subscriber_1 = __webpack_require__(36);
 	/**
-	 * @param predicate
-	 * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
+	 * Emits values emitted by the source Observable so long as each value satisfies
+	 * the given `predicate`, and then completes as soon as this `predicate` is not
+	 * satisfied.
+	 *
+	 * <span class="informal">Takes values from the source only while they pass the
+	 * condition given. When the first value does not satisfy, it completes.</span>
+	 *
+	 * <img src="./img/takeWhile.png" width="100%">
+	 *
+	 * `takeWhile` subscribes and begins mirroring the source Observable. Each value
+	 * emitted on the source is given to the `predicate` function which returns a
+	 * boolean, representing a condition to be satisfied by the source values. The
+	 * output Observable emits the source values until such time as the `predicate`
+	 * returns false, at which point `takeWhile` stops mirroring the source
+	 * Observable and completes the output Observable.
+	 *
+	 * @example <caption>Emit click events only while the clientX property is greater than 200</caption>
+	 * var clicks = Rx.Observable.fromEvent(document, 'click');
+	 * var result = clicks.takeWhile(ev => ev.clientX > 200);
+	 * result.subscribe(x => console.log(x));
+	 *
+	 * @see {@link take}
+	 * @see {@link takeLast}
+	 * @see {@link takeUntil}
+	 * @see {@link skip}
+	 *
+	 * @param {function(value: T, index: number): boolean} predicate A function that
+	 * evaluates a value emitted by the source Observable and returns a boolean.
+	 * Also takes the (zero-based) index as the second argument.
+	 * @return {Observable<T>} An Observable that emits the values from the source
+	 * Observable so long as each value satisfies the condition defined by the
+	 * `predicate`, then completes.
 	 * @method takeWhile
 	 * @owner Observable
 	 */
@@ -12541,7 +13575,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=takeWhile.js.map
 
 /***/ },
-/* 635 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12550,8 +13584,8 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FutureAction_1 = __webpack_require__(224);
-	var QueueScheduler_1 = __webpack_require__(363);
+	var FutureAction_1 = __webpack_require__(226);
+	var QueueScheduler_1 = __webpack_require__(369);
 	var AsyncScheduler = (function (_super) {
 	    __extends(AsyncScheduler, _super);
 	    function AsyncScheduler() {
@@ -12566,7 +13600,7 @@ webpackJsonp([3],[
 	//# sourceMappingURL=AsyncScheduler.js.map
 
 /***/ },
-/* 636 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12575,7 +13609,7 @@ webpackJsonp([3],[
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var FutureAction_1 = __webpack_require__(224);
+	var FutureAction_1 = __webpack_require__(226);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -12604,26 +13638,26 @@ webpackJsonp([3],[
 	//# sourceMappingURL=QueueAction.js.map
 
 /***/ },
-/* 637 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var AsyncScheduler_1 = __webpack_require__(635);
+	var AsyncScheduler_1 = __webpack_require__(651);
 	exports.async = new AsyncScheduler_1.AsyncScheduler();
 	//# sourceMappingURL=async.js.map
 
 /***/ },
-/* 638 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var QueueScheduler_1 = __webpack_require__(363);
+	var QueueScheduler_1 = __webpack_require__(369);
 	exports.queue = new QueueScheduler_1.QueueScheduler();
 	//# sourceMappingURL=queue.js.map
 
 /***/ },
-/* 639 */,
-/* 640 */
+/* 655 */,
+/* 656 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12654,12 +13688,12 @@ webpackJsonp([3],[
 	//# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ },
-/* 641 */,
-/* 642 */
+/* 657 */,
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var isArray_1 = __webpack_require__(226);
+	var isArray_1 = __webpack_require__(228);
 	function isNumeric(val) {
 	    // parseFloat NaNs numeric-cast false positives (null|true|false|"")
 	    // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
@@ -12672,19 +13706,28 @@ webpackJsonp([3],[
 	//# sourceMappingURL=isNumeric.js.map
 
 /***/ },
-/* 643 */,
-/* 644 */,
-/* 645 */,
-/* 646 */,
-/* 647 */
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function throwError(e) { throw e; }
+	exports.throwError = throwError;
+	//# sourceMappingURL=throwError.js.map
+
+/***/ },
+/* 663 */,
+/* 664 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var dispatcher_1 = __webpack_require__(368);
-	var store_1 = __webpack_require__(370);
-	var store_backend_1 = __webpack_require__(369);
-	var utils_1 = __webpack_require__(371);
+	var dispatcher_1 = __webpack_require__(372);
+	var store_1 = __webpack_require__(374);
+	var store_backend_1 = __webpack_require__(373);
+	var utils_1 = __webpack_require__(375);
 	exports.PRE_MIDDLEWARE = new core_1.OpaqueToken('ngrx/store/pre-middleware');
 	exports.POST_MIDDLEWARE = new core_1.OpaqueToken('ngrx/store/post-middleware');
 	exports.RESOLVED_PRE_MIDDLEWARE = new core_1.OpaqueToken('ngrx/store/resolved-pre-middleware');
@@ -12795,7 +13838,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 648 */
+/* 665 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12805,15 +13848,15 @@ webpackJsonp([3],[
 	 * @license MIT
 	 */
 	"use strict";
-	var google_map_1 = __webpack_require__(373);
-	var google_map_marker_1 = __webpack_require__(372);
-	var google_map_info_window_1 = __webpack_require__(229);
+	var google_map_1 = __webpack_require__(377);
+	var google_map_marker_1 = __webpack_require__(376);
+	var google_map_info_window_1 = __webpack_require__(231);
 	exports.ANGULAR2_GOOGLE_MAPS_DIRECTIVES = [google_map_1.SebmGoogleMap, google_map_marker_1.SebmGoogleMapMarker, google_map_info_window_1.SebmGoogleMapInfoWindow];
 
 	
 
 /***/ },
-/* 649 */
+/* 666 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12823,19 +13866,560 @@ webpackJsonp([3],[
 	 * @license MIT
 	 */
 	"use strict";
-	var google_map_1 = __webpack_require__(373);
+	var google_map_1 = __webpack_require__(377);
 	exports.SebmGoogleMap = google_map_1.SebmGoogleMap;
-	var google_map_marker_1 = __webpack_require__(372);
+	var google_map_marker_1 = __webpack_require__(376);
 	exports.SebmGoogleMapMarker = google_map_marker_1.SebmGoogleMapMarker;
-	var google_map_info_window_1 = __webpack_require__(229);
+	var google_map_info_window_1 = __webpack_require__(231);
 	exports.SebmGoogleMapInfoWindow = google_map_info_window_1.SebmGoogleMapInfoWindow;
-	var directives_const_1 = __webpack_require__(648);
+	var directives_const_1 = __webpack_require__(665);
 	exports.ANGULAR2_GOOGLE_MAPS_DIRECTIVES = directives_const_1.ANGULAR2_GOOGLE_MAPS_DIRECTIVES;
 
 	
 
 /***/ },
-/* 650 */
+/* 667 */
+/***/ function(module, exports) {
+
+	"use strict";
+	exports.empty = {
+	    isUnsubscribed: true,
+	    next: function (value) { },
+	    error: function (err) { throw err; },
+	    complete: function () { }
+	};
+	
+
+/***/ },
+/* 668 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var isFunction_1 = __webpack_require__(381);
+	var Subscription_1 = __webpack_require__(669);
+	var rxSubscriber_1 = __webpack_require__(379);
+	var Observer_1 = __webpack_require__(667);
+	/**
+	 * Implements the {@link Observer} interface and extends the
+	 * {@link Subscription} class. While the {@link Observer} is the public API for
+	 * consuming the values of an {@link Observable}, all Observers get converted to
+	 * a Subscriber, in order to provide Subscription-like capabilities such as
+	 * `unsubscribe`. Subscriber is a common type in RxJS, and crucial for
+	 * implementing operators, but it is rarely used as a public API.
+	 *
+	 * @class Subscriber<T>
+	 */
+	var Subscriber = (function (_super) {
+	    __extends(Subscriber, _super);
+	    /**
+	     * @param {Observer|function(value: T): void} [destinationOrNext] A partially
+	     * defined Observer or a `next` callback function.
+	     * @param {function(e: ?any): void} [error] The `error` callback of an
+	     * Observer.
+	     * @param {function(): void} [complete] The `complete` callback of an
+	     * Observer.
+	     */
+	    function Subscriber(destinationOrNext, error, complete) {
+	        _super.call(this);
+	        this.syncErrorValue = null;
+	        this.syncErrorThrown = false;
+	        this.syncErrorThrowable = false;
+	        this.isStopped = false;
+	        switch (arguments.length) {
+	            case 0:
+	                this.destination = Observer_1.empty;
+	                break;
+	            case 1:
+	                if (!destinationOrNext) {
+	                    this.destination = Observer_1.empty;
+	                    break;
+	                }
+	                if (typeof destinationOrNext === 'object') {
+	                    if (destinationOrNext instanceof Subscriber) {
+	                        this.destination = destinationOrNext;
+	                        this.destination.add(this);
+	                    }
+	                    else {
+	                        this.syncErrorThrowable = true;
+	                        this.destination = new SafeSubscriber(this, destinationOrNext);
+	                    }
+	                    break;
+	                }
+	            default:
+	                this.syncErrorThrowable = true;
+	                this.destination = new SafeSubscriber(this, destinationOrNext, error, complete);
+	                break;
+	        }
+	    }
+	    /**
+	     * A static factory for a Subscriber, given a (potentially partial) definition
+	     * of an Observer.
+	     * @param {function(x: ?T): void} [next] The `next` callback of an Observer.
+	     * @param {function(e: ?any): void} [error] The `error` callback of an
+	     * Observer.
+	     * @param {function(): void} [complete] The `complete` callback of an
+	     * Observer.
+	     * @return {Subscriber<T>} A Subscriber wrapping the (partially defined)
+	     * Observer represented by the given arguments.
+	     */
+	    Subscriber.create = function (next, error, complete) {
+	        var subscriber = new Subscriber(next, error, complete);
+	        subscriber.syncErrorThrowable = false;
+	        return subscriber;
+	    };
+	    /**
+	     * The {@link Observer} callback to receive notifications of type `next` from
+	     * the Observable, with a value. The Observable may call this method 0 or more
+	     * times.
+	     * @param {T} [value] The `next` value.
+	     * @return {void}
+	     */
+	    Subscriber.prototype.next = function (value) {
+	        if (!this.isStopped) {
+	            this._next(value);
+	        }
+	    };
+	    /**
+	     * The {@link Observer} callback to receive notifications of type `error` from
+	     * the Observable, with an attached {@link Error}. Notifies the Observer that
+	     * the Observable has experienced an error condition.
+	     * @param {any} [err] The `error` exception.
+	     * @return {void}
+	     */
+	    Subscriber.prototype.error = function (err) {
+	        if (!this.isStopped) {
+	            this.isStopped = true;
+	            this._error(err);
+	        }
+	    };
+	    /**
+	     * The {@link Observer} callback to receive a valueless notification of type
+	     * `complete` from the Observable. Notifies the Observer that the Observable
+	     * has finished sending push-based notifications.
+	     * @return {void}
+	     */
+	    Subscriber.prototype.complete = function () {
+	        if (!this.isStopped) {
+	            this.isStopped = true;
+	            this._complete();
+	        }
+	    };
+	    Subscriber.prototype.unsubscribe = function () {
+	        if (this.isUnsubscribed) {
+	            return;
+	        }
+	        this.isStopped = true;
+	        _super.prototype.unsubscribe.call(this);
+	    };
+	    Subscriber.prototype._next = function (value) {
+	        this.destination.next(value);
+	    };
+	    Subscriber.prototype._error = function (err) {
+	        this.destination.error(err);
+	        this.unsubscribe();
+	    };
+	    Subscriber.prototype._complete = function () {
+	        this.destination.complete();
+	        this.unsubscribe();
+	    };
+	    Subscriber.prototype[rxSubscriber_1.$$rxSubscriber] = function () {
+	        return this;
+	    };
+	    return Subscriber;
+	}(Subscription_1.Subscription));
+	exports.Subscriber = Subscriber;
+	/**
+	 * We need this JSDoc comment for affecting ESDoc.
+	 * @ignore
+	 * @extends {Ignored}
+	 */
+	var SafeSubscriber = (function (_super) {
+	    __extends(SafeSubscriber, _super);
+	    function SafeSubscriber(_parent, observerOrNext, error, complete) {
+	        _super.call(this);
+	        this._parent = _parent;
+	        var next;
+	        var context = this;
+	        if (isFunction_1.isFunction(observerOrNext)) {
+	            next = observerOrNext;
+	        }
+	        else if (observerOrNext) {
+	            context = observerOrNext;
+	            next = observerOrNext.next;
+	            error = observerOrNext.error;
+	            complete = observerOrNext.complete;
+	            if (isFunction_1.isFunction(context.unsubscribe)) {
+	                this.add(context.unsubscribe.bind(context));
+	            }
+	            context.unsubscribe = this.unsubscribe.bind(this);
+	        }
+	        this._context = context;
+	        this._next = next;
+	        this._error = error;
+	        this._complete = complete;
+	    }
+	    SafeSubscriber.prototype.next = function (value) {
+	        if (!this.isStopped && this._next) {
+	            var _parent = this._parent;
+	            if (!_parent.syncErrorThrowable) {
+	                this.__tryOrUnsub(this._next, value);
+	            }
+	            else if (this.__tryOrSetError(_parent, this._next, value)) {
+	                this.unsubscribe();
+	            }
+	        }
+	    };
+	    SafeSubscriber.prototype.error = function (err) {
+	        if (!this.isStopped) {
+	            var _parent = this._parent;
+	            if (this._error) {
+	                if (!_parent.syncErrorThrowable) {
+	                    this.__tryOrUnsub(this._error, err);
+	                    this.unsubscribe();
+	                }
+	                else {
+	                    this.__tryOrSetError(_parent, this._error, err);
+	                    this.unsubscribe();
+	                }
+	            }
+	            else if (!_parent.syncErrorThrowable) {
+	                this.unsubscribe();
+	                throw err;
+	            }
+	            else {
+	                _parent.syncErrorValue = err;
+	                _parent.syncErrorThrown = true;
+	                this.unsubscribe();
+	            }
+	        }
+	    };
+	    SafeSubscriber.prototype.complete = function () {
+	        if (!this.isStopped) {
+	            var _parent = this._parent;
+	            if (this._complete) {
+	                if (!_parent.syncErrorThrowable) {
+	                    this.__tryOrUnsub(this._complete);
+	                    this.unsubscribe();
+	                }
+	                else {
+	                    this.__tryOrSetError(_parent, this._complete);
+	                    this.unsubscribe();
+	                }
+	            }
+	            else {
+	                this.unsubscribe();
+	            }
+	        }
+	    };
+	    SafeSubscriber.prototype.__tryOrUnsub = function (fn, value) {
+	        try {
+	            fn.call(this._context, value);
+	        }
+	        catch (err) {
+	            this.unsubscribe();
+	            throw err;
+	        }
+	    };
+	    SafeSubscriber.prototype.__tryOrSetError = function (parent, fn, value) {
+	        try {
+	            fn.call(this._context, value);
+	        }
+	        catch (err) {
+	            parent.syncErrorValue = err;
+	            parent.syncErrorThrown = true;
+	            return true;
+	        }
+	        return false;
+	    };
+	    SafeSubscriber.prototype._unsubscribe = function () {
+	        var _parent = this._parent;
+	        this._context = null;
+	        this._parent = null;
+	        _parent.unsubscribe();
+	    };
+	    return SafeSubscriber;
+	}(Subscriber));
+	
+
+/***/ },
+/* 669 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var isArray_1 = __webpack_require__(672);
+	var isObject_1 = __webpack_require__(673);
+	var isFunction_1 = __webpack_require__(381);
+	var tryCatch_1 = __webpack_require__(675);
+	var errorObject_1 = __webpack_require__(380);
+	var UnsubscriptionError_1 = __webpack_require__(671);
+	/**
+	 * Represents a disposable resource, such as the execution of an Observable. A
+	 * Subscription has one important method, `unsubscribe`, that takes no argument
+	 * and just disposes the resource held by the subscription.
+	 *
+	 * Additionally, subscriptions may be grouped together through the `add()`
+	 * method, which will attach a child Subscription to the current Subscription.
+	 * When a Subscription is unsubscribed, all its children (and its grandchildren)
+	 * will be unsubscribed as well.
+	 *
+	 * @class Subscription
+	 */
+	var Subscription = (function () {
+	    /**
+	     * @param {function(): void} [unsubscribe] A function describing how to
+	     * perform the disposal of resources when the `unsubscribe` method is called.
+	     */
+	    function Subscription(unsubscribe) {
+	        /**
+	         * A flag to indicate whether this Subscription has already been unsubscribed.
+	         * @type {boolean}
+	         */
+	        this.isUnsubscribed = false;
+	        if (unsubscribe) {
+	            this._unsubscribe = unsubscribe;
+	        }
+	    }
+	    /**
+	     * Disposes the resources held by the subscription. May, for instance, cancel
+	     * an ongoing Observable execution or cancel any other type of work that
+	     * started when the Subscription was created.
+	     * @return {void}
+	     */
+	    Subscription.prototype.unsubscribe = function () {
+	        var hasErrors = false;
+	        var errors;
+	        if (this.isUnsubscribed) {
+	            return;
+	        }
+	        this.isUnsubscribed = true;
+	        var _a = this, _unsubscribe = _a._unsubscribe, _subscriptions = _a._subscriptions;
+	        this._subscriptions = null;
+	        if (isFunction_1.isFunction(_unsubscribe)) {
+	            var trial = tryCatch_1.tryCatch(_unsubscribe).call(this);
+	            if (trial === errorObject_1.errorObject) {
+	                hasErrors = true;
+	                (errors = errors || []).push(errorObject_1.errorObject.e);
+	            }
+	        }
+	        if (isArray_1.isArray(_subscriptions)) {
+	            var index = -1;
+	            var len = _subscriptions.length;
+	            while (++index < len) {
+	                var sub = _subscriptions[index];
+	                if (isObject_1.isObject(sub)) {
+	                    var trial = tryCatch_1.tryCatch(sub.unsubscribe).call(sub);
+	                    if (trial === errorObject_1.errorObject) {
+	                        hasErrors = true;
+	                        errors = errors || [];
+	                        var err = errorObject_1.errorObject.e;
+	                        if (err instanceof UnsubscriptionError_1.UnsubscriptionError) {
+	                            errors = errors.concat(err.errors);
+	                        }
+	                        else {
+	                            errors.push(err);
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	        if (hasErrors) {
+	            throw new UnsubscriptionError_1.UnsubscriptionError(errors);
+	        }
+	    };
+	    /**
+	     * Adds a tear down to be called during the unsubscribe() of this
+	     * Subscription.
+	     *
+	     * If the tear down being added is a subscription that is already
+	     * unsubscribed, is the same reference `add` is being called on, or is
+	     * `Subscription.EMPTY`, it will not be added.
+	     *
+	     * If this subscription is already in an `isUnsubscribed` state, the passed
+	     * tear down logic will be executed immediately.
+	     *
+	     * @param {TeardownLogic} teardown The additional logic to execute on
+	     * teardown.
+	     * @return {Subscription} Returns the Subscription used or created to be
+	     * added to the inner subscriptions list. This Subscription can be used with
+	     * `remove()` to remove the passed teardown logic from the inner subscriptions
+	     * list.
+	     */
+	    Subscription.prototype.add = function (teardown) {
+	        if (!teardown || (teardown === this) || (teardown === Subscription.EMPTY)) {
+	            return;
+	        }
+	        var sub = teardown;
+	        switch (typeof teardown) {
+	            case 'function':
+	                sub = new Subscription(teardown);
+	            case 'object':
+	                if (sub.isUnsubscribed || typeof sub.unsubscribe !== 'function') {
+	                    break;
+	                }
+	                else if (this.isUnsubscribed) {
+	                    sub.unsubscribe();
+	                }
+	                else {
+	                    (this._subscriptions || (this._subscriptions = [])).push(sub);
+	                }
+	                break;
+	            default:
+	                throw new Error('Unrecognized teardown ' + teardown + ' added to Subscription.');
+	        }
+	        return sub;
+	    };
+	    /**
+	     * Removes a Subscription from the internal list of subscriptions that will
+	     * unsubscribe during the unsubscribe process of this Subscription.
+	     * @param {Subscription} subscription The subscription to remove.
+	     * @return {void}
+	     */
+	    Subscription.prototype.remove = function (subscription) {
+	        // HACK: This might be redundant because of the logic in `add()`
+	        if (subscription == null || (subscription === this) || (subscription === Subscription.EMPTY)) {
+	            return;
+	        }
+	        var subscriptions = this._subscriptions;
+	        if (subscriptions) {
+	            var subscriptionIndex = subscriptions.indexOf(subscription);
+	            if (subscriptionIndex !== -1) {
+	                subscriptions.splice(subscriptionIndex, 1);
+	            }
+	        }
+	    };
+	    Subscription.EMPTY = (function (empty) {
+	        empty.isUnsubscribed = true;
+	        return empty;
+	    }(new Subscription()));
+	    return Subscription;
+	}());
+	exports.Subscription = Subscription;
+	
+
+/***/ },
+/* 670 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var root_1 = __webpack_require__(232);
+	var Symbol = root_1.root.Symbol;
+	if (typeof Symbol === 'function') {
+	    if (Symbol.observable) {
+	        exports.$$observable = Symbol.observable;
+	    }
+	    else {
+	        if (typeof Symbol.for === 'function') {
+	            exports.$$observable = Symbol.for('observable');
+	        }
+	        else {
+	            exports.$$observable = Symbol('observable');
+	        }
+	        Symbol.observable = exports.$$observable;
+	    }
+	}
+	else {
+	    exports.$$observable = '@@observable';
+	}
+	
+
+/***/ },
+/* 671 */
+/***/ function(module, exports) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	/**
+	 * An error thrown when one or more errors have occurred during the
+	 * `unsubscribe` of a {@link Subscription}.
+	 */
+	var UnsubscriptionError = (function (_super) {
+	    __extends(UnsubscriptionError, _super);
+	    function UnsubscriptionError(errors) {
+	        _super.call(this);
+	        this.errors = errors;
+	        this.name = 'UnsubscriptionError';
+	        this.message = errors ? errors.length + " errors occurred during unsubscription:\n" + errors.map(function (err, i) { return ((i + 1) + ") " + err.toString()); }).join('\n') : '';
+	    }
+	    return UnsubscriptionError;
+	}(Error));
+	exports.UnsubscriptionError = UnsubscriptionError;
+	
+
+/***/ },
+/* 672 */
+/***/ function(module, exports) {
+
+	"use strict";
+	exports.isArray = Array.isArray || (function (x) { return x && typeof x.length === 'number'; });
+	
+
+/***/ },
+/* 673 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function isObject(x) {
+	    return x != null && typeof x === 'object';
+	}
+	exports.isObject = isObject;
+	
+
+/***/ },
+/* 674 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Subscriber_1 = __webpack_require__(668);
+	var rxSubscriber_1 = __webpack_require__(379);
+	function toSubscriber(nextOrObserver, error, complete) {
+	    if (nextOrObserver && typeof nextOrObserver === 'object') {
+	        if (nextOrObserver instanceof Subscriber_1.Subscriber) {
+	            return nextOrObserver;
+	        }
+	        else if (typeof nextOrObserver[rxSubscriber_1.$$rxSubscriber] === 'function') {
+	            return nextOrObserver[rxSubscriber_1.$$rxSubscriber]();
+	        }
+	    }
+	    return new Subscriber_1.Subscriber(nextOrObserver, error, complete);
+	}
+	exports.toSubscriber = toSubscriber;
+	
+
+/***/ },
+/* 675 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var errorObject_1 = __webpack_require__(380);
+	var tryCatchTarget;
+	function tryCatcher() {
+	    try {
+	        return tryCatchTarget.apply(this, arguments);
+	    }
+	    catch (e) {
+	        errorObject_1.errorObject.e = e;
+	        return errorObject_1.errorObject;
+	    }
+	}
+	function tryCatch(fn) {
+	    tryCatchTarget = fn;
+	    return tryCatcher;
+	}
+	exports.tryCatch = tryCatch;
+	;
+	
+
+/***/ },
+/* 676 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -12845,17 +14429,17 @@ webpackJsonp([3],[
 	 * @license MIT
 	 */
 	"use strict";
-	var maps_api_loader_1 = __webpack_require__(146);
+	var maps_api_loader_1 = __webpack_require__(147);
 	exports.MapsAPILoader = maps_api_loader_1.MapsAPILoader;
-	var noop_maps_api_loader_1 = __webpack_require__(651);
+	var noop_maps_api_loader_1 = __webpack_require__(677);
 	exports.NoOpMapsAPILoader = noop_maps_api_loader_1.NoOpMapsAPILoader;
-	var google_maps_api_wrapper_1 = __webpack_require__(145);
+	var google_maps_api_wrapper_1 = __webpack_require__(146);
 	exports.GoogleMapsAPIWrapper = google_maps_api_wrapper_1.GoogleMapsAPIWrapper;
-	var marker_manager_1 = __webpack_require__(147);
+	var marker_manager_1 = __webpack_require__(148);
 	exports.MarkerManager = marker_manager_1.MarkerManager;
-	var info_window_manager_1 = __webpack_require__(230);
+	var info_window_manager_1 = __webpack_require__(233);
 	exports.InfoWindowManager = info_window_manager_1.InfoWindowManager;
-	var lazy_maps_api_loader_1 = __webpack_require__(374);
+	var lazy_maps_api_loader_1 = __webpack_require__(382);
 	exports.LazyMapsAPILoader = lazy_maps_api_loader_1.LazyMapsAPILoader;
 	exports.LazyMapsAPILoaderConfig = lazy_maps_api_loader_1.LazyMapsAPILoaderConfig;
 	exports.GoogleMapsScriptProtocol = lazy_maps_api_loader_1.GoogleMapsScriptProtocol;
@@ -12863,7 +14447,7 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 651 */
+/* 677 */
 /***/ function(module, exports) {
 
 	/**
@@ -12895,11 +14479,11 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 652 */
+/* 678 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {"use strict";
-	var hmr_store_1 = __webpack_require__(148);
+	var hmr_store_1 = __webpack_require__(149);
 	// noop in parentNode
 	// TODO: find a better way to noop
 	var _env = typeof process !== 'undefined' &&
@@ -12949,20 +14533,20 @@ webpackJsonp([3],[
 	}
 	exports.HmrState = HmrState;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(256)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(259)))
 
 /***/ },
-/* 653 */
+/* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var hmr_store_1 = __webpack_require__(148);
-	__export(__webpack_require__(654));
-	__export(__webpack_require__(652));
-	__export(__webpack_require__(148));
+	var hmr_store_1 = __webpack_require__(149);
+	__export(__webpack_require__(680));
+	__export(__webpack_require__(678));
+	__export(__webpack_require__(149));
 	function provideHmrState(initialState) {
 	    if (initialState === void 0) { initialState = {}; }
 	    return [
@@ -12974,11 +14558,11 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 654 */
+/* 680 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var hmr_store_1 = __webpack_require__(148);
+	var hmr_store_1 = __webpack_require__(149);
 	function hotModuleReplacement(bootloader, module, options) {
 	    if (options === void 0) { options = {}; }
 	    if (!module.hot) {
@@ -13084,32 +14668,6 @@ webpackJsonp([3],[
 	
 
 /***/ },
-/* 655 */,
-/* 656 */,
-/* 657 */,
-/* 658 */,
-/* 659 */,
-/* 660 */,
-/* 661 */,
-/* 662 */,
-/* 663 */,
-/* 664 */,
-/* 665 */,
-/* 666 */,
-/* 667 */,
-/* 668 */,
-/* 669 */,
-/* 670 */,
-/* 671 */,
-/* 672 */,
-/* 673 */,
-/* 674 */,
-/* 675 */,
-/* 676 */,
-/* 677 */,
-/* 678 */,
-/* 679 */,
-/* 680 */,
 /* 681 */,
 /* 682 */,
 /* 683 */,
@@ -13237,7 +14795,33 @@ webpackJsonp([3],[
 /* 805 */,
 /* 806 */,
 /* 807 */,
-/* 808 */
+/* 808 */,
+/* 809 */,
+/* 810 */,
+/* 811 */,
+/* 812 */,
+/* 813 */,
+/* 814 */,
+/* 815 */,
+/* 816 */,
+/* 817 */,
+/* 818 */,
+/* 819 */,
+/* 820 */,
+/* 821 */,
+/* 822 */,
+/* 823 */,
+/* 824 */,
+/* 825 */,
+/* 826 */,
+/* 827 */,
+/* 828 */,
+/* 829 */,
+/* 830 */,
+/* 831 */,
+/* 832 */,
+/* 833 */,
+/* 834 */
 /***/ function(module, exports) {
 
 	/*
@@ -13293,12 +14877,12 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 809 */
+/* 835 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var file_like_object_class_1 = __webpack_require__(405);
+	var file_like_object_class_1 = __webpack_require__(413);
 	var FileItem = (function () {
 	    function FileItem(uploader, some, options) {
 	        this.alias = 'file';
@@ -13428,7 +15012,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 810 */
+/* 836 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13596,18 +15180,18 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 811 */
+/* 837 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(406));
-	__export(__webpack_require__(404));
-	__export(__webpack_require__(252));
-	var file_select_directive_2 = __webpack_require__(406);
-	var file_drop_directive_2 = __webpack_require__(404);
+	__export(__webpack_require__(414));
+	__export(__webpack_require__(412));
+	__export(__webpack_require__(255));
+	var file_select_directive_2 = __webpack_require__(414);
+	var file_drop_directive_2 = __webpack_require__(412);
 	exports.FILE_UPLOAD_DIRECTIVES = [file_select_directive_2.FileSelectDirective, file_drop_directive_2.FileDropDirective];
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = {
@@ -13618,7 +15202,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 812 */
+/* 838 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -13668,7 +15252,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 813 */
+/* 839 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -13714,7 +15298,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 814 */
+/* 840 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -13728,7 +15312,7 @@ webpackJsonp([3],[
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(1);
-	var common_1 = __webpack_require__(429);
+	var common_1 = __webpack_require__(437);
 	var HighlightPipe = (function () {
 	    function HighlightPipe() {
 	    }
@@ -13768,16 +15352,16 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 815 */
+/* 841 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var select_1 = __webpack_require__(428);
-	__export(__webpack_require__(430));
-	__export(__webpack_require__(428));
+	var select_1 = __webpack_require__(436);
+	__export(__webpack_require__(438));
+	__export(__webpack_require__(436));
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = {
 	    directives: [
@@ -13787,7 +15371,7 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 816 */
+/* 842 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -14039,27 +15623,27 @@ webpackJsonp([3],[
 
 
 /***/ },
-/* 817 */,
-/* 818 */,
-/* 819 */,
-/* 820 */,
-/* 821 */
+/* 843 */,
+/* 844 */,
+/* 845 */,
+/* 846 */,
+/* 847 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(224);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(816)(content, {});
+	var update = __webpack_require__(842)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(223, function() {
-				var newContent = __webpack_require__(223);
+			module.hot.accept(224, function() {
+				var newContent = __webpack_require__(224);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});

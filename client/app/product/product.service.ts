@@ -3,6 +3,7 @@ import {Http, Headers} from '@angular/http';
 
 @Injectable()
 export class ProductService {
+	public userId ='';
     public url = '/api/product';
     public urlMy = '/api/myproduct/';
     public urlShopProducts = '/api/shopproducts/';
