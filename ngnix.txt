@@ -8,12 +8,12 @@ server {
 # HTTPS - proxy requests on to local Node.js app:
 server {
         listen 443;
-        server_name your_domain_name;
+        server_name foodrings.com;
 
         ssl on;
         # Use certificate and key provided by Let's Encrypt:
-        ssl_certificate /etc/letsencrypt/live/your_domain_name/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/your_domain_name/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/foodrings.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/foodrings.com/privkey.pem;
         ssl_session_timeout 5m;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;

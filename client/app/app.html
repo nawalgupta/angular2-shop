@@ -1,11 +1,24 @@
 <md-sidenav-layout layout="row" fullscreen>
     <md-sidenav #menu class="app-menu">
         <md-toolbar>
-            <h3>ng2-shop</h3>
+            <h3>Food Rings</h3>
         </md-toolbar>
         <md-list>
 
+            <md-list-item>
 
+            <button md-button router-active [routerLink]=" ['Signin'] ">
+                Login
+            </button>
+</md-list-item>
+            <md-list-item>
+
+           <button md-button router-active [routerLink]=" ['Signup'] ">
+                Signup
+            </button>
+</md-list-item>
+
+		
             <md-list-item>
 
                 <md-button md-button router-active [routerLink]=" ['CartList'] ">
@@ -18,48 +31,37 @@
                     Search
                 </md-button>
             </md-list-item>
+
+			
+            <md-list-item>
+			
+			
+			
+
+            <button md-button router-active [routerLink]=" ['ShopAdd'] ">
+                Add a Kitchen
+            </button>
+            
+			</md-list-item>
+            <md-list-item>
+<button md-button router-active [routerLink]=" ['ShopList'] ">
+                Manage Kitchen
+            </button>
+</md-list-item>
             <md-list-item>
 
-                <button md-button router-active [routerLink]=" ['Test'] ">
-                    Test
-                </button>
+            <button md-button router-active [routerLink]=" ['Profile'] ">
+                Profile
+            </button>
+</md-list-item>
 
-            </md-list-item>
-            <md-list-item>
-
-
-                <button md-button router-active [routerLink]=" ['ShopAdd'] ">
-                    Shop Add
-                </button>
-            </md-list-item>
-            <md-list-item>
-                <button md-button router-active [routerLink]=" ['ShopList'] ">
-                    Shop List
-                </button>
-            </md-list-item>
-            <md-list-item>
-
-                <button md-button router-active [routerLink]=" ['Products'] ">
-                    Products Flux
-                </button>
-            </md-list-item>
-            <md-list-item>
-                <button md-button router-active [routerLink]=" ['Product'] ">
-                    Products
-                </button>
-            </md-list-item>
-            <md-list-item>
-
-                <button md-button router-active [routerLink]=" ['Signin'] ">
-                    Login
-                </button>
-            </md-list-item>
-
+			
+			
         </md-list>
 
     </md-sidenav>
 
-    <md-content #content>
+    <md-content1 #content>
         <md-toolbar color="primary" class="hero">
 
 
@@ -71,60 +73,8 @@
                 <i md-icon class="md-dark">menu</i>
             </button>
 
+			<h3>Food Rings</h3>
 
-
-
-            <md-button md-button router-active [routerLink]=" ['CartList'] ">
-                Cart
-            </md-button>
-
-            <md-button md-button router-active [routerLink]=" ['ShopSearch'] ">
-                Search
-            </md-button>
-
-            <button md-button router-active [routerLink]=" ['Test'] ">
-                Test
-            </button>
-
-
-
-            <button md-button router-active [routerLink]=" ['ShopAdd'] ">
-                Shop Add
-            </button>
-            <button md-button router-active [routerLink]=" ['ShopList'] ">
-                Shop List
-            </button>
-
-            <button md-button router-active [routerLink]=" ['Products'] ">
-                Products Flux
-            </button>
-            <button md-button router-active [routerLink]=" ['Product'] ">
-                Products
-            </button>
-
-            <button md-button router-active [routerLink]=" ['Signin'] ">
-                Login
-            </button>
-
-            <button md-button router-active [routerLink]=" ['FileUpload'] ">
-                File
-            </button>
-
-            <button md-button router-active [routerLink]=" ['Demo'] ">
-                File Upload Demo
-            </button>
-
-            <button md-button router-active [routerLink]=" ['MapAutocomplete'] ">
-                Map
-            </button>
-
-            <button md-button router-active [routerLink]=" ['Profile'] ">
-                Profile
-            </button>
-
-            <button md-button router-active [routerLink]=" ['Avatar'] ">
-                Avatar
-            </button>
 
 
             <h1></h1>
@@ -135,14 +85,9 @@
             </h1>
         </md-toolbar>
 
-
-        <md-content>
-            <router-outlet></router-outlet>
-            <map-autocomplete2>            </map-autocomplete2>
-
-        </md-content>
+<router-outlet></router-outlet>
 
 
 
-    </md-content>
+    </md-content1>
 </md-sidenav-layout>
