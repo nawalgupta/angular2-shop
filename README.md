@@ -1,6 +1,6 @@
 # Angular2Shop (Angular eCommerce) (ng2Shop) - Fullstack (Defunct)
 
-# This is Defunct project beacause the chnages in Angualr2 Beta and Breaking Changes in Angular 2 
+# This is Defunct project beacause the changes in Angualr2 Beta and Breaking Changes in Angular 2 
 
 Angular2Shop is a multi tenant eCommerce application. The sample site is for home cooked meals, but can be easily accomodate for any product.
 
